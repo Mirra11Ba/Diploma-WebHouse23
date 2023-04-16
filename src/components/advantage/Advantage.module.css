@@ -1,0 +1,15 @@
+.card {
+    height: 175px;
+    width: 224px;
+    left: 0px;
+    top: 0px;
+    border-radius: 4px;
+    background: var(--neptune-blue-75);
+}
+.icon {
+
+}
+.text {
+ color: var(--white);
+}
+
