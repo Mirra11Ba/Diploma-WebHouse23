@@ -1,15 +1,42 @@
 .card {
     height: 175px;
     width: 224px;
-    left: 0px;
-    top: 0px;
     border-radius: 4px;
     background: var(--neptune-blue-75);
+    margin: 20px;
 }
-.icon {
 
+/*.flexItemContainer {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+
+/*    padding: 28px 38px 28px 38px;*/
+/*}*/
+
+.icon {
+    width: 40px;
+    height: 40px;
 }
+
 .text {
- color: var(--white);
+    text-align: center;
+    color: var(--white);
 }
+
+/*.flexListContainer {*/
+/*    height: auto;*/
+/*    width: 1200px;*/
+
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*}*/
 

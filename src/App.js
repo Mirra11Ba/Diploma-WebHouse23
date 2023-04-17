@@ -16,62 +16,62 @@ import AdvantageItem from "./components/advantage/AdvantageItem";
 
 function App() {
     return (
-      <div className="App">
-        <WrapperFullWidth>
-            {/*Header*/}
-            <h1>Header</h1>
-            <img style={{width: "100%", height: "auto"}} src={ImgCyberpunk} alt={"киберпанк"}/>
+        <div className="App">
+            <WrapperFullWidth>
+                {/*Header*/}
+                <h1>Header</h1>
+                <img style={{width: "100%", height: "auto"}} src={ImgCyberpunk} alt={"киберпанк"}/>
 
-            {/*Slider*/}
-            <WrapperMainContent>
-                <Carousel
-                    showStatus={false}
-                    showThumbs={false}
-                    emulateTouch={true}
-                    swipeable={true}
-                    infiniteLoop={true}
-                    interval={3100}
-                    transitionTime={800}
-                    useKeyboardArrows={true}
-                    autoPlay={true}
-                    stopOnHover={true}
-                >
-                    <div>
-                        <img src={ImgLuchshieDomaUNas} alt="Частный дом"/>
-                        <p className={"legend, slider-label-text, f-des-oswald-font-H2-56-reg" }>Лучшие дома только у нас!</p>
-                    </div>
-                    <div>
-                        <img src={ImgProektyChastnykhDomov} alt="Дом с землей"/>
-                        <p className="legend">Проекты домов</p>
-                    </div>
-                    <div>
-                        <img src={ImgInvesticziiVNedvizhimost} alt="Инвестии в недвижимость"/>
-                        <p className="legend">Инвестируй в недвижимость, а не в крипту</p>
-                    </div>
-                </Carousel>
+                {/*Slider*/}
+                <WrapperMainContent>
+                    <Carousel
+                        showStatus={false}
+                        showThumbs={false}
+                        emulateTouch={true}
+                        swipeable={true}
+                        infiniteLoop={true}
+                        interval={3100}
+                        transitionTime={800}
+                        useKeyboardArrows={true}
+                        autoPlay={true}
+                        stopOnHover={true}
+                    >
+                        <div>
+                            <img src={ImgLuchshieDomaUNas} alt="Частный дом"/>
+                            <p className={"legend, slider-label-text, f-des-oswald-font-H2-56-reg"}>Лучшие дома только у
+                                нас!</p>
+                        </div>
+                        <div>
+                            <img src={ImgProektyChastnykhDomov} alt="Дом с землей"/>
+                            <p className="legend">Проекты домов</p>
+                        </div>
+                        <div>
+                            <img src={ImgInvesticziiVNedvizhimost} alt="Инвестии в недвижимость"/>
+                            <p className="legend">Инвестируй в недвижимость, а не в крипту</p>
+                        </div>
+                    </Carousel>
 
 
-                {/*Блок преимущества*/}
-                <Grid2>
-                    <AdvantageItem/>
+                    {/*Блок преимущества*/}
+                    <h3>Преимущества</h3>
                     <AdvantageList/>
-                </Grid2>
-
-
-
-                {/*Блок Дома*/}
 
 
 
 
-                {/*Блок способы оплаты*/}
-                {/*Блок новости*/}
-                {/*Блок запись на экскурсию*/}
-                {/*Блок обзоры*/}
-                {/*Footer*/}
-            </WrapperMainContent>
-        </WrapperFullWidth>
-      </div>
+
+                    {/*Блок Дома*/}
+
+
+                    {/*Блок способы оплаты*/}
+                    {/*Блок новости*/}
+                    {/*Блок запись на экскурсию*/}
+                    {/*Блок обзоры*/}
+                    {/*Footer*/}
+                </WrapperMainContent>
+            </WrapperFullWidth>
+        </div>
     );
 }
+
 export default App;

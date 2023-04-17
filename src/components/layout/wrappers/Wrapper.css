@@ -15,6 +15,7 @@
     height: auto;
     background-color: palegreen;
 }
+
 /*Desktop*/
 @media (min-width: 1250px) {
     .wrapper-main-content {
@@ -38,6 +39,7 @@
         /* identical to box height, or 107% */
         /*letter-spacing: 0.5px;*/
     }
+
     h3 {
         /* Oswald/H3 48 reg */
         font-family: 'Oswald', sans-serif;
@@ -46,7 +48,9 @@
         font-size: 48px;
         line-height: 50px;
         /* identical to box height, or 104% */
+        text-align: center;
     }
+
     h4 {
         /* Oswald/H4 34 reg */
         font-family: 'Oswald', sans-serif;
@@ -57,6 +61,7 @@
         /* identical to box height, or 118% */
         /*letter-spacing: 0.25px;*/
     }
+
     h5 {
         /* Oswald/H5 24 reg */
         font-family: 'Oswald', sans-serif;
@@ -66,9 +71,10 @@
         line-height: 32px;
         /* identical to box height, or 133% */
     }
+
     .mon-filters-24-med {
         /* Montserrat/Filters 24 med */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
@@ -76,9 +82,10 @@
         /* identical to box height, or 121% */
         letter-spacing: -0.015em;
     }
-    .mon-list-24-reg{
+
+    .mon-list-24-reg {
         /* Montserrat/List 24 reg */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -86,36 +93,40 @@
         /* identical to box height, or 121% */
         letter-spacing: -0.015em;
     }
+
     .mon-price-20-bol {
         /* Montserrat/Price 20 bol */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
         line-height: 24px;
         /* identical to box height, or 120% */
     }
+
     .mon-body-20-reg {
         /* Montserrat/Body 20 reg */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
         line-height: 26px;
         /* identical to box height, or 130% */
     }
+
     .mon-body-18-reg {
         /* Montserrat/Body 18 reg */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 23px;
         /* identical to box height, or 128% */
     }
+
     .mon-button-17-reg {
         /* Montserrat/Button 17 med */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 17px;
@@ -123,9 +134,10 @@
         /* identical to box height, or 124% */
         letter-spacing: -0.015em;
     }
+
     .mon-menu-16-med {
         /* Montserrat/Menu 16 med */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -133,9 +145,10 @@
         /* identical to box height, or 125% */
         letter-spacing: 0.03125em;
     }
+
     .mon-body-16-reg {
         /* Montserrat/Body 16 reg */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -143,18 +156,20 @@
         /* identical to box height, or 125% */
         letter-spacing: 0.03125em;
     }
+
     .mon-small-button-14-reg {
         /* Montserrat/Small button 14 reg */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
         line-height: 36px;
         /* identical to box height, or 257% */
     }
+
     .mon-body-14-reg {
         /* Montserrat/Body 14 reg */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -162,9 +177,10 @@
         /* identical to box height, or 129% */
         letter-spacing: 0.015625em;
     }
+
     .mon-footer-12-reg {
         /* Montserrat/Footer 12 reg */
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -175,30 +191,513 @@
 
 
 }
+
 /*Netbook*/
-@media (min-width: 1000px) and (max-width: 1249px){
+@media (min-width: 1000px) and (max-width: 1249px) {
     .wrapper-main-content {
         margin-left: auto;
         margin-right: auto;
         width: 80%;
         height: auto;
     }
+    /*Типографика*/
+    h2 {
+        /* Oswald/H2 56 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 60px;
+        /* identical to box height, or 107% */
+        /*letter-spacing: 0.5px;*/
+    }
+
+    h3 {
+        /* Oswald/H3 48 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 50px;
+        /* identical to box height, or 104% */
+        text-align: center;
+    }
+
+    h4 {
+        /* Oswald/H4 34 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 40px;
+        /* identical to box height, or 118% */
+        /*letter-spacing: 0.25px;*/
+    }
+
+    h5 {
+        /* Oswald/H5 24 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        /* identical to box height, or 133% */
+    }
+
+    .mon-filters-24-med {
+        /* Montserrat/Filters 24 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height, or 121% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-list-24-reg {
+        /* Montserrat/List 24 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height, or 121% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-price-20-bol {
+        /* Montserrat/Price 20 bol */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height, or 120% */
+    }
+
+    .mon-body-20-reg {
+        /* Montserrat/Body 20 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        /* identical to box height, or 130% */
+    }
+
+    .mon-body-18-reg {
+        /* Montserrat/Body 18 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        /* identical to box height, or 128% */
+    }
+
+    .mon-button-17-reg {
+        /* Montserrat/Button 17 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height, or 124% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-menu-16-med {
+        /* Montserrat/Menu 16 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        letter-spacing: 0.03125em;
+    }
+
+    .mon-body-16-reg {
+        /* Montserrat/Body 16 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        letter-spacing: 0.03125em;
+    }
+
+    .mon-small-button-14-reg {
+        /* Montserrat/Small button 14 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        /* identical to box height, or 257% */
+    }
+
+    .mon-body-14-reg {
+        /* Montserrat/Body 14 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        letter-spacing: 0.015625em;
+    }
+
+    .mon-footer-12-reg {
+        /* Montserrat/Footer 12 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height, or 125% */
+        letter-spacing: -0.015em;
+    }
 }
+
 /*Tablet*/
-@media (min-width: 600px) and (max-width: 999px){
+@media (min-width: 600px) and (max-width: 999px) {
     .wrapper-main-content {
         margin-left: auto;
         margin-right: auto;
         width: 80%;
         height: auto;
     }
+    /*Типографика*/
+    h2 {
+        /* Oswald/H2 56 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 60px;
+        /* identical to box height, or 107% */
+        /*letter-spacing: 0.5px;*/
+    }
+
+    h3 {
+        /* Oswald/H3 48 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 50px;
+        /* identical to box height, or 104% */
+        text-align: center;
+    }
+
+    h4 {
+        /* Oswald/H4 34 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 40px;
+        /* identical to box height, or 118% */
+        /*letter-spacing: 0.25px;*/
+    }
+
+    h5 {
+        /* Oswald/H5 24 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        /* identical to box height, or 133% */
+    }
+
+    .mon-filters-24-med {
+        /* Montserrat/Filters 24 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height, or 121% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-list-24-reg {
+        /* Montserrat/List 24 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height, or 121% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-price-20-bol {
+        /* Montserrat/Price 20 bol */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height, or 120% */
+    }
+
+    .mon-body-20-reg {
+        /* Montserrat/Body 20 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        /* identical to box height, or 130% */
+    }
+
+    .mon-body-18-reg {
+        /* Montserrat/Body 18 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        /* identical to box height, or 128% */
+    }
+
+    .mon-button-17-reg {
+        /* Montserrat/Button 17 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height, or 124% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-menu-16-med {
+        /* Montserrat/Menu 16 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        letter-spacing: 0.03125em;
+    }
+
+    .mon-body-16-reg {
+        /* Montserrat/Body 16 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        letter-spacing: 0.03125em;
+    }
+
+    .mon-small-button-14-reg {
+        /* Montserrat/Small button 14 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        /* identical to box height, or 257% */
+    }
+
+    .mon-body-14-reg {
+        /* Montserrat/Body 14 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        letter-spacing: 0.015625em;
+    }
+
+    .mon-footer-12-reg {
+        /* Montserrat/Footer 12 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height, or 125% */
+        letter-spacing: -0.015em;
+    }
 }
+
 /*Mobile*/
-@media (min-width: 320px) and (max-width: 599px){
+@media (min-width: 320px) and (max-width: 599px) {
     .wrapper-main-content {
         margin-left: auto;
         margin-right: auto;
         width: 80%;
         height: auto;
+    }
+    /*Типографика*/
+    h2 {
+        /* Oswald/H2 56 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 60px;
+        /* identical to box height, or 107% */
+        /*letter-spacing: 0.5px;*/
+    }
+
+    h3 {
+        /* Oswald/H3 48 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 50px;
+        /* identical to box height, or 104% */
+        text-align: center;
+    }
+
+    h4 {
+        /* Oswald/H4 34 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 40px;
+        /* identical to box height, or 118% */
+        /*letter-spacing: 0.25px;*/
+    }
+
+    h5 {
+        /* Oswald/H5 24 reg */
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        /* identical to box height, or 133% */
+    }
+
+    .mon-filters-24-med {
+        /* Montserrat/Filters 24 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height, or 121% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-list-24-reg {
+        /* Montserrat/List 24 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height, or 121% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-price-20-bol {
+        /* Montserrat/Price 20 bol */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height, or 120% */
+    }
+
+    .mon-body-20-reg {
+        /* Montserrat/Body 20 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        /* identical to box height, or 130% */
+    }
+
+    .mon-body-18-reg {
+        /* Montserrat/Body 18 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        /* identical to box height, or 128% */
+    }
+
+    .mon-button-17-reg {
+        /* Montserrat/Button 17 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height, or 124% */
+        letter-spacing: -0.015em;
+    }
+
+    .mon-menu-16-med {
+        /* Montserrat/Menu 16 med */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        letter-spacing: 0.03125em;
+    }
+
+    .mon-body-16-reg {
+        /* Montserrat/Body 16 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        letter-spacing: 0.03125em;
+    }
+
+    .mon-small-button-14-reg {
+        /* Montserrat/Small button 14 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 36px;
+        /* identical to box height, or 257% */
+    }
+
+    .mon-body-14-reg {
+        /* Montserrat/Body 14 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        letter-spacing: 0.015625em;
+    }
+
+    .mon-footer-12-reg {
+        /* Montserrat/Footer 12 reg */
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height, or 125% */
+        letter-spacing: -0.015em;
     }
 }
