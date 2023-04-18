@@ -22,7 +22,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: black;
+    color: var(--black);
 }
 
 code {
@@ -75,4 +75,13 @@ code {
     line-height: 60px;
     text-align: center;
     color: #FFFFFF;
+}
+
+.backColNeptuneBlue25 {
+    background-color: var(--neptune-blue-25);
+}
+
+.sliderImage {
+    width: 100vw;
+    height: 100vh;
 }
