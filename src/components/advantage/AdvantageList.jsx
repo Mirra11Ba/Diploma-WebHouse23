@@ -23,15 +23,8 @@ export default function AdvantageList(props) {
         <AdvantageItem icon={advantage.icon} text={advantage.text} key={advantage.id}/>
     )
     return (
-        <Grid2 container spacing={2}>
-            <div>
-                {list}
-            </div>
-
-            {/*<div className={classes.flexListContainer}>*/}
-            {/*    {list}*/}
-            {/*</div>*/}
-        </Grid2>
-
+        <div className={classes.flexListContainer}>
+            {list}
+        </div>
     );
 };

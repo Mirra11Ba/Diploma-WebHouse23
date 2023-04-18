@@ -9,10 +9,13 @@ import ImgProektyChastnykhDomov from "./media/images/proekty-chastnykh-domov.web
 import Button from '@mui/material/Button';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from "react-responsive-carousel";
-import {Grid} from "@mui/material";
 import AdvantageList from "./components/advantage/AdvantageList";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import AdvantageItem from "./components/advantage/AdvantageItem";
+import CssColors, {colNeptuneBlue25} from "./style/colors.js";
+import CssIndex from "./style/index.css";
+import PaymentMethodItem from "./components/paymentMethod/PaymentMethodItem";
+
+
 
 function App() {
     return (
@@ -22,8 +25,8 @@ function App() {
                 <h1>Header</h1>
                 <img style={{width: "100%", height: "auto"}} src={ImgCyberpunk} alt={"киберпанк"}/>
 
+
                 {/*Slider*/}
-                <WrapperMainContent>
                     <Carousel
                         showStatus={false}
                         showThumbs={false}
@@ -34,11 +37,11 @@ function App() {
                         transitionTime={800}
                         useKeyboardArrows={true}
                         autoPlay={true}
-                        stopOnHover={true}
-                    >
+                        stopOnHover={true}>
+
                         <div>
                             <img src={ImgLuchshieDomaUNas} alt="Частный дом"/>
-                            <p className={"legend, slider-label-text, f-des-oswald-font-H2-56-reg"}>Лучшие дома только у
+                            <p className={"legend, slider-label-text"}>Лучшие дома только у
                                 нас!</p>
                         </div>
                         <div>
@@ -52,23 +55,44 @@ function App() {
                     </Carousel>
 
 
-                    {/*Блок преимущества*/}
-                    <h3>Преимущества</h3>
+                {/*Блок преимущества*/}
+                <WrapperMainContent>
+                    <h3 style={{marginBottom: "30px"}}>Преимущества</h3>
                     <AdvantageList/>
+                </WrapperMainContent>
+
+
+                {/*Блок каталог домов*/}
+                <WrapperFullWidth>
+                    <div className={"backColNeptuneBlue25"} style={{width: "100%", height: "700px"}}>
+                        <h3 style={{paddingBottom: "30px", paddingTop: "30px"}}>Наши дома</h3>
+                        <WrapperMainContent>
+                            <h3>список домов</h3>
+                        </WrapperMainContent>
+                    </div>
+                </WrapperFullWidth>
+
+                {/*Блок способы оплаты*/}
+                <WrapperMainContent>
+                    <h3 style={{marginBottom: "30px"}}>Способы оплаты</h3>
+                    <PaymentMethodItem/>
+                </WrapperMainContent>
 
 
 
 
 
-                    {/*Блок Дома*/}
 
 
-                    {/*Блок способы оплаты*/}
+
+
+
+
                     {/*Блок новости*/}
                     {/*Блок запись на экскурсию*/}
                     {/*Блок обзоры*/}
                     {/*Footer*/}
-                </WrapperMainContent>
+
             </WrapperFullWidth>
         </div>
     );

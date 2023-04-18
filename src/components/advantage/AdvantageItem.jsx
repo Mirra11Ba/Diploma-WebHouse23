@@ -10,16 +10,11 @@ export default function AdvantageItem(props) {
     const {icon, text} = props;
     return (
         <div className={classes.card}>
-            <img className={classes.icon} src={icon}/>
-            <div className={classes.text}>{text}</div>
+            <div className={classes.flexItemContainer}>
+                <img className={classes.icon} src={icon}/>
+                <div className={`${classes.text} ${"mon-body-18-reg"}`}>{text}</div>
+            </div>
         </div>
-
-        // <div className={classes.card}>
-        //     <div className={classes.flexItemContainer}>
-        //         <img className={classes.icon} src={icon}/>
-        //         <div className={classes.text}>{text}</div>
-        //     </div>
-        // </div>
     );
 };
 
