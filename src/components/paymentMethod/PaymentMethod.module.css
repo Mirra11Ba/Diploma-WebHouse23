@@ -7,4 +7,17 @@
 .img {
     width: 100%;
     height: auto;
+    border-radius: 4px;
+}
+
+.title {
+    padding-bottom: 15px;
+}
+
+.text {
+    padding-bottom: 7px;
+}
+
+ul {
+    padding-left: 17px;
 }

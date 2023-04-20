@@ -13,11 +13,11 @@ import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 
 export default function AdvantageList(props) {
     const advantages = [
-        {id: 1, icon: IcoCottage, text: 'Широкий \n' + 'выбор \n' + 'локаций строек'},
+        {id: 1, icon: IcoCottage, text: 'Широкий выбор локаций строек'},
         {id: 2, icon: IcoWallet, text: 'Недвижимость от элитной до эконома'},
         {id: 3, icon: IcoHomePin, text: 'Посещение стройки online и offline'},
-        {id: 4, icon: IcoClientNotes, text: 'Заключение договора купли-продажи'},
-        {id: 5, icon: IcoCheckMark, text: 'Богатый опыт\n' + '15 лет \n' + 'на рынке'},
+        {id: 4, icon: IcoClientNotes, text: 'Заключение договора купли\u00A0-\u00A0продажи'},
+        {id: 5, icon: IcoCheckMark, text: 'Богатый опыт 15 лет на рынке'},
     ];
     const list = advantages.map(advantage =>
         <AdvantageItem icon={advantage.icon} text={advantage.text} key={advantage.id}/>

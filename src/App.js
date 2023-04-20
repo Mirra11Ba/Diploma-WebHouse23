@@ -17,13 +17,23 @@ import PaymentMethodItem from "./components/paymentMethod/PaymentMethodItem";
 
 
 
+
 function App() {
     return (
         <div className="App">
             <WrapperFullWidth>
                 {/*Header*/}
                 <h1>Header</h1>
-                <img style={{width: "100%", height: "auto"}} src={ImgCyberpunk} alt={"киберпанк"}/>
+                {/*<img style={{width: "100%", height: "auto"}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
+
+                {/*<div style={{height: "600px;", width: "100%"}}>*/}
+                {/*    <img style={{width: "100%", height: "100%", objectFit: "cover", objectPosition: 'center'}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
+                {/*</div>*/}
+
+                {/*<div style={{height: "600px;", width: "100%"}}>*/}
+                {/*    <img style={{width: "100%", height: "80hv", objectFit: "cover", objectPosition: 'center'}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
+                {/*</div>*/}
+
 
 
                 {/*Slider*/}
@@ -77,6 +87,7 @@ function App() {
                     <h3 style={{marginBottom: "30px"}}>Способы оплаты</h3>
                     <PaymentMethodItem/>
                 </WrapperMainContent>
+                <h1>fkfkf</h1>
 
 
 

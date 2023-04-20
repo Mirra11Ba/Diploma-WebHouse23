@@ -14,14 +14,16 @@
     --black: #000000;
 }
 
+/*Импорт шрифтов из Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald&display=swap');
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Oswald', 'Montserrat','Segoe UI', 'Roboto', 'Oxygen',
+    font-family: -apple-system, 'Montserrat', 'Oswald', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    /*-webkit-font-smoothing: antialiased;*/
+    /*-moz-osx-font-smoothing: grayscale;*/
     color: var(--black);
 }
 
@@ -31,57 +33,6 @@ code {
 }
 
 
-/*Подключение шрифтов*/
-@font-face {
-    font-family: 'Montserrat', sans-serif;
-    src: local('Montserrat'),
-    url('../media/fonts/montserrat/static/Montserrat-Regular.ttf') format('truetype');
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat', sans-serif;
-    src: local('Montserrat'),
-    url('../media/fonts/montserrat/static/Montserrat-Medium.ttf') format('truetype');
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat', sans-serif;
-    src: local('Montserrat'),
-    url('../media/fonts/montserrat/static/Montserrat-Bold.ttf') format('truetype');
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Oswald', sans-serif;
-    src: local('Oswald'),
-    url('../media/fonts/oswald/static/Oswald-Regular.ttf') format('truetype');
-    font-weight: normal;
-}
-
-
-/*Импортированные компоненты*/
-.sliderTextPosition {
-    position: absolute;
-    width: 577px;
-    height: 60px;
-    left: 432px;
-    top: 278px;
-    font-family: 'Oswald';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 56px;
-    line-height: 60px;
-    text-align: center;
-    color: #FFFFFF;
-}
-
 .backColNeptuneBlue25 {
     background-color: var(--neptune-blue-25);
-}
-
-.sliderImage {
-    width: 100vw;
-    height: 100vh;
 }

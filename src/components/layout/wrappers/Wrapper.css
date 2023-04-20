@@ -29,7 +29,7 @@
     /*Типографика*/
     h2 {
         /* Oswald/H2 56 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 56px;
@@ -40,7 +40,7 @@
 
     h3 {
         /* Oswald/H3 48 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 48px;
@@ -51,7 +51,7 @@
 
     h4 {
         /* Oswald/H4 34 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 34px;
@@ -62,7 +62,7 @@
 
     h5 {
         /* Oswald/H5 24 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -72,7 +72,7 @@
 
     .mon-filters-24-med {
         /* Montserrat/Filters 24 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
@@ -83,7 +83,7 @@
 
     .mon-list-24-reg {
         /* Montserrat/List 24 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -94,7 +94,7 @@
 
     .mon-price-20-bol {
         /* Montserrat/Price 20 bol */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -104,7 +104,7 @@
 
     .mon-body-20-reg {
         /* Montserrat/Body 20 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
@@ -114,7 +114,7 @@
 
     .mon-body-18-reg {
         /* Montserrat/Body 18 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
@@ -124,7 +124,7 @@
 
     .mon-button-17-reg {
         /* Montserrat/Button 17 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 17px;
@@ -135,7 +135,7 @@
 
     .mon-menu-16-med {
         /* Montserrat/Menu 16 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -146,7 +146,7 @@
 
     .mon-body-16-reg {
         /* Montserrat/Body 16 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -157,7 +157,7 @@
 
     .mon-small-button-14-reg {
         /* Montserrat/Small button 14 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -167,7 +167,7 @@
 
     .mon-body-14-reg {
         /* Montserrat/Body 14 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -178,7 +178,7 @@
 
     .mon-footer-12-reg {
         /* Montserrat/Footer 12 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -195,13 +195,14 @@
     .wrapper-main-content {
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 90%;
         height: auto;
     }
     /*Типографика*/
+    /*Типографика*/
     h2 {
         /* Oswald/H2 56 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 56px;
@@ -212,7 +213,7 @@
 
     h3 {
         /* Oswald/H3 48 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 48px;
@@ -223,7 +224,7 @@
 
     h4 {
         /* Oswald/H4 34 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 34px;
@@ -234,7 +235,7 @@
 
     h5 {
         /* Oswald/H5 24 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -244,7 +245,7 @@
 
     .mon-filters-24-med {
         /* Montserrat/Filters 24 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
@@ -255,7 +256,7 @@
 
     .mon-list-24-reg {
         /* Montserrat/List 24 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -266,7 +267,7 @@
 
     .mon-price-20-bol {
         /* Montserrat/Price 20 bol */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -276,7 +277,7 @@
 
     .mon-body-20-reg {
         /* Montserrat/Body 20 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
@@ -286,7 +287,7 @@
 
     .mon-body-18-reg {
         /* Montserrat/Body 18 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
@@ -296,7 +297,7 @@
 
     .mon-button-17-reg {
         /* Montserrat/Button 17 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 17px;
@@ -307,7 +308,7 @@
 
     .mon-menu-16-med {
         /* Montserrat/Menu 16 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -318,7 +319,7 @@
 
     .mon-body-16-reg {
         /* Montserrat/Body 16 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -329,7 +330,7 @@
 
     .mon-small-button-14-reg {
         /* Montserrat/Small button 14 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -339,7 +340,7 @@
 
     .mon-body-14-reg {
         /* Montserrat/Body 14 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -350,7 +351,7 @@
 
     .mon-footer-12-reg {
         /* Montserrat/Footer 12 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -365,13 +366,14 @@
     .wrapper-main-content {
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 90%;
         height: auto;
     }
     /*Типографика*/
+    /*Типографика*/
     h2 {
         /* Oswald/H2 56 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 56px;
@@ -382,7 +384,7 @@
 
     h3 {
         /* Oswald/H3 48 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 48px;
@@ -393,7 +395,7 @@
 
     h4 {
         /* Oswald/H4 34 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 34px;
@@ -404,7 +406,7 @@
 
     h5 {
         /* Oswald/H5 24 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -414,7 +416,7 @@
 
     .mon-filters-24-med {
         /* Montserrat/Filters 24 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
@@ -425,7 +427,7 @@
 
     .mon-list-24-reg {
         /* Montserrat/List 24 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -436,7 +438,7 @@
 
     .mon-price-20-bol {
         /* Montserrat/Price 20 bol */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -446,7 +448,7 @@
 
     .mon-body-20-reg {
         /* Montserrat/Body 20 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
@@ -456,7 +458,7 @@
 
     .mon-body-18-reg {
         /* Montserrat/Body 18 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
@@ -466,7 +468,7 @@
 
     .mon-button-17-reg {
         /* Montserrat/Button 17 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 17px;
@@ -477,7 +479,7 @@
 
     .mon-menu-16-med {
         /* Montserrat/Menu 16 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -488,7 +490,7 @@
 
     .mon-body-16-reg {
         /* Montserrat/Body 16 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -499,7 +501,7 @@
 
     .mon-small-button-14-reg {
         /* Montserrat/Small button 14 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -509,7 +511,7 @@
 
     .mon-body-14-reg {
         /* Montserrat/Body 14 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -520,7 +522,7 @@
 
     .mon-footer-12-reg {
         /* Montserrat/Footer 12 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -541,7 +543,7 @@
     /*Типографика*/
     h2 {
         /* Oswald/H2 56 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 56px;
@@ -552,7 +554,7 @@
 
     h3 {
         /* Oswald/H3 48 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 48px;
@@ -563,7 +565,7 @@
 
     h4 {
         /* Oswald/H4 34 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 34px;
@@ -574,7 +576,7 @@
 
     h5 {
         /* Oswald/H5 24 reg */
-        font-family: 'Oswald', sans-serif;
+        font-family: Oswald, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -584,7 +586,7 @@
 
     .mon-filters-24-med {
         /* Montserrat/Filters 24 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
@@ -595,7 +597,7 @@
 
     .mon-list-24-reg {
         /* Montserrat/List 24 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
@@ -606,7 +608,7 @@
 
     .mon-price-20-bol {
         /* Montserrat/Price 20 bol */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -616,7 +618,7 @@
 
     .mon-body-20-reg {
         /* Montserrat/Body 20 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
@@ -626,7 +628,7 @@
 
     .mon-body-18-reg {
         /* Montserrat/Body 18 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
@@ -636,7 +638,7 @@
 
     .mon-button-17-reg {
         /* Montserrat/Button 17 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 17px;
@@ -647,7 +649,7 @@
 
     .mon-menu-16-med {
         /* Montserrat/Menu 16 med */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -658,7 +660,7 @@
 
     .mon-body-16-reg {
         /* Montserrat/Body 16 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -669,7 +671,7 @@
 
     .mon-small-button-14-reg {
         /* Montserrat/Small button 14 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -679,7 +681,7 @@
 
     .mon-body-14-reg {
         /* Montserrat/Body 14 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -690,7 +692,7 @@
 
     .mon-footer-12-reg {
         /* Montserrat/Footer 12 reg */
-        font-family: 'Montserrat', sans-serif;
+        font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
