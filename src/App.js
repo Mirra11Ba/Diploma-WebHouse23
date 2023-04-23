@@ -51,7 +51,7 @@ function App() {
 
                         <div>
                             <img src={ImgLuchshieDomaUNas} alt="Частный дом"/>
-                            <p className={"legend, slider-label-text"}>Лучшие дома только у
+                            <p className={"legend"}>Лучшие дома только у
                                 нас!</p>
                         </div>
                         <div>

@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-/*#root {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
-
 .wrapper-full-width {
     /*расчет макета на 1440px*/
     width: 100%;
@@ -35,7 +30,7 @@
         font-size: 56px;
         line-height: 60px;
         /* identical to box height, or 107% */
-        /*letter-spacing: 0.5px;*/
+        letter-spacing: 0.03125em;
     }
 
     h3 {
@@ -57,7 +52,7 @@
         font-size: 34px;
         line-height: 40px;
         /* identical to box height, or 118% */
-        /*letter-spacing: 0.25px;*/
+        letter-spacing: 0.015625em;
     }
 
     h5 {
@@ -186,19 +181,16 @@
         /* identical to box height, or 125% */
         letter-spacing: -0.015em;
     }
-
-
 }
 
 /*Netbook*/
-@media (min-width: 1000px) and (max-width: 1249px) {
+@media (min-width: 900px) and (max-width: 1249px) {
     .wrapper-main-content {
         margin-left: auto;
         margin-right: auto;
-        width: 90%;
+        width: 95%;
         height: auto;
     }
-    /*Типографика*/
     /*Типографика*/
     h2 {
         /* Oswald/H2 56 reg */
@@ -208,7 +200,7 @@
         font-size: 56px;
         line-height: 60px;
         /* identical to box height, or 107% */
-        /*letter-spacing: 0.5px;*/
+        letter-spacing: 0.03125em;
     }
 
     h3 {
@@ -230,7 +222,7 @@
         font-size: 34px;
         line-height: 40px;
         /* identical to box height, or 118% */
-        /*letter-spacing: 0.25px;*/
+        letter-spacing: 0.015625em;
     }
 
     h5 {
@@ -362,14 +354,13 @@
 }
 
 /*Tablet*/
-@media (min-width: 600px) and (max-width: 999px) {
+@media (min-width: 600px) and (max-width: 899px) {
     .wrapper-main-content {
         margin-left: auto;
         margin-right: auto;
         width: 90%;
         height: auto;
     }
-    /*Типографика*/
     /*Типографика*/
     h2 {
         /* Oswald/H2 56 reg */
@@ -379,7 +370,7 @@
         font-size: 56px;
         line-height: 60px;
         /* identical to box height, or 107% */
-        /*letter-spacing: 0.5px;*/
+        letter-spacing: 0.03125em;
     }
 
     h3 {
@@ -401,7 +392,7 @@
         font-size: 34px;
         line-height: 40px;
         /* identical to box height, or 118% */
-        /*letter-spacing: 0.25px;*/
+        letter-spacing: 0.015625em;
     }
 
     h5 {
@@ -533,26 +524,16 @@
 }
 
 /*Mobile*/
-@media (min-width: 320px) and (max-width: 599px) {
+@media (min-width: 0px) and (max-width: 599px) {
     .wrapper-main-content {
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
+        width: 90%;
         height: auto;
     }
     /*Типографика*/
     h2 {
-        /* Oswald/H2 56 reg */
-        font-family: Oswald, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 56px;
-        line-height: 60px;
-        /* identical to box height, or 107% */
-        /*letter-spacing: 0.5px;*/
-    }
-
-    h3 {
+        /*Override*/
         /* Oswald/H3 48 reg */
         font-family: Oswald, sans-serif;
         font-style: normal;
@@ -563,6 +544,18 @@
         text-align: center;
     }
 
+    h3 {
+        /*Override*/
+        /* Oswald/H4 34 reg */
+        font-family: Oswald, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 40px;
+        /* identical to box height, or 118% */
+        letter-spacing: 0.015625em;
+    }
+
     h4 {
         /* Oswald/H4 34 reg */
         font-family: Oswald, sans-serif;
@@ -571,7 +564,7 @@
         font-size: 34px;
         line-height: 40px;
         /* identical to box height, or 118% */
-        /*letter-spacing: 0.25px;*/
+        letter-spacing: 0.015625em;
     }
 
     h5 {
@@ -627,13 +620,15 @@
     }
 
     .mon-body-18-reg {
-        /* Montserrat/Body 18 reg */
+        /*Override*/
+        /* Montserrat/Body 16 reg */
         font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
-        line-height: 23px;
-        /* identical to box height, or 128% */
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+        letter-spacing: 0.03125em;;
     }
 
     .mon-button-17-reg {
@@ -659,14 +654,12 @@
     }
 
     .mon-body-16-reg {
-        /* Montserrat/Body 16 reg */
+        /*Override*/
+        /* Montserrat/Small button 14 reg */
         font-family: Montserrat, sans-serif;
         font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        /* identical to box height, or 125% */
-        letter-spacing: 0.03125em;
+        font-weight: 500;
+        font-size: 14px;
     }
 
     .mon-small-button-14-reg {

@@ -1,5 +1,6 @@
 .card {
-    height: 378px;
+    /*height: 379px;*/
+    height: auto;
     width: 589px;
     border-radius: 4px;
 }
@@ -10,14 +11,22 @@
     border-radius: 4px;
 }
 
-.title {
+.titleMortgage {
     padding-bottom: 15px;
 }
 
-.text {
+.textMortgage {
     padding-bottom: 7px;
+
 }
 
-ul {
+ul{
     padding-left: 17px;
+}
+
+hr {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-self: center;
+    border: 1px solid rgba(27, 28, 55, 0.5);
 }
