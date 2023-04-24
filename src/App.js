@@ -14,6 +14,7 @@ import Grid2 from "@mui/material/Unstable_Grid2";
 import CssColors, {colNeptuneBlue25} from "./style/colors.js";
 import CssIndex from "./style/index.css";
 import PaymentMethodItem from "./components/paymentMethod/PaymentMethodItem";
+import NewsItem from "./components/news/NewsItem";
 
 
 
@@ -87,7 +88,13 @@ function App() {
                     <h3 style={{marginBottom: "30px"}}>Способы оплаты</h3>
                     <PaymentMethodItem/>
                 </WrapperMainContent>
-                <h1>fkfkf</h1>
+
+
+                {/*Блок Новости*/}
+                <WrapperMainContent>
+                    <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Новости</h3>
+                    <NewsItem/>
+                </WrapperMainContent>
 
 
 
@@ -95,14 +102,14 @@ function App() {
 
 
 
+                {/*Блок новости*/}
+                {/*Блок запись на экскурсию*/}
+                {/*Блок обзоры*/}
+                {/*Footer*/}
 
 
 
 
-                    {/*Блок новости*/}
-                    {/*Блок запись на экскурсию*/}
-                    {/*Блок обзоры*/}
-                    {/*Footer*/}
 
             </WrapperFullWidth>
         </div>

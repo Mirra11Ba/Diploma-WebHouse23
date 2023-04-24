@@ -31,6 +31,7 @@
         line-height: 60px;
         /* identical to box height, or 107% */
         letter-spacing: 0.03125em;
+        text-align: center;
     }
 
     h3 {
@@ -53,6 +54,7 @@
         line-height: 40px;
         /* identical to box height, or 118% */
         letter-spacing: 0.015625em;
+        text-align: center;
     }
 
     h5 {
@@ -63,6 +65,7 @@
         font-size: 24px;
         line-height: 32px;
         /* identical to box height, or 133% */
+        text-align: center;
     }
 
     .mon-filters-24-med {
@@ -201,6 +204,7 @@
         line-height: 60px;
         /* identical to box height, or 107% */
         letter-spacing: 0.03125em;
+        text-align: center;
     }
 
     h3 {
@@ -223,6 +227,7 @@
         line-height: 40px;
         /* identical to box height, or 118% */
         letter-spacing: 0.015625em;
+        text-align: center;
     }
 
     h5 {
@@ -233,6 +238,7 @@
         font-size: 24px;
         line-height: 32px;
         /* identical to box height, or 133% */
+        text-align: center;
     }
 
     .mon-filters-24-med {
@@ -371,6 +377,7 @@
         line-height: 60px;
         /* identical to box height, or 107% */
         letter-spacing: 0.03125em;
+        text-align: center;
     }
 
     h3 {
@@ -393,6 +400,7 @@
         line-height: 40px;
         /* identical to box height, or 118% */
         letter-spacing: 0.015625em;
+        text-align: center;
     }
 
     h5 {
@@ -403,6 +411,7 @@
         font-size: 24px;
         line-height: 32px;
         /* identical to box height, or 133% */
+        text-align: center;
     }
 
     .mon-filters-24-med {
@@ -554,20 +563,11 @@
         line-height: 40px;
         /* identical to box height, or 118% */
         letter-spacing: 0.015625em;
+        text-align: center;
     }
 
     h4 {
-        /* Oswald/H4 34 reg */
-        font-family: Oswald, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 34px;
-        line-height: 40px;
-        /* identical to box height, or 118% */
-        letter-spacing: 0.015625em;
-    }
-
-    h5 {
+        /*Override*/
         /* Oswald/H5 24 reg */
         font-family: Oswald, sans-serif;
         font-style: normal;
@@ -575,6 +575,7 @@
         font-size: 24px;
         line-height: 32px;
         /* identical to box height, or 133% */
+        text-align: center;
     }
 
     .mon-filters-24-med {
@@ -655,11 +656,13 @@
 
     .mon-body-16-reg {
         /*Override*/
-        /* Montserrat/Small button 14 reg */
+        /* Montserrat/Body 14 reg unic*/
         font-family: Montserrat, sans-serif;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 14px;
+        line-height: 18px;
+        /* letter-spacing: 0.03125em; */
     }
 
     .mon-small-button-14-reg {

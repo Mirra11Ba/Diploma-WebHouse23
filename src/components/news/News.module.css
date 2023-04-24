@@ -1,0 +1,20 @@
+.card {
+    height: auto;
+    width: 387px;
+    border-radius: 4px;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+
+}
+
+.title {
+
+}
+
+.text{
+    padding-bottom: 20px;
+}
