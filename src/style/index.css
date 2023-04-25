@@ -12,6 +12,8 @@
 
     --white: #FFFFFF;
     --black: #000000;
+
+    --bord-radius-cust: 7px;
 }
 
 /*Импорт шрифтов из Google Fonts*/
@@ -22,17 +24,12 @@ body {
     font-family: -apple-system, 'Montserrat', 'Oswald', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    /*-webkit-font-smoothing: antialiased;*/
-    /*-moz-osx-font-smoothing: grayscale;*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: var(--black);
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-
-.backColNeptuneBlue25 {
-    background-color: var(--neptune-blue-25);
 }

@@ -15,6 +15,7 @@ import CssColors, {colNeptuneBlue25} from "./style/colors.js";
 import CssIndex from "./style/index.css";
 import PaymentMethodItem from "./components/paymentMethod/PaymentMethodItem";
 import NewsItem from "./components/news/NewsItem";
+import NewsList from "./components/news/NewsList";
 
 
 
@@ -83,6 +84,7 @@ function App() {
                     </div>
                 </WrapperFullWidth>
 
+
                 {/*Блок способы оплаты*/}
                 <WrapperMainContent>
                     <h3 style={{marginBottom: "30px"}}>Способы оплаты</h3>
@@ -93,23 +95,13 @@ function App() {
                 {/*Блок Новости*/}
                 <WrapperMainContent>
                     <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Новости</h3>
-                    <NewsItem/>
+                    <NewsList/>
                 </WrapperMainContent>
 
 
-
-
-
-
-
-                {/*Блок новости*/}
                 {/*Блок запись на экскурсию*/}
                 {/*Блок обзоры*/}
                 {/*Footer*/}
-
-
-
-
 
             </WrapperFullWidth>
         </div>

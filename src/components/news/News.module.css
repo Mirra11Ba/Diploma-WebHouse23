@@ -1,18 +1,14 @@
 .card {
     height: auto;
     width: 387px;
-    border-radius: 4px;
+    border-radius: var(--bord-radius-cust);
 }
 
 .img {
     width: 100%;
     height: auto;
-    border-radius: 4px;
-
-}
-
-.title {
-
+    border-radius: var(--bord-radius-cust);
+    background-size: cover;
 }
 
 .text{

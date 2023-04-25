@@ -1,7 +1,7 @@
 .card {
     height: 175px;
     width: 224px;
-    border-radius: 4px;
+    border-radius: var(--bord-radius-cust);
     background: var(--neptune-blue-75);
 }
 

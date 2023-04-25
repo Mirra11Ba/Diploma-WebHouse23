@@ -6,9 +6,6 @@ import IcoHomePin from "../../media/svg/home_pin.svg";
 import IcoClientNotes from "../../media/svg/clinical_notes.svg";
 import IcoCheckMark from "../../media/svg/approval_delegation.svg";
 import classes from "./Advantage.module.css";
-import Grid from '@mui/material/Grid'; // Grid version 1
-import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
-
 
 
 export default function AdvantageList(props) {
