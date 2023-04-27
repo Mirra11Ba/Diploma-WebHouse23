@@ -17,7 +17,7 @@ export default function NewsList(props) {
             title: 'Жилой Комплекс Фонтаны',
             text: 'ЖК Фонтаны воплощает оригинальные, креативные решения дизайнеров и архитекторов. Он расположен ' +
                   'в Краснодаре на границе района ЦМР и ЧМР. Масштабно и красиво, завораживающе.',
-            btnText: 'Читать далее'
+            btnLink: 'https://domnovostroika.ru/zhk-fontany-krasnodar/'
         },
         {
             id: 2,
@@ -26,20 +26,20 @@ export default function NewsList(props) {
             text: 'ЖК Элегант – три линии домов со стильным фасадом, неоновой подсветкой. Комплекс расположен ' +
                 'в самом развитом по инфраструктуре и удобном по транспортной доступности районе Карасунского ' +
                 'округа Краснодара – ХБК.',
-            btnText: 'Читать далее'
+            btnLink: 'https://domnovostroika.ru/zhiloj-kompleks-jelegant/'
         },
         {
             id: 3,
             pict: ImgZkStriji,
             title: 'Жилой Комплекс Стрижи',
-            text: 'ЖК Стрижи – это четыре монолитно-кирпичных 24-этажных дома.\n' +
-                'Обзор новостройки в микрорайоне Гидрострой. Расскажем про инфраструктуру в районе. Какие парки, ' +
-                'школы, магазины и дороги.\n',
-            btnText: 'Читать далее'
+            text: 'ЖК Стрижи – это четыре монолитно-кирпичных 24-этажных дома. Жилые помещения с 3 по 24 этажи. ' +
+                'Обзор новостройки в микрорайоне Гидрострой. Расскажем про инфраструктуру в районе. Какие парки, школы, ' +
+                'магазины и дороги.',
+            btnLink: 'https://domnovostroika.ru/zhiloj-kompleks-strizhi/'
         },
     ];
     const list = newsArr.map(news =>
-        <NewsItem pict={news.pict} title={news.title} text={news.text} btnText={news.btnText} key={news.id}/>
+        <NewsItem pict={news.pict} title={news.title} text={news.text} btnLink={news.btnLink} key={news.id}/>
     )
     return (
         <Grid2 container sx={{
@@ -47,7 +47,7 @@ export default function NewsList(props) {
                 sm: "35px",
                 lg: "19px",
             },
-            alignItems: "center",
+            alignItems: "flex-start",
             justifyContent: "center",
         }}>
             {list}

@@ -10,7 +10,7 @@ import AdvantageItem from "../advantage/AdvantageItem";
 
 
 export default function NewsItem(props) {
-    const {pict, title, text, btnText} = props;
+    const {pict, title, text, btnLink} = props;
     return (
         <Grid2 container className={classes.card} sx={{
             gap: {
@@ -19,14 +19,16 @@ export default function NewsItem(props) {
             }
         }}>
             <Grid2>
-                <img className={classes.img} src={pict}/>
+                <div className={classes.handler}>
+                    <img className={classes.img} src={pict}/>
+                </div>
             </Grid2>
             <Grid2>
                 <h4 className={classes.title}>{title}</h4>
             </Grid2>
             <Grid2>
                 <p className={`${classes.text} mon-body-16-reg`}>{text}</p>
-                <Button variant="outlined">{btnText}</Button>
+                <Button href={btnLink} variant="contained">Читать далее</Button>
             </Grid2>
         </Grid2>
     );
@@ -36,5 +38,5 @@ NewsItem.propTypes = {
     pict: PropTypes.object,
     title: PropTypes.string,
     text: PropTypes.string,
-    btnText: PropTypes.string,
+    btnLink: PropTypes.string,
 }

@@ -11,7 +11,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from "react-responsive-carousel";
 import AdvantageList from "./components/advantage/AdvantageList";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import CssColors, {colNeptuneBlue25} from "./style/colors.js";
 import CssIndex from "./style/index.css";
 import PaymentMethodItem from "./components/paymentMethod/PaymentMethodItem";
 import NewsItem from "./components/news/NewsItem";

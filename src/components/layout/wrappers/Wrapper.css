@@ -8,7 +8,7 @@
     /*расчет макета на 1440px*/
     width: 100%;
     height: auto;
-    background-color: palegreen;
+    /*background-color: palegreen;*/
 }
 
 /*Desktop*/
@@ -18,7 +18,7 @@
         margin-right: auto;
         width: 1200px;
         height: auto;
-        background-color: paleturquoise;
+        /*background-color: paleturquoise;*/
     }
 
     /*Типографика*/
