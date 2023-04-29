@@ -5,9 +5,7 @@ import ImgVoenIpoteka from "../../media/images/voennaya-ipoteka.webp"
 import ImgRassrochka from "../../media/images/rassrochka.webp";
 import classes from "./PaymentMethod.module.css";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import CssWrapper from "../layout/wrappers/Wrapper.css";
-import {Container, useMediaQuery, useTheme} from "@mui/material";
-import CssIndex from "../../style/index.css";
+import {useMediaQuery, useTheme} from "@mui/material";
 
 export default function PaymentMethodItem() {
 

@@ -1,11 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classes from "./Advantage.module.css";
 import PropTypes from "prop-types";
-import IcoCottage from "../../media/svg/cottage.svg";
-import Grid from "@mui/material/Grid"; // Grid version 1
-import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
-import CssWrapper from "../layout/wrappers/Wrapper.css";
-import CssIndex from "../../style/index.css";
 
 
 export default function AdvantageItem(props) {

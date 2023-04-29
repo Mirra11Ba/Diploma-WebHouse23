@@ -2,11 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import classes from "./News.module.css";
-import ImgZkElegeant from "../../media/images/zhiloj-kompleks-elegeant.webp";
-import ImgZkFontany from "../../media/images/zhk-fontany-krasnodar.webp";
-import ImgZkStriji from "../../media/images/zhk-striji-krasnodar.webp";
 import Button from "@mui/material/Button";
-import AdvantageItem from "../advantage/AdvantageItem";
+import {SmallButton} from "../styled/buttons/SmallButton";
+import WrapperCss from "../../components/layout/wrappers/Wrapper.css";
 
 
 export default function NewsItem(props) {
@@ -28,7 +26,7 @@ export default function NewsItem(props) {
             </Grid2>
             <Grid2>
                 <p className={`${classes.text} mon-body-16-reg`}>{text}</p>
-                <Button href={btnLink} variant="contained">Читать далее</Button>
+                <SmallButton href={btnLink} variant="contained">Читать далее</SmallButton>
             </Grid2>
         </Grid2>
     );
