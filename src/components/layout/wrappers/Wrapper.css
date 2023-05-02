@@ -8,7 +8,7 @@
     /*расчет макета на 1440px*/
     width: 100%;
     height: auto;
-    background-color: palegreen;
+    /*background-color: palegreen;*/
 }
 
 /*Desktop*/
@@ -18,7 +18,7 @@
         margin-right: auto;
         width: 1200px;
         height: auto;
-        background-color: paleturquoise;
+        /*background-color: paleturquoise;*/
     }
 
     /*Типографика*/
@@ -622,14 +622,23 @@
 
     .mon-body-18-reg {
         /*Override*/
-        /* Montserrat/Body 16 reg */
+        /* Montserrat/Body 14 reg unic*/
         font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        /* identical to box height, or 125% */
-        letter-spacing: 0.03125em;;
+        font-size: 14px;
+        line-height: 18px;
+        /* letter-spacing: 0.03125em; */
+
+
+        /* Montserrat/Body 16 reg */
+        /*font-family: Montserrat, sans-serif;*/
+        /*font-style: normal;*/
+        /*font-weight: 400;*/
+        /*font-size: 16px;*/
+        /*line-height: 20px;*/
+        /*!* identical to box height, or 125% *!*/
+        /*letter-spacing: 0.03125em;*/
     }
 
     .mon-button-17-reg {

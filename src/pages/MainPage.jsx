@@ -8,11 +8,13 @@ import AdvantageList from "../components/advantage/AdvantageList";
 import WrapperFullWidth from "../components/layout/wrappers/Wrapper-full-width";
 import PaymentMethodItem from "../components/paymentMethod/PaymentMethodItem";
 import NewsList from "../components/news/NewsList";
+import Header from "../components/layout/header/Header";
 
 export default function MainPage() {
     return(
         <WrapperFullWidth>
             {/*Header*/}
+            <Header/>
             <h1>Header</h1>
             {/*<img style={{width: "100%", height: "auto"}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
 

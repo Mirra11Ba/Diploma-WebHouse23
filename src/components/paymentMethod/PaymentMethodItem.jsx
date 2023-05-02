@@ -6,6 +6,8 @@ import ImgRassrochka from "../../media/images/rassrochka.webp";
 import classes from "./PaymentMethod.module.css";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import {useMediaQuery, useTheme} from "@mui/material";
+import {Divider} from "@mui/material";
+
 
 export default function PaymentMethodItem() {
 
@@ -13,7 +15,7 @@ export default function PaymentMethodItem() {
     const matches = useMediaQuery(theme.breakpoints.up('lg'))
     console.log(matches)
 
-    const jsx = [
+    const ipotekaRow1 = [
         (<Grid2 className={classes.card}>
             <img className={classes.img} src={ImgIpoteka}/>
         </Grid2>),
@@ -34,10 +36,11 @@ export default function PaymentMethodItem() {
                     <li>ипотека с господдержкой</li>
                 </ul>
             </Grid2>
-        </Grid2>)
+        </Grid2>
+        )
     ]
 
-    const jsx2 = [
+    const voenIpotekaRow3 = [
         <Grid2 className={classes.card}>
             <img className={classes.img} src={ImgVoenIpoteka}/>
         </Grid2>,
@@ -62,7 +65,6 @@ export default function PaymentMethodItem() {
 
     return (
         <>
-            {/*1*/}
             <Grid2 container sx={{
                 gap: {
                     sm: "15px",
@@ -73,11 +75,12 @@ export default function PaymentMethodItem() {
             }}>
 
 
+                {/*1*/}
                 {matches
-                    ? jsx.map(item => (
+                    ? ipotekaRow1.map(item => (
                         item
                     ))
-                    : jsx.reverse().map(item => item)
+                    : ipotekaRow1.reverse().map(item => item)
                 }
 
 
@@ -108,6 +111,7 @@ export default function PaymentMethodItem() {
                     </Grid2>
                 </Grid2>
 
+
                 {/*3*/}
                 <Grid2 container sx={{
                     gap: {
@@ -118,10 +122,10 @@ export default function PaymentMethodItem() {
                     justifyContent: "center",
                 }}>
                     {matches
-                        ? jsx2.map(item => (
+                        ? voenIpotekaRow3.map(item => (
                             item
                         ))
-                        : jsx2.reverse().map(item => item)
+                        : voenIpotekaRow3.reverse().map(item => item)
                     }
                 </Grid2>
 
