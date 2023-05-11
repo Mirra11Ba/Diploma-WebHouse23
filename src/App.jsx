@@ -1,7 +1,7 @@
 import "./style/index.css";
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import MainPage from "./components/pages/MainPage";
+import MainPage from "./pages/MainPage";
 import {ThemeProvider} from "@mui/material";
 import {house23Theme} from "./style/themes";
 

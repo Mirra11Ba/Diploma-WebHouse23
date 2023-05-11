@@ -1,22 +1,22 @@
 import React from "react";
 import {Carousel} from "react-responsive-carousel";
-import ImgLuchshieDomaUNas from "../../media/images/slider/luchshie-doma-u-nas.webp";
-import ImgProektyChastnykhDomov from "../../media/images/slider/proekty-chastnykh-domov.webp";
-import ImgInvesticziiVNedvizhimost from "../../media/images/slider/investiczii-v-nedvizhimost.webp";
-import WrapperMainContent from "../layout/wrappers/Wrapper-main-content";
-import AdvantageList from "../advantage/AdvantageList";
-import WrapperFullWidth from "../layout/wrappers/Wrapper-full-width";
-import PaymentMethodItem from "../paymentMethod/PaymentMethodItem";
-import NewsList from "../news/NewsList";
-import Header from "../layout/header/Header";
-import Slider from "../slider/Slider";
+import ImgLuchshieDomaUNas from "../media/images/slider/luchshie-doma-u-nas.webp";
+import ImgProektyChastnykhDomov from "../media/images/slider/proekty-chastnykh-domov.webp";
+import ImgInvesticziiVNedvizhimost from "../media/images/slider/investiczii-v-nedvizhimost.webp";
+import WrapperMainContent from "../components/layout/wrappers/Wrapper-main-content";
+import AdvantageList from "../components/advantage/AdvantageList";
+import WrapperFullWidth from "../components/layout/wrappers/Wrapper-full-width";
+import PaymentMethodList from "../components/paymentMethod/PaymentMethodList";
+import NewsList from "../components/news/NewsList";
+import Header from "../components/layout/header/Header";
+import Slider from "../components/slider/Slider";
 
 export default function MainPage() {
     return(
         <WrapperFullWidth>
-            {/*Header*/}
+
             <Header/>
-            <h1>Header</h1>
+
             {/*<img style={{width: "100%", height: "auto"}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
 
             {/*<div style={{height: "600px;", width: "100%"}}>*/}
@@ -29,7 +29,6 @@ export default function MainPage() {
 
 
 
-            {/*Slider*/}
             <Slider/>
 
 
@@ -44,7 +43,7 @@ export default function MainPage() {
             <div className={"backColNeptuneBlue25"} style={{width: "100%", height: "700px"}}>
                 <h3 style={{paddingBottom: "30px", paddingTop: "30px"}}>Наши дома</h3>
                 <WrapperMainContent>
-                    <h3>список домов</h3>
+                    <h3>Cписок домов</h3>
                 </WrapperMainContent>
             </div>
 
@@ -52,7 +51,7 @@ export default function MainPage() {
             <WrapperMainContent>
                 {/*Блок способы оплаты*/}
                 <h3 style={{marginBottom: "30px"}}>Способы оплаты</h3>
-                <PaymentMethodItem/>
+                <PaymentMethodList/>
 
                 {/*Блок Новости*/}
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Новости</h3>
