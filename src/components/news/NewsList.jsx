@@ -41,6 +41,7 @@ export default function NewsList(props) {
     return (
         <Grid2 container sx={{
             gap: {
+                xs: "20px",
                 sm: "35px",
                 lg: "19px",
             },
