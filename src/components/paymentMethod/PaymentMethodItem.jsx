@@ -1,8 +1,8 @@
 import React from "react";
-import ImgIpoteka from "../../media/images/ipoteka.webp";
-import ImgMaterinskijKapital from "../../media/images/materinskij-kapital.webp";
-import ImgVoenIpoteka from "../../media/images/voennaya-ipoteka.webp"
-import ImgRassrochka from "../../media/images/rassrochka.webp";
+import ImgIpoteka from "../../media/images/payment/ipoteka.webp";
+import ImgMaterinskijKapital from "../../media/images/payment/materinskij-kapital.webp";
+import ImgVoenIpoteka from "../../media/images/payment/voennaya-ipoteka.webp"
+import ImgRassrochka from "../../media/images/payment/rassrochka.webp";
 import classes from "./PaymentMethod.module.css";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import {useMediaQuery, useTheme} from "@mui/material";

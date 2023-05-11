@@ -1,9 +1,9 @@
 import React from "react";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import ImgZkElegeant from "../../media/images/zhiloj-kompleks-elegeant.webp";
-import ImgZkFontany from "../../media/images/zhk-fontany-krasnodar.webp";
-import ImgZkStriji from "../../media/images/zhk-striji-krasnodar.webp";
-import ImgEleg from "../../media/images/elegant-krasnodar-jk.jpg";
+import ImgZkElegeant from "../../media/images/news/zhiloj-kompleks-elegeant.webp";
+import ImgZkFontany from "../../media/images/news/zhk-fontany-krasnodar.webp";
+import ImgZkStriji from "../../media/images/news/zhk-striji-krasnodar.webp";
+import ImgEleg from "../../media/images/news/elegant-krasnodar-jk.jpg";
 import NewsItem from "./NewsItem";
 
 export default function NewsList(props) {
