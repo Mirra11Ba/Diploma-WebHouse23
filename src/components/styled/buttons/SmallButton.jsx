@@ -7,7 +7,7 @@ export const SmallButton = styled(Button)(({theme}) =>
     ({
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.custom.white,
-            boxShadow: "none",
+        boxShadow: "none",
 
         height: "36px",
         width: "141px",

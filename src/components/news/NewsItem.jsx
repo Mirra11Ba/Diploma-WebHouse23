@@ -17,7 +17,7 @@ export default function NewsItem(props) {
             }
         }}>
             <Grid2>
-                <div className={classes.handler}>
+                <div>
                     <img className={classes.img} src={pict}/>
                 </div>
             </Grid2>

@@ -18,19 +18,23 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import {MenuButton} from "../../styled/buttons/MenuButton";
+import classes from "../../news/News.module.css";
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import {AccountCircleOutlined} from "@mui/icons-material";
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 
 const pages = [
-    'Products', 'Pricing', 'Blog'
-
+    "Главная", "Дома", "Способы оплаты", "Услуги", "О нас", "Контакты",
 ];
 
 const newPages = [
     {title: 'Products', value: 'products'}
 ]
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Профиль', 'Избранное', 'Брони', 'Выйти'];
 
-function ResponsiveAppBar() {
+function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const [isOpen, setIsOpen] = React.useState(false);
@@ -54,33 +58,13 @@ function ResponsiveAppBar() {
         setIsOpen(!isOpen);
     }
 
-
-
     return (
-        <AppBar position="sticky">
+        <AppBar position="sticky" sx={{background: "white", boxShadow: "none", borderBottom: "1px solid rgba(27, 28, 55, 0.5)"}}>
             <Container maxWidth="xl">
+
                 <Toolbar disableGutters>
-
-
-                    {/*<Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
-                    </Typography>*/}
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    {/*блок с бургером и контекстным меню*/}
+                    <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -92,7 +76,7 @@ function ResponsiveAppBar() {
                             <MenuIcon />
                         </IconButton>
                         <Drawer
-                            anchor={'left'}
+                            anchor={"top"}
                             open={isOpen}
                             onClose={handleOpenDrawer}
                         >
@@ -103,7 +87,7 @@ function ResponsiveAppBar() {
                                             {/*<ListItemIcon>
                                                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                                             </ListItemIcon>*/}
-                                            <ListItemText primary={item} />
+                                            <ListItemText primary={item}/>
                                         </ListItemButton>
                                     </ListItem>
                                 ))}
@@ -112,7 +96,6 @@ function ResponsiveAppBar() {
                                         123123
                                     </Typography>
                                 </ListItem>*/}
-
                             </List>}
                         </Drawer>
                         <Menu
@@ -141,45 +124,41 @@ function ResponsiveAppBar() {
                         </Menu>
                     </Box>
 
-
+                    {/*блок с логотипом*/}
                     <Box sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1, flexGrow: {xs: 1, md: 1} }}>
                         <img src={ImgLogo} />
                     </Box>
 
-                    {/* <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href=""
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
-                    </Typography>*/}
+                    {/*блок с пунктами меню*/}
                     <Box sx={{ flexGrow: 4, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
                         {pages.map((page) => (
-                            <Button
+                            <MenuButton
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, display: 'block' }}
                             >
                                 {page}
-                            </Button>
+                            </MenuButton>
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: {xs: 0, md: 1 }}}>
-                        <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                    <Box sx={{ flexGrow: {xs: 0, md: 1 }, display: { xs: 'none', md: 'flex' }}}>
+                        <p className={"mon-menu-16-med"}><a style={{textDecoration: "none", color: "black"}} href={"tel: +79182505588"}>+7(918)250-55-88</a></p>
+                    </Box>
+
+                    {/*блок с икнокой пользователя*/}
+                    <Box sx={{ flexGrow: {xs: 0, md: 1.7 }}}>
+                        <Tooltip title="Открыть профиль">
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                color="inherit"
+                            >
+                                <PersonOutlinedIcon/>
+                                <AccountCircleOutlined/>
+                                <Avatar alt="User" src="/static/images/avatar/2.jpg" />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -205,9 +184,10 @@ function ResponsiveAppBar() {
                             ))}
                         </Menu>
                     </Box>
+
                 </Toolbar>
             </Container>
         </AppBar>
     );
 }
-export default ResponsiveAppBar;
+export default Header;

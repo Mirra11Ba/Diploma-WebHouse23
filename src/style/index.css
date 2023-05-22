@@ -3,7 +3,7 @@
     --neptune-blue: #18A0FB;
     --neptune-blue-75: rgba(24, 160, 251, 0.75);
     --neptune-blue-50: rgba(24, 160, 251, 0.5);
-    --neptune-blue-25: rgba(24, 160, 251, 0.5);
+    --neptune-blue-25: rgba(24, 160, 251, 0.25);
 
     --dark-space: #1B1C37;
     --dark-space-75: rgba(27, 28, 55, 0.75);
@@ -13,7 +13,7 @@
     --white: #FFFFFF;
     --black: #000000;
 
-    --bord-radius-cust: 5px;
+    --bord-radius-cust: 4px;
 }
 
 /*Импорт шрифтов из Google Fonts*/

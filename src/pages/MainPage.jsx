@@ -14,7 +14,6 @@ import Slider from "../components/slider/Slider";
 export default function MainPage() {
     return(
         <WrapperFullWidth>
-
             <Header/>
 
             {/*<img style={{width: "100%", height: "auto"}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
@@ -26,8 +25,6 @@ export default function MainPage() {
             {/*<div style={{height: "600px;", width: "100%"}}>*/}
             {/*    <img style={{width: "100%", height: "80hv", objectFit: "cover", objectPosition: 'center'}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
             {/*</div>*/}
-
-
 
             <Slider/>
 
