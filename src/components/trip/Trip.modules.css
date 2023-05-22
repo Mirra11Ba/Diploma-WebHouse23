@@ -1,0 +1,14 @@
+.card {
+    height: 590px;
+    width: 590px;
+    border-radius: 15px;
+}
+.img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+.text {
+    padding-bottom: 25px;
+    color: var(--dark-space-50);
+}

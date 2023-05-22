@@ -10,6 +10,7 @@ import PaymentMethodList from "../components/paymentMethod/PaymentMethodList";
 import NewsList from "../components/news/NewsList";
 import Header from "../components/layout/header/Header";
 import Slider from "../components/slider/Slider";
+import Trip from "../components/trip/Trip";
 
 export default function MainPage() {
     return(
@@ -31,23 +32,20 @@ export default function MainPage() {
 
             {/*Блок преимущества*/}
             <WrapperMainContent>
-                <h3 style={{marginBottom: "30px"}}>Преимущества</h3>
+                <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Преимущества</h3>
                 <AdvantageList/>
             </WrapperMainContent>
 
 
             {/*Блок каталог домов*/}
-            <div className={"backColNeptuneBlue25"} style={{width: "100%", height: "700px"}}>
+            <WrapperMainContent>
                 <h3 style={{paddingBottom: "30px", paddingTop: "30px"}}>Наши дома</h3>
-                <WrapperMainContent>
-                    <h3>Cписок домов</h3>
-                </WrapperMainContent>
-            </div>
+            </WrapperMainContent>
 
 
             <WrapperMainContent>
                 {/*Блок способы оплаты*/}
-                <h3 style={{marginBottom: "30px"}}>Способы оплаты</h3>
+                <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Способы оплаты</h3>
                 <PaymentMethodList/>
 
                 {/*Блок Новости*/}
@@ -55,11 +53,11 @@ export default function MainPage() {
                 <NewsList/>
 
                 {/*Блок запись на экскурсию*/}
+                <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Записаться на экскурсию бесплатно</h3>
+                <Trip/>
 
                 {/*Блок обзоры*/}
 
-                <h1>efe</h1>
-                <h1>efe</h1>
                 <h1>efe</h1>
             </WrapperMainContent>
 

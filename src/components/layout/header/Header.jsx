@@ -63,6 +63,68 @@ function Header() {
             <Container maxWidth="xl">
 
                 <Toolbar disableGutters>
+
+
+                    {/*блок с логотипом*/}
+                    <Box sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1, flexGrow: {xs: 1, md: 1} }}>
+                        <img src={ImgLogo} />
+                    </Box>
+
+                    {/*блок с пунктами меню*/}
+                    <Box sx={{ flexGrow: 4, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+                        {pages.map((page) => (
+                            <MenuButton
+                                key={page}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, display: 'block' }}
+                            >
+                                {page}
+                            </MenuButton>
+                        ))}
+                    </Box>
+
+                    <Box sx={{ flexGrow: {xs: 0, md: 1 }, display: { xs: 'none', md: 'flex' }}}>
+                        <p className={"mon-menu-16-med"}><a style={{textDecoration: "none", color: "black"}} href={"tel: +79182505588"}>+7(918)250-55-88</a></p>
+                    </Box>
+
+                    {/*блок с икнокой пользователя*/}
+                    <Box sx={{ flexGrow: {xs: 0, md: 1.7 }}}>
+                        <Tooltip title="Открыть профиль">
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                color="inherit"
+                            >
+                                <PersonOutlinedIcon/>
+                                <AccountCircleOutlined/>
+                                {/*<Avatar alt="User" src="/static/images/avatar/2.jpg" />*/}
+                            </IconButton>
+                        </Tooltip>
+                        <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                        >
+                            {settings.map((setting) => (
+                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                    <Typography textAlign="center">{setting}</Typography>
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
                     {/*блок с бургером и контекстным меню*/}
                     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }}}>
                         <IconButton
@@ -76,7 +138,7 @@ function Header() {
                             <MenuIcon />
                         </IconButton>
                         <Drawer
-                            anchor={"top"}
+                            anchor={"right"}
                             open={isOpen}
                             onClose={handleOpenDrawer}
                         >
@@ -119,67 +181,6 @@ function Header() {
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-
-                    {/*блок с логотипом*/}
-                    <Box sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1, flexGrow: {xs: 1, md: 1} }}>
-                        <img src={ImgLogo} />
-                    </Box>
-
-                    {/*блок с пунктами меню*/}
-                    <Box sx={{ flexGrow: 4, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
-                        {pages.map((page) => (
-                            <MenuButton
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, display: 'block' }}
-                            >
-                                {page}
-                            </MenuButton>
-                        ))}
-                    </Box>
-
-                    <Box sx={{ flexGrow: {xs: 0, md: 1 }, display: { xs: 'none', md: 'flex' }}}>
-                        <p className={"mon-menu-16-med"}><a style={{textDecoration: "none", color: "black"}} href={"tel: +79182505588"}>+7(918)250-55-88</a></p>
-                    </Box>
-
-                    {/*блок с икнокой пользователя*/}
-                    <Box sx={{ flexGrow: {xs: 0, md: 1.7 }}}>
-                        <Tooltip title="Открыть профиль">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}
-                                size="large"
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                color="inherit"
-                            >
-                                <PersonOutlinedIcon/>
-                                <AccountCircleOutlined/>
-                                <Avatar alt="User" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
