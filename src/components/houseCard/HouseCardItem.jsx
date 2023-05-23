@@ -8,6 +8,8 @@ import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import {CardButton} from "../styled/buttons/CardButton";
+import {CardButtonOutlined} from "../styled/buttons/CardButtonOutlined";
 
 
 export default function HouseCardItem(props) {
@@ -15,58 +17,69 @@ export default function HouseCardItem(props) {
     return (
         <Grid2 container sx={{
             gap: {
-                sm: "10px",
-                md: "15px",
+
             },
             height: "auto",
             width: "387px",
-            borderTopRightRadius: "15px",
-            borderTopLeftRadius: "15px",
-            borderBottomRightRadius: "15px",
-            borderBottomLeftRadius: "15px",
-            border: "1px solid var(--dark-space-50)",
+            border: "none",
+
         }}>
-            <Box sx={{
+            <Grid2 item xs={12} sx={{
                 width: "387px",
-                height: "auto",
-                borderTopRightRadius: "15px",
-                borderTopLeftRadius: "15px",
-                borderBottomRightRadius: "15px",
-                borderBottomLeftRadius: "15px",
+                height: "264px",
             }}>
                     <img style={{
                         width: "100%",
-                        height: "auto",
+                        height: "264px",
                         borderTopRightRadius: "15px",
                         borderTopLeftRadius: "15px",
                     }} src={img}/>
-            </Box>
-            <Box>
-                <h5>Дом {titleName}</h5>
-            </Box>
-            <IconButton
-                size="large"
-                aria-label="Избранное"
-                aria-controls="menu-appbar"
-                aria-haspopup="true">
-                    <FavoriteBorderIcon/>
-            </IconButton>
-            <Box>
-                <IconButton>
-                </IconButton>
-            </Box>
-            <Box>
-                <p className={"mon-price-20-bol"} sx={{color: "var(--neptune-blue)"}}>{price} ₽</p>
-            </Box>
-            <Box className={"mon-body-16-reg"}>
-                Этажи: {numberFloors}
-                Площадь дома: {area} м²
-                Участок: {landPlotSize} сотки
-            </Box>
-            <Box>
-                <SmallButton variant="contained">Бронь на показ</SmallButton>
-                <SmallButton variant="outlined">Подробнее</SmallButton>
-            </Box>
+            </Grid2>
+
+            <Grid2 item xs={12} sx={{
+                p: 2.5,
+                pt: 0,
+                border: '1px solid var(--dark-space-50)',
+                borderBottomRightRadius: "15px",
+                borderBottomLeftRadius: "15px",
+            }}>
+                <Grid2 item xs={12} sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                }}>
+                    <h5>Дом {titleName}</h5>
+                    <IconButton
+                        size="large"
+                        aria-label="Избранное"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true">
+                        <FavoriteBorderIcon sx={{
+                            color: 'black',
+                            width: '33px',
+                            height: '33px'
+                        }}/>
+                    </IconButton>
+                </Grid2>
+
+                <Grid2 item xs={12} sx={{pt: 1}}>
+                    <p className={"mon-price-20-bol"} style={{color: "var(--neptune-blue)"}}>{price} ₽</p>
+                </Grid2>
+                <Box className={"mon-body-16-reg"} sx={{
+                    py: 2
+                }}>
+                    Этажи: {numberFloors}{<br/>}
+                    Площадь дома: {area} м²{<br/>}
+                    Участок: {landPlotSize} сотки{<br/>}
+                </Box>
+                <Grid2 item xs={12} sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between'
+                }}>
+                    <CardButton variant="contained">Бронь на показ</CardButton>
+                    <CardButtonOutlined variant="outlined">Подробнее</CardButtonOutlined>
+                </Grid2>
+            </Grid2>
         </Grid2>
     );
 };

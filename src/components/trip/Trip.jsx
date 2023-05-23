@@ -5,6 +5,7 @@ import {SmallButton} from "../styled/buttons/SmallButton";
 import ImgRieltor from "../../media/images/rieltor-larisa-bagrova.webp";
 import Box from "@mui/material/Box";
 import {styled, TextField} from "@mui/material";
+import {CardButton} from "../styled/buttons/CardButton";
 
 
 
@@ -44,7 +45,7 @@ export default function Trip() {
                     <StyledTextField id="phone" label="Телефон*" variant="outlined" />
                     <StyledTextField id="email" label="Почта*" variant="outlined" />
                     <StyledTextField id="name" label="Имя" variant="outlined" />
-                    <SmallButton sx={{alignItems: "center"}}>Жду звонка!</SmallButton>
+                    <CardButton variant={'contained'} sx={{alignItems: "center"}}>Жду звонка!</CardButton>
                     <p className={`${classes.text} mon-body-14-reg`} style={{width: '80%'}}>Отправляя свои данные вы соглашаетесь с политикой конфиденциальности</p>
                    {/* <Box sx={{alignContent: "center", paddingLeft: "104px", paddingRight: "104px", paddingBottom: "93px"}}>
 

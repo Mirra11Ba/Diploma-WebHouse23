@@ -19,6 +19,7 @@ export const SmallButton = styled(Button)(({theme}) =>
         fontWeight: "500",
         lineHeight: "36px",
         letterSpacing: "0px",
+
     }),
 );
 

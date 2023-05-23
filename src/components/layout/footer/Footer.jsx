@@ -9,6 +9,7 @@ import {MenuButton} from "../../styled/buttons/MenuButton";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
+import {CardButton} from "../../styled/buttons/CardButton";
 
 export default function Footer() {
 
@@ -103,15 +104,18 @@ export default function Footer() {
                     justifyContent: 'center',
                     gap: 2
                 }}>
-                    <SmallButton>
+                    <CardButton variant={'contained'} sx={{alignItems: "center"}}>
                         Регистрация
-                    </SmallButton>
-                    <SmallButton sx={{
+                    </CardButton>
+                    <CardButton variant={'contained'} sx={{
                         bgcolor: 'white',
-                        color: 'black'
+                        color: '#000',
+                        "&:hover": {
+                            bgcolor: 'white'
+                        }
                     }}>
-                        Войти
-                    </SmallButton>
+                        <p style={{color: 'var(--neptune-blue)'}}>Войти</p>
+                    </CardButton>
                 </Grid2>
                 <Grid2 item xs={12}>
                     <Divider sx={{width: '100%', bgcolor: 'white'}}/>
