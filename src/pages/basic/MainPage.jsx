@@ -12,6 +12,8 @@ import Header from "../../components/layout/header/Header";
 import Slider from "../../components/slider/Slider";
 import Trip from "../../components/trip/Trip";
 import Footer from "../../components/layout/footer/Footer";
+import HouseCardItem from "../../components/houseCard/HouseCardItem";
+import HouseCardList from "../../components/houseCard/HouseCardList";
 
 export default function MainPage() {
     return(
@@ -41,6 +43,11 @@ export default function MainPage() {
             {/*Блок каталог домов*/}
             <WrapperMainContent>
                 <h3 style={{paddingBottom: "30px", paddingTop: "30px"}}>Наши дома</h3>
+                {/*<HouseCardItem/>*/}
+                <HouseCardList/>
+
+
+
             </WrapperMainContent>
 
 
