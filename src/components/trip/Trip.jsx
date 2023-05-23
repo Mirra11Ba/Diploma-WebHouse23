@@ -1,45 +1,57 @@
 import React from "react";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import classes from "../../components/trip/Trip.modules.css";
+import classes from "./Trip.module.css";
 import {SmallButton} from "../styled/buttons/SmallButton";
 import ImgRieltor from "../../media/images/rieltor-larisa-bagrova.webp";
 import Box from "@mui/material/Box";
-import {TextField} from "@mui/material";
+import {styled, TextField} from "@mui/material";
+
+
+
 
 export default function Trip() {
+    const StyledTextField = styled(TextField)(({theme}) => ({
+        width: '80%'
+    }))
+
     return (
-        <Grid2 container sx={{
+        <Grid2 container spacing={2} sx={{
             gap: {
                 // xs: "20px",
                 // sm: "35px",
                 // lg: "19px",
             },
-            alignItems: "flex-start",
-            justifyContent: "center",
         }}>
-            <Grid2 container className={classes.card} sx={{
-                gap: {
-                    sm: "10px",
-                }
-            }}>
-
-                <Grid2 className={classes.card}>
-                    <img className={classes.img} src={ImgRieltor}/>
-                </Grid2>
-                <Grid2 className={classes.card}>
-                    <Box className={classes.card} sx={{border: "3px solid #18A0FB", borderRadius: "15px"}}>
-                        <h4 sx={{padding: "30px 143px", alignContent: "center"}}>Оставьте номер и мы вам перезвоним!</h4>
-                        <Box sx={{alignContent: "center", paddingLeft: "104px", paddingRight: "104px", paddingBottom: "93px"}}>
-                            <TextField id="phone" label="Телефон*" variant="outlined" />
-                            <TextField id="email" label="Почта*" variant="outlined" />
-                            <TextField id="name" label="Имя" variant="outlined" />
-                            <SmallButton sx={{alignItems: "center"}}>Жду звонка!</SmallButton>
-                            <p className={`${classes.text} mon-body-14-reg`}>Отправляя свои данные вы соглашаетесь с политикой конфиденциальности</p>
-                        </Box>
-                    </Box>
-                </Grid2>
-
+            <Grid2 item xs={12} md={6}>
+                <Box>
+                    <img style={{width: '100%',aspectRatio: '1 / 1', borderRadius: '4px', objectFit: 'cover'}} src={ImgRieltor}/>
+                </Box>
             </Grid2>
+            <Grid2 item xs={12} md={6}>
+                <Box  sx={{
+                    border: "3px solid #18A0FB",
+                    borderRadius: "4px",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 4,
+                    maxWidth: '100%',
+                    height: '100%',
+                    padding: 2
+                }}>
+                    <h4 style={{padding: "16px, 16px, 16px, 16px", alignContent: "center"}}><span style={{color: 'var( --neptune-blue)'}}>Оставьте номер</span> и мы вам перезвоним!</h4>
+                    <StyledTextField id="phone" label="Телефон*" variant="outlined" />
+                    <StyledTextField id="email" label="Почта*" variant="outlined" />
+                    <StyledTextField id="name" label="Имя" variant="outlined" />
+                    <SmallButton sx={{alignItems: "center"}}>Жду звонка!</SmallButton>
+                    <p className={`${classes.text} mon-body-14-reg`} style={{width: '80%'}}>Отправляя свои данные вы соглашаетесь с политикой конфиденциальности</p>
+                   {/* <Box sx={{alignContent: "center", paddingLeft: "104px", paddingRight: "104px", paddingBottom: "93px"}}>
+
+                    </Box>*/}
+                </Box>
+            </Grid2>
+
 
         </Grid2>
     );

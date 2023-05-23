@@ -14,17 +14,27 @@ export default function Footer() {
             background: "#1B1C37",
         }}>
             {/* Второстепенный grid - individual rows (card)*/}
-            <Grid2 container sx={{
-                gap: {
-                    sm: "10px",
-                    md: "15px",
-                },
-            }}>
+
+            <Grid2 item xs={4}>
                 <img src={ImgWhiteLogo}/>
             </Grid2>
 
+            <Grid2 item xs={2}>
+
+            </Grid2>
+
+            <Grid2 item xs={2}>
+
+            </Grid2>
 
 
+            <Grid2 item xs={2}>
+
+            </Grid2>
+
+            <Grid2 item xs={4}>
+
+            </Grid2>
 
         </Grid2>
 

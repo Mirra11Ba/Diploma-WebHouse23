@@ -8,8 +8,7 @@ import PaymentMethodList from "../../components/paymentMethod/PaymentMethodList"
 
 export default function WaysOfPayment() {
     return(
-    <WrapperFullWidth>
-        <Header/>
+    <>
         <WrapperMainContent>
             {/*Блок преимущества*/}
             <WrapperMainContent>
@@ -18,8 +17,7 @@ export default function WaysOfPayment() {
                 <PaymentMethodList/>
             </WrapperMainContent>
         </WrapperMainContent>
-        <Footer/>
-    </WrapperFullWidth>
+    </>
     );
 };
 

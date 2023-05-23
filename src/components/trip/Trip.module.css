@@ -1,6 +1,6 @@
 .card {
     height: 590px;
-    width: 590px;
+    width: 390px;
     border-radius: 15px;
 }
 .img {
@@ -11,4 +11,5 @@
 .text {
     padding-bottom: 25px;
     color: var(--dark-space-50);
+    text-align: center;
 }

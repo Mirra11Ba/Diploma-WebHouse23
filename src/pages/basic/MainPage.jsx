@@ -15,8 +15,8 @@ import Footer from "../../components/layout/footer/Footer";
 
 export default function MainPage() {
     return(
-        <WrapperFullWidth>
-            <Header/>
+        <>
+            {/*<Header/>*/}
 
             {/*<img style={{width: "100%", height: "auto"}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
 
@@ -64,9 +64,9 @@ export default function MainPage() {
 
 
             {/*Footer*/}
-            <Footer/>
+           {/* <Footer/>*/}
 
 
-        </WrapperFullWidth>
+        </>
     );
 };

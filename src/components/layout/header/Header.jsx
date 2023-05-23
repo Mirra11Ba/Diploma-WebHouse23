@@ -18,9 +18,17 @@ import ListItemText from "@mui/material/ListItemText";
 import {MenuButton} from "../../styled/buttons/MenuButton";
 import {AccountCircleOutlined} from "@mui/icons-material";
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import {Link, useLocation} from "react-router-dom";
+import Divider from "@mui/material/Divider";
+
 
 const pages = [
-    "Главная", "Дома", "Способы оплаты", "Услуги", "О нас", "Контакты",
+    {title: "Главная", url: '/'},
+    {title: "Дома", url: '/catalog'},
+    {title: "Способы оплаты", url: '/payments'},
+    {title: "Услуги", url: '/services'},
+    {title: "О нас", url: '/about'},
+    {title: "Контакты", url: '/contacts'},
 ];
 
 const newPages = [
@@ -33,6 +41,9 @@ function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const [isOpen, setIsOpen] = React.useState(false);
+
+    const location = useLocation();
+    console.log(location)
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -53,6 +64,17 @@ function Header() {
         setIsOpen(!isOpen);
     }
 
+    const menuButton = pages.map((page) => (
+        <MenuButton
+            key={page.url}
+            component={Link}
+            to={page.url}
+            sx={{my: 2, display: 'block', borderBottom: location.pathname === page.url ? '1px solid blue' : '0px', borderRadius: 0, }}
+        >
+            {page.title}
+        </MenuButton>
+    ))
+
     return (
         <AppBar position="sticky"
                 sx={{background: "white", boxShadow: "none", borderBottom: "1px solid rgba(27, 28, 55, 0.5)"}}>
@@ -62,7 +84,7 @@ function Header() {
 
 
                     {/*блок с логотипом*/}
-                    <Box sx={{display: {xs: 'flex', md: 'flex'}, mr: 1, flexGrow: {xs: 1, md: 1}}}>
+                    <Box sx={{display: {xs: 'flex', md: 'flex'}, mr: 2, flexGrow: {xs: 1, md: 1.7}, justifyContent: {xs: 'start', md: 'end'}}}>
                         <img src={ImgLogo}/>
                     </Box>
 
@@ -70,11 +92,12 @@ function Header() {
                     <Box sx={{flexGrow: 4, display: {xs: 'none', md: 'flex'}, justifyContent: 'center'}}>
                         {pages.map((page) => (
                             <MenuButton
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{my: 2, display: 'block'}}
+                                key={page.url}
+                                component={Link}
+                                to={page.url}
+                                sx={{my: 2, display: 'block', borderBottom: location.pathname === page.url ? '1px solid blue' : '0px', borderRadius: 0, }}
                             >
-                                {page}
+                                {page.title}
                             </MenuButton>
                         ))}
                     </Box>
@@ -95,12 +118,12 @@ function Header() {
                                         color="inherit"
                             >
                                 <PersonOutlinedIcon/>
-                                <AccountCircleOutlined/>
+                                {/*<AccountCircleOutlined/>*/}
                                 {/*<Avatar alt="User" src="/static/images/avatar/2.jpg" />*/}
                             </IconButton>
                         </Tooltip>
                         <Menu
-                            sx={{mt: '45px'}}
+                            sx={{mt: '45px', '& ul': {padding: 0}, '& hr': {margin: 0}}}
                             id="menu-appbar"
                             anchorEl={anchorElUser}
                             anchorOrigin={{
@@ -116,14 +139,22 @@ function Header() {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
+                                <>
+                                    <MenuItem
+                                        key={setting}
+                                        /*component={Link}
+                                        to={page.url}*/
+                                        onClick={handleCloseUserMenu}>
+                                        <Typography textAlign="center">{setting}</Typography>
+                                    </MenuItem>
+                                    <Divider sx={{width: '100%'}}/>
+                                </>
+
                             ))}
                         </Menu>
                     </Box>
                     {/*блок с бургером и контекстным меню*/}
-                    <Box sx={{flexGrow: 1, display: {xs: "flex", md: "none"}}}>
+                    <Box sx={{flexGrow: 0, display: {xs: "flex", md: "none"}}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -139,17 +170,18 @@ function Header() {
                             open={isOpen}
                             onClose={handleOpenDrawer}
                         >
-                            {<List>
-                                {settings.map((item) => (
-                                    <ListItem key={item}>
+                            {<List sx={{p: 2}} onClick={handleOpenDrawer}>
+                                {/*{pages.map((item) => (
+                                    <ListItem key={item.url}>
                                         <ListItemButton>
-                                            {/*<ListItemIcon>
+                                            <ListItemIcon>
                                                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                            </ListItemIcon>*/}
-                                            <ListItemText primary={item}/>
+                                            </ListItemIcon>
+                                            <ListItemText primary={item.title}/>
                                         </ListItemButton>
                                     </ListItem>
-                                ))}
+                                ))}*/}
+                                {menuButton}
                                 {/* <ListItem>
                                     <Typography>
                                         123123
@@ -176,8 +208,8 @@ function Header() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.url} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page.title}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
