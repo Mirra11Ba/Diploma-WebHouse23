@@ -1,9 +1,10 @@
 import React from 'react';
+import FilterForm from "../../components/FilterForm/FilterForm";
 
 const СatalogOfHouses = () => {
     return (
         <div>
-            Catalog12312
+            <FilterForm/>
         </div>
     );
 };
