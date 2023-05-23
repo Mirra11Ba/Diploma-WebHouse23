@@ -7,20 +7,15 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import ImgLogo from "../../../media/images/house-23-logo.png";
-import {useState} from "react";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import {MenuButton} from "../../styled/buttons/MenuButton";
-import classes from "../../news/News.module.css";
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import {AccountCircleOutlined} from "@mui/icons-material";
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 
@@ -59,43 +54,45 @@ function Header() {
     }
 
     return (
-        <AppBar position="sticky" sx={{background: "white", boxShadow: "none", borderBottom: "1px solid rgba(27, 28, 55, 0.5)"}}>
+        <AppBar position="sticky"
+                sx={{background: "white", boxShadow: "none", borderBottom: "1px solid rgba(27, 28, 55, 0.5)"}}>
             <Container maxWidth="xl">
 
                 <Toolbar disableGutters>
 
 
                     {/*блок с логотипом*/}
-                    <Box sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1, flexGrow: {xs: 1, md: 1} }}>
-                        <img src={ImgLogo} />
+                    <Box sx={{display: {xs: 'flex', md: 'flex'}, mr: 1, flexGrow: {xs: 1, md: 1}}}>
+                        <img src={ImgLogo}/>
                     </Box>
 
                     {/*блок с пунктами меню*/}
-                    <Box sx={{ flexGrow: 4, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+                    <Box sx={{flexGrow: 4, display: {xs: 'none', md: 'flex'}, justifyContent: 'center'}}>
                         {pages.map((page) => (
                             <MenuButton
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, display: 'block' }}
+                                sx={{my: 2, display: 'block'}}
                             >
                                 {page}
                             </MenuButton>
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: {xs: 0, md: 1 }, display: { xs: 'none', md: 'flex' }}}>
-                        <p className={"mon-menu-16-med"}><a style={{textDecoration: "none", color: "black"}} href={"tel: +79182505588"}>+7(918)250-55-88</a></p>
+                    <Box sx={{flexGrow: {xs: 0, md: 1}, display: {xs: 'none', md: 'flex'}}}>
+                        <p className={"mon-menu-16-med"}><a style={{textDecoration: "none", color: "black"}}
+                                                            href={"tel: +79182505588"}>+7(918)250-55-88</a></p>
                     </Box>
 
                     {/*блок с икнокой пользователя*/}
-                    <Box sx={{ flexGrow: {xs: 0, md: 1.7 }}}>
+                    <Box sx={{flexGrow: {xs: 0, md: 1.7}}}>
                         <Tooltip title="Открыть профиль">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}
-                                size="large"
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                color="inherit"
+                            <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}
+                                        size="large"
+                                        aria-label="account of current user"
+                                        aria-controls="menu-appbar"
+                                        aria-haspopup="true"
+                                        color="inherit"
                             >
                                 <PersonOutlinedIcon/>
                                 <AccountCircleOutlined/>
@@ -103,7 +100,7 @@ function Header() {
                             </IconButton>
                         </Tooltip>
                         <Menu
-                            sx={{ mt: '45px' }}
+                            sx={{mt: '45px'}}
                             id="menu-appbar"
                             anchorEl={anchorElUser}
                             anchorOrigin={{
@@ -126,7 +123,7 @@ function Header() {
                         </Menu>
                     </Box>
                     {/*блок с бургером и контекстным меню*/}
-                    <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }}}>
+                    <Box sx={{flexGrow: 1, display: {xs: "flex", md: "none"}}}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -135,7 +132,7 @@ function Header() {
                             onClick={handleOpenDrawer}
                             color="inherit"
                         >
-                            <MenuIcon />
+                            <MenuIcon/>
                         </IconButton>
                         <Drawer
                             anchor={"right"}
@@ -175,7 +172,7 @@ function Header() {
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: {xs: 'block', md: 'none'},
                             }}
                         >
                             {pages.map((page) => (
@@ -191,4 +188,5 @@ function Header() {
         </AppBar>
     );
 }
+
 export default Header;

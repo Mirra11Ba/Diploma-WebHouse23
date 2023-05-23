@@ -3,7 +3,6 @@ import Grid2 from "@mui/material/Unstable_Grid2";
 import ImgZkElegeant from "../../media/images/news/zhiloj-kompleks-elegeant.webp";
 import ImgZkFontany from "../../media/images/news/zhk-fontany-krasnodar.webp";
 import ImgZkStriji from "../../media/images/news/zhk-striji-krasnodar.webp";
-import ImgEleg from "../../media/images/news/elegant-krasnodar-jk.jpg";
 import NewsItem from "./NewsItem";
 
 export default function NewsList(props) {
@@ -13,7 +12,7 @@ export default function NewsList(props) {
             pict: ImgZkFontany,
             title: 'Жилой Комплекс Фонтаны',
             text: 'ЖК Фонтаны воплощает оригинальные, креативные решения дизайнеров и архитекторов. Он расположен ' +
-                  'в Краснодаре на границе района ЦМР и ЧМР. Масштабно и красиво, завораживающе.',
+                'в Краснодаре на границе района ЦМР и ЧМР. Масштабно и красиво, завораживающе.',
             btnLink: 'https://domnovostroika.ru/zhk-fontany-krasnodar/'
         },
         {

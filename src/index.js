@@ -8,7 +8,6 @@ import './media/fonts/montserrat/static/Montserrat-Regular.ttf';
 import './media/fonts/inter/static/Inter-Regular.ttf';
 import {ThemeProvider} from "@mui/material";
 import {house23Theme} from "./style/themes";
-import MainPage from "./pages/MainPage";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

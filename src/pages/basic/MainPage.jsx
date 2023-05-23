@@ -1,16 +1,17 @@
 import React from "react";
 import {Carousel} from "react-responsive-carousel";
-import ImgLuchshieDomaUNas from "../media/images/slider/luchshie-doma-u-nas.webp";
-import ImgProektyChastnykhDomov from "../media/images/slider/proekty-chastnykh-domov.webp";
-import ImgInvesticziiVNedvizhimost from "../media/images/slider/investiczii-v-nedvizhimost.webp";
-import WrapperMainContent from "../components/layout/wrappers/Wrapper-main-content";
-import AdvantageList from "../components/advantage/AdvantageList";
-import WrapperFullWidth from "../components/layout/wrappers/Wrapper-full-width";
-import PaymentMethodList from "../components/paymentMethod/PaymentMethodList";
-import NewsList from "../components/news/NewsList";
-import Header from "../components/layout/header/Header";
-import Slider from "../components/slider/Slider";
-import Trip from "../components/trip/Trip";
+import ImgLuchshieDomaUNas from "../../media/images/slider/luchshie-doma-u-nas.webp";
+import ImgProektyChastnykhDomov from "../../media/images/slider/proekty-chastnykh-domov.webp";
+import ImgInvesticziiVNedvizhimost from "../../media/images/slider/investiczii-v-nedvizhimost.webp";
+import WrapperMainContent from "../../components/layout/wrappers/Wrapper-main-content";
+import AdvantageList from "../../components/advantage/AdvantageList";
+import WrapperFullWidth from "../../components/layout/wrappers/Wrapper-full-width";
+import PaymentMethodList from "../../components/paymentMethod/PaymentMethodList";
+import NewsList from "../../components/news/NewsList";
+import Header from "../../components/layout/header/Header";
+import Slider from "../../components/slider/Slider";
+import Trip from "../../components/trip/Trip";
+import Footer from "../../components/layout/footer/Footer";
 
 export default function MainPage() {
     return(
@@ -63,7 +64,7 @@ export default function MainPage() {
 
 
             {/*Footer*/}
-
+            <Footer/>
 
 
         </WrapperFullWidth>

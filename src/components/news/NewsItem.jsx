@@ -2,9 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import classes from "./News.module.css";
-import Button from "@mui/material/Button";
 import {SmallButton} from "../styled/buttons/SmallButton";
-import WrapperCss from "../../components/layout/wrappers/Wrapper.css";
 
 
 export default function NewsItem(props) {
