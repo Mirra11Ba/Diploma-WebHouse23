@@ -1,7 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import MainPage from "../pages/basic/MainPage";
 import React from "react";
-import App, {loader} from "../App";
+import App, {loader as appLoader} from "../App";
 import CatalogOfHouses from '../pages/basic/СatalogOfHouses'
 import WaysOfPayment from "../pages/basic/WaysOfPayment";
 import Services from "../pages/basic/Services";
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <App/>,
-        loader: loader,
+        loader: appLoader,
         children: [
             {
                 path: '/',

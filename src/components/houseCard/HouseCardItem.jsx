@@ -13,7 +13,20 @@ import {CardButtonOutlined} from "../styled/buttons/CardButtonOutlined";
 
 
 export default function HouseCardItem(props) {
-    const {img, titleName, price, numberFloors, area, landPlotSize} = props;
+    const {house} = props;
+
+    const splitNumber = (number) => {
+        const arr = String(number).split('').map(n => Number(n)).reverse();
+        let newArr = [];
+        for (let i = 0; i < arr.length; i += 3) {
+            const chunk = arr.slice(i, i + 3);
+            console.log(chunk)
+            newArr.push(chunk)
+        }
+        console.log(newArr)
+        return newArr;
+    }
+
     return (
         <Grid2 container sx={{
             gap: {
@@ -33,11 +46,11 @@ export default function HouseCardItem(props) {
                         height: "264px",
                         borderTopRightRadius: "15px",
                         borderTopLeftRadius: "15px",
-                    }} src={img}/>
+                    }} src={house.image}/>
             </Grid2>
 
             <Grid2 item xs={12} sx={{
-                p: 2.5,
+                p: {xs: 1, sm: 2.5},
                 pt: 0,
                 border: '1px solid var(--dark-space-50)',
                 borderBottomRightRadius: "15px",
@@ -48,7 +61,7 @@ export default function HouseCardItem(props) {
                     justifyContent: 'space-between',
                     alignItems: 'center'
                 }}>
-                    <h5>Дом {titleName}</h5>
+                    <h5>{house.name}</h5>
                     <IconButton
                         size="large"
                         aria-label="Избранное"
@@ -62,15 +75,20 @@ export default function HouseCardItem(props) {
                     </IconButton>
                 </Grid2>
 
-                <Grid2 item xs={12} sx={{pt: 1}}>
-                    <p className={"mon-price-20-bol"} style={{color: "var(--neptune-blue)"}}>{price} ₽</p>
+                <Grid2 item xs={12} sx={{pt: {xs: 0, sm: 1}}}>
+                    <p className={"mon-price-20-bol"} style={{color: "var(--neptune-blue)"}}>
+                        {splitNumber(house.price).reverse().map(i => {
+                            i = i.join('');
+                            return `${i} `
+                        })} ₽
+                    </p>
                 </Grid2>
                 <Box className={"mon-body-16-reg"} sx={{
                     py: 2
                 }}>
-                    Этажи: {numberFloors}{<br/>}
-                    Площадь дома: {area} м²{<br/>}
-                    Участок: {landPlotSize} сотки{<br/>}
+                    Этажи: {house.numberOfFloors}{<br/>}
+                    Площадь дома: {house.area} м²{<br/>}
+                    Участок: {house.landPlotSize} сотки{<br/>}
                 </Box>
                 <Grid2 item xs={12} sx={{
                     display: 'flex',

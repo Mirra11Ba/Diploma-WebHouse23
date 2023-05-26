@@ -8,10 +8,11 @@ import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
 import WrapperFullWidth from "./components/layout/wrappers/Wrapper-full-width";
 import {Outlet} from 'react-router-dom'
-import useFetching from "./hooks/useFetching";
+import fetchData from "./hooks/fetchData";
 
 export const loader = async () => {
-    //await useFetching();
+    console.log('app loaded')
+    await fetchData();
     return null
 }
 

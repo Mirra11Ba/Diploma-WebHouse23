@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export const API_URL = 'http://http://91.223.199.62:8107/api';
+export const API_URL = 'https://webhouse23.ru/api';
 
 const $api = axios.create({
     baseURL: API_URL

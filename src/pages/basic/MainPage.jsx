@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Carousel} from "react-responsive-carousel";
 import ImgLuchshieDomaUNas from "../../media/images/slider/luchshie-doma-u-nas.webp";
 import ImgProektyChastnykhDomov from "../../media/images/slider/proekty-chastnykh-domov.webp";
@@ -14,8 +14,23 @@ import Trip from "../../components/trip/Trip";
 import Footer from "../../components/layout/footer/Footer";
 import HouseCardItem from "../../components/houseCard/HouseCardItem";
 import HouseCardList from "../../components/houseCard/HouseCardList";
+import {observer} from "mobx-react-lite";
+import house from "../../store/house";
 
-export default function MainPage() {
+
+
+const MainPage = observer(() => {
+
+    const [houses, setHouses] = useState([])
+
+    useEffect(() => {
+        setHouses(house.houses)
+    }, [])
+
+    useEffect(() => {
+        setHouses(house.houses)
+    }, [JSON.stringify(house.houses)])
+
     return(
         <>
             {/*<Header/>*/}
@@ -44,7 +59,7 @@ export default function MainPage() {
             <WrapperMainContent>
                 <h3 style={{paddingBottom: "30px", paddingTop: "30px"}}>Наши дома</h3>
                 {/*<HouseCardItem/>*/}
-                <HouseCardList/>
+                <HouseCardList houses={houses}/>
 
 
 
@@ -76,4 +91,6 @@ export default function MainPage() {
 
         </>
     );
-};
+});
+
+export default MainPage;
