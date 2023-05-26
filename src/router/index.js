@@ -6,6 +6,8 @@ import CatalogOfHouses from '../pages/basic/СatalogOfHouses'
 import WaysOfPayment from "../pages/basic/WaysOfPayment";
 import Services from "../pages/basic/Services";
 import AbotUs from "../pages/basic/AbotUs";
+import AdminPage from "../pages/adminPanel/AdminPage/AdminPage";
+import HousePanel from "../pages/adminPanel/HousePanel/HousePanel";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +39,17 @@ export const router = createBrowserRouter([
                 path: 'contacts',
                 element: <CatalogOfHouses/>
             },
+        ]
+    },
+    {
+        path: 'admin',
+        element: <AdminPage/>,
+        loader: appLoader,
+        children: [
+            {
+                path: 'houses',
+                element: <HousePanel/>
+            }
         ]
     },
 

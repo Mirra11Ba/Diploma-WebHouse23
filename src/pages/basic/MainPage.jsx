@@ -21,15 +21,7 @@ import house from "../../store/house";
 
 const MainPage = observer(() => {
 
-    const [houses, setHouses] = useState([])
 
-    useEffect(() => {
-        setHouses(house.houses)
-    }, [])
-
-    useEffect(() => {
-        setHouses(house.houses)
-    }, [JSON.stringify(house.houses)])
 
     return(
         <>
@@ -59,14 +51,14 @@ const MainPage = observer(() => {
             <WrapperMainContent>
                 <h3 style={{paddingBottom: "30px", paddingTop: "30px"}}>Наши дома</h3>
                 {/*<HouseCardItem/>*/}
-                <HouseCardList houses={houses}/>
+                <HouseCardList houses={house.houses}/>
 
 
 
             </WrapperMainContent>
 
 
-            <WrapperMainContent>
+            <WrapperMainContent >
                 {/*Блок способы оплаты*/}
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Способы оплаты</h3>
                 <PaymentMethodList/>
@@ -77,11 +69,10 @@ const MainPage = observer(() => {
 
                 {/*Блок запись на экскурсию*/}
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Записаться на экскурсию бесплатно</h3>
-                <Trip/>
+                <Trip />
 
                 {/*Блок обзоры*/}
 
-                <h1>efe</h1>
             </WrapperMainContent>
 
 

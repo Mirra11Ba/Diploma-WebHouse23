@@ -35,26 +35,27 @@ const newPages = [
     {title: 'Products', value: 'products'}
 ]
 
-const settings = ['Профиль', 'Избранное', 'Брони', 'Выйти'];
+const settings = [
+    {title: 'Профиль', url: '/'},
+    {title: 'Избранное', url: '/'},
+    {title: 'Брони', url: '/'},
+    {title: 'Выйти', url: '/'},
+    {title: 'Администрирование', url: '/admin'},
+];
 
 function Header() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const [isOpen, setIsOpen] = React.useState(false);
 
     const location = useLocation();
     console.log(location)
 
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
+
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
@@ -139,16 +140,16 @@ function Header() {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <>
+                                <div>
                                     <MenuItem
                                         key={setting}
-                                        /*component={Link}
-                                        to={page.url}*/
+                                        component={Link}
+                                        to={setting.url}
                                         onClick={handleCloseUserMenu}>
-                                        <Typography textAlign="center">{setting}</Typography>
+                                        <Typography textAlign="center" sx={{width:'100%'}}>{setting.title}</Typography>
                                     </MenuItem>
                                     <Divider sx={{width: '100%'}}/>
-                                </>
+                                </div>
 
                             ))}
                         </Menu>
@@ -171,48 +172,12 @@ function Header() {
                             onClose={handleOpenDrawer}
                         >
                             {<List sx={{p: 2}} onClick={handleOpenDrawer}>
-                                {/*{pages.map((item) => (
-                                    <ListItem key={item.url}>
-                                        <ListItemButton>
-                                            <ListItemIcon>
-                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                            </ListItemIcon>
-                                            <ListItemText primary={item.title}/>
-                                        </ListItemButton>
-                                    </ListItem>
-                                ))}*/}
+
                                 {menuButton}
-                                {/* <ListItem>
-                                    <Typography>
-                                        123123
-                                    </Typography>
-                                </ListItem>*/}
+
                             </List>}
                         </Drawer>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={ImgLogo}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{
-                                display: {xs: 'block', md: 'none'},
-                            }}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page.url} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page.title}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
+
                     </Box>
 
                 </Toolbar>

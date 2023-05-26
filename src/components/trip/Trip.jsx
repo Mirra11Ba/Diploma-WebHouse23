@@ -22,6 +22,7 @@ export default function Trip() {
                 // sm: "35px",
                 // lg: "19px",
             },
+            mb: 2
         }}>
             <Grid2 item xs={12} md={6}>
                 <Box>

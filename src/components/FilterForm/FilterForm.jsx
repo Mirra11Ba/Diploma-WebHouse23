@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Grid2 from "@mui/material/Unstable_Grid2";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
@@ -8,28 +8,32 @@ import {Box, MenuItem} from '@mui/material'
 import Select from "@mui/material/Select";
 import styles from './FilterForm.module.css'
 import {SmallButton} from "../styled/buttons/SmallButton";
+import house from "../../store/house";
+import district from "../../store/district";
 
 
 const Input = styled(TextField)(({theme}) => ({
     width: '47%'
 }))
 
-const FilterForm = () => {
+const FilterForm = ({callback}) => {
 
     const [startCost, setStartCost] = useState(5000000);
     const [endCost, setEndCost] = useState(20000000);
     const [startMeters, setStartMeters] = useState(100);
     const [endMeters, setEndMeters] = useState(500);
+
     const areas = [
+        {id: 0, title: 'Все', value: 'all'},
         {id: 1, title: 'ЮМР', value: 'umr'},
         {id: 2, title: 'КМР', value: 'kmr'},
         {id: 3, title: 'ФМР', value: 'fmr'},
         {id: 4, title: 'ГМР', value: 'gmr'},
     ];
-    const [selectedArea, setSelectedArea] = useState(areas[0]);
-
+    const [selectedArea, setSelectedArea] = useState(1);
 
     const levels = [
+        {id: 0, title: 'Любое', value: 0},
         {id: 1, title: '1 этаж', value: 1},
         {id: 2, title: '2 этажа', value: 2},
         {id: 3, title: '1 этаж', value: 3},
@@ -37,16 +41,18 @@ const FilterForm = () => {
         {id: 5, title: '1 этаж', value: 5},
         {id: 6, title: '1 этаж', value: 6},
         {id: 7, title: '1 этаж', value: 7},
-        {id: 8, title: '1 этаж', value: 8},
+        {id: 8, title: '10 этаж', value: 10},
     ];
     const [selectedLevels, setSelectedLevels] = useState(levels[0]);
 
-    const handleAreaChange = (event) => {
-        setSelectedArea(event.target);
+    const handleAreaChange = (event, name) => {
+        console.log(event.target.value)
+        setSelectedArea(event.target.value);
     }
 
-    const handleLevelsChange = (event) => {
-        setSelectedLevels(event.target);
+    const handleLevelsChange = (event, name) => {
+        console.log(name.props)
+        setSelectedLevels(name.props);
     }
 
     const handleStartCostChange = (e) => {
@@ -71,6 +77,28 @@ const FilterForm = () => {
         setStartMeters(newValue[0])
         setEndMeters(newValue[1])
     }
+
+    const handleApplyFilters = () => {
+        let arr = house.houses.filter(item => item.price >= startCost
+            && item.price <= endCost
+            && item.area >= startMeters && item.area <= endMeters
+        )
+
+        console.log(selectedLevels);
+        console.log(selectedArea)
+
+        if (selectedArea !== 0) {
+            arr = arr.filter(item => item.district.id === selectedArea);
+        }
+
+        if (selectedLevels.children && selectedLevels.children !== 'Любое') {
+            //arr = arr.filter(item => item.)
+        }
+
+        console.log(arr)
+        callback(arr);
+    }
+
 
     return (
         <div className={styles.main} >
@@ -114,7 +142,7 @@ const FilterForm = () => {
                         aria-label="Small"
                         valueLabelDisplay="auto"
                         max={20000000}
-                        min={5000000}
+                        min={100000}
                         step={100000}
                     />
                 </Grid>
@@ -123,12 +151,12 @@ const FilterForm = () => {
                     <Select sx={{
                         width: '80%'
                     }}
-                            value={selectedArea.value}
+                            value={selectedArea}
                             onChange={handleAreaChange}
                     >
-                        {areas.map((area) => {
-                            return <MenuItem value={area.value} key={area.id}>
-                                {area.title}
+                        {district.districts.map((area) => {
+                            return <MenuItem value={area.id} key={area.id}>
+                                {area.name}
                             </MenuItem>
                         })}
                     </Select>
@@ -173,7 +201,7 @@ const FilterForm = () => {
                             onChange={handleLevelsChange}
                     >
                         {levels.map((level) => {
-                            return <MenuItem value={level.id} key={level.id}>
+                            return <MenuItem value={level.value} key={level.id}>
                                 {level.title}
                             </MenuItem>
                         })}
@@ -185,7 +213,7 @@ const FilterForm = () => {
                     justifyContent: 'center',
                     display: 'flex'
                 }}>
-                    <SmallButton>
+                    <SmallButton onClick={handleApplyFilters}>
                         Применить
                     </SmallButton>
                 </Grid>

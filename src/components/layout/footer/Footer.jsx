@@ -67,12 +67,15 @@ export default function Footer() {
                 </Grid2>
 
                 <Grid2 item xs={12} md={2}>
-                    <h5>Навигация</h5>
+
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
+                        alignItems: {xs: 'center', md: 'start'},
                         gap: 1
                     }}>
+                        <h5>Навигация</h5>
+
                         {pages.map((item) => (
                             <Link to={item.url}>{item.title}</Link>
                         ))}
@@ -81,27 +84,37 @@ export default function Footer() {
                 </Grid2>
 
                 <Grid2 item xs={12} md={2}>
-                    <h5>Дополнительно</h5>
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
+                        alignItems: {xs: 'center', md: 'start'},
                         gap: 1
                     }}>
+                        <h5>Дополнительно</h5>
                         {addPages.map((item) => (
                             <Link to={item.url}>{item.title}</Link>
                         ))}
                     </Box>
+
                 </Grid2>
 
                 <Grid2 item xs={12} md={2} >
-                    <h5>Контакты</h5>
-                    +7 (918) 991 72 78
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: {xs: 'center', md: 'start'},
+                        gap: 1
+                    }}>
+                        <h5>Контакты</h5>
+                        +7 (918) 991 72 78
+                    </Box>
+
                 </Grid2>
 
                 <Grid2 item xs={12} md sx={{
                     display: 'flex',
                     flexDirection: {xs: 'row', sm: 'column'},
-                    alignItems: 'end',
+                    alignItems: {xs: 'center', md: 'end'},
                     justifyContent: 'center',
                     gap: 2,
                     py: 2
