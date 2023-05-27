@@ -1,15 +1,16 @@
 import React from "react";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import classes from "../../news/News.module.css";
 import ImgWhiteLogo from "../../../media/images/house-23-logo-white.png";
 import {Link} from "react-router-dom";
 import Box from "@mui/material/Box";
-import {SmallButton} from "../../styled/buttons/SmallButton";
-import {MenuButton} from "../../styled/buttons/MenuButton";
-import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
 import {CardButton} from "../../styled/buttons/CardButton";
+import IconButton from "@mui/material/IconButton";
+import IcoTelegram from "../../../media/svg/social/telegram.svg";
+import IcoVK from "../../../media/svg/social/vk.svg";
+import IcoWhatsApp from "../../../media/svg/social/whatsapp.svg";
+import IcoYouTube from "../../../media/svg/social/youtube.svg";
+import IcoOk from "../../../media/svg/social/ok.svg";
 
 export default function Footer() {
 
@@ -29,13 +30,19 @@ export default function Footer() {
     ];
 
     const socialLinks = [
-
-    ]
+        {title: "Telegram", url: "https://t.me/moydom23"},
+        {title: "VK", url: "https://vk.com/krasnodarmoy"},
+        {title: "WhatSap", url: "https://wa.me/+79182505588"},
+        {title: "YouTube", url: "https://www.youtube.com/channel/UCereBbnFSA5FvTwsalZzB0w"},
+        {title: "OK", url: "https://ok.ru/larisa.bagrova"},
+        {title: "Zen", url: "https://zen.yandex.ru/tvoydom"},
+    ];
 
     return (
         // Гланый big grid - columns
         <Box sx={{
             background: "#1B1C37",
+            marginTop: "60px",
         }}>
 
             <Grid2 container sx={{
@@ -57,8 +64,8 @@ export default function Footer() {
                 },
                 px: {xs: 2, sm: 0}
             }}>
-                {/* Второстепенный grid - individual rows (card)*/}
 
+                {/* Второстепенный grid - individual rows (card)*/}
                 <Grid2 item xs={12} md={3} sx={{
                     display: 'flex',
                     alignItems: 'center'
@@ -67,8 +74,8 @@ export default function Footer() {
                 </Grid2>
 
                 <Grid2 item xs={12} md={2}>
-
-                    <Box sx={{
+                    <Box className={"mon-menu-16-med"}
+                        sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: {xs: 'center', md: 'start'},
@@ -80,11 +87,11 @@ export default function Footer() {
                             <Link to={item.url}>{item.title}</Link>
                         ))}
                     </Box>
-
                 </Grid2>
 
                 <Grid2 item xs={12} md={2}>
-                    <Box sx={{
+                    <Box className={"mon-menu-16-med"}
+                        sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: {xs: 'center', md: 'start'},
@@ -106,7 +113,13 @@ export default function Footer() {
                         gap: 1
                     }}>
                         <h5>Контакты</h5>
-                        +7 (918) 991 72 78
+                        <p className={"mon-menu-16-med"}>
+                            <a style={{textDecoration: "none",}}
+                               href={"tel: +79182505588"}>+7(918)250-55-88
+                            </a>
+                        </p>
+
+
                     </Box>
 
                 </Grid2>
@@ -140,7 +153,7 @@ export default function Footer() {
                 </Grid2>
 
                 <Grid2 item xs={12} md={4}>
-                    <p>
+                    <p className={"mon-body-14-reg"}>
                         © Copyright 2023. House23
                     </p>
                 </Grid2>
@@ -150,6 +163,10 @@ export default function Footer() {
                     display: 'flex',
                     justifyContent: 'center'
                 }}>
+                    {/*<IconButton href={"https://t.me/moydom23"}>*/}
+                    {/*    <svg src={"IcoTelegram"}/>*/}
+                    {/*</IconButton>*/}
+
                     <svg width="290" height="40" viewBox="0 0 290 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="200" width="40" height="40" rx="20" fill="#18A0FB"/>
                         <path d="M226.238 22.7928C226.762 22.2681 226.837 21.5185 226.388 20.7689C226.013 20.1692 225.338 19.8694 224.589 20.0193C224.289 20.0942 223.989 20.2442 223.689 20.469C221.365 22.0432 218.217 21.9683 215.893 20.3941C215.743 20.3191 215.593 20.2442 215.443 20.1692C214.619 19.7944 213.794 19.9443 213.344 20.6939C212.82 21.4435 212.895 22.2681 213.569 22.9428C213.719 23.0927 213.869 23.1676 213.944 23.3176L214.019 23.3925C215.068 24.2171 216.343 24.7418 217.992 24.9667L217.017 25.9412C216.193 26.7658 215.293 27.6653 214.469 28.4899C214.244 28.7148 213.944 29.0896 213.944 29.6143C213.944 30.2889 214.319 30.9636 214.993 31.2634C215.218 31.4133 215.443 31.4133 215.668 31.4133C216.043 31.4133 216.493 31.2634 216.793 30.8886C217.917 29.7642 218.817 28.8647 219.716 27.9651C219.791 27.8902 219.791 27.8902 219.791 27.8902C219.791 27.8902 219.866 27.8902 219.866 27.9651C220.466 28.6398 221.14 29.2395 221.74 29.9141C222.04 30.214 222.34 30.5138 222.64 30.8137C223.014 31.1885 223.314 31.3384 223.764 31.3384C224.439 31.4134 225.188 30.9636 225.488 30.2889C225.788 29.6892 225.638 28.9396 225.113 28.4899C224.364 27.7403 223.614 26.9157 222.789 26.1661L221.515 24.8917C222.19 24.8168 222.939 24.6669 223.614 24.367C224.738 23.9922 225.563 23.4675 226.238 22.7928Z" fill="white"/>
@@ -171,9 +188,7 @@ export default function Footer() {
                 </Grid2>
 
                 <Grid2 item xs={12} md={4} sx={{textAlign: 'end'}}>
-                    <p>
-                        Created by Mirra11Ba
-                    </p>
+                    <p className={"mon-body-14-reg"}>Created by <a href={"https://github.com/Mirra11Ba"}>Mirra11Ba</a></p>
                 </Grid2>
 
 

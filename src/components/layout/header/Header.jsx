@@ -107,7 +107,7 @@ const Header = observer(() => {
                                 key={page.url}
                                 component={Link}
                                 to={page.url}
-                                sx={{my: 2, display: 'block', borderBottom: location.pathname === page.url ? '1px solid blue' : '0px', borderRadius: 0, }}
+                                sx={{my: 2, display: 'block', borderBottom: location.pathname === page.url ? '3px solid var(--neptune-blue)' : '0px', borderRadius: 0, }}
                             >
                                 {page.title}
                             </MenuButton>
@@ -115,8 +115,11 @@ const Header = observer(() => {
                     </Box>
 
                     <Box sx={{flexGrow: {xs: 0, md: 1}, display: {xs: 'none', md: 'flex'}}}>
-                        <p className={"mon-menu-16-med"}><a style={{textDecoration: "none", color: "black"}}
-                                                            href={"tel: +79182505588"}>+7(918)250-55-88</a></p>
+                        <p className={"mon-menu-16-med"}>
+                            <a style={{textDecoration: "none", color: "black"}}
+                               href={"tel: +79182505588"}>+7(918)250-55-88
+                            </a>
+                        </p>
                     </Box>
 
                     {/*блок с икнокой пользователя*/}
