@@ -17,6 +17,10 @@ class User {
         this.currentUser = await UserService.getUser();
     }
 
+    async fetchUserList() {
+        this.users = await UserService.getUserList()
+    }
+
     async login(login, password) {
         try {
             const response = await AuthService.auth(login, password)

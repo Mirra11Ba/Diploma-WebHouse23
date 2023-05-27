@@ -15,7 +15,6 @@ import {House} from "@mui/icons-material";
 
 const HousePanel = () => {
 
-
     const initialRows = useMemo(() => house.houses.map((item) => {
         return {
             id: item.id,

@@ -5,7 +5,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import {Outlet, Navigate, useNavigate} from 'react-router-dom';
+import {Outlet, Navigate, useNavigate, Link} from 'react-router-dom';
 import user from "../../../store/user";
 
 
@@ -35,13 +35,13 @@ const ProfilePage = () => {
 
 
                 <List>
-                    <ListItemButton>
+                    <ListItemButton component={Link} to={'data'}>
                         Мои данные
                     </ListItemButton>
-                    <ListItemButton>
+                    <ListItemButton  component={Link} to={'bookings'}>
                         Мои брони
                     </ListItemButton>
-                    <ListItemButton>
+                    <ListItemButton  component={Link} to={'favorite'}>
                         Мой данные
                     </ListItemButton>
                 </List>

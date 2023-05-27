@@ -12,6 +12,9 @@ import OAuth2RedirectHandler from "../pages/OAuth2RedirectHandler/OAuth2Redirect
 import BackCallsPanel from "../pages/adminPanel/BackCallsPanel/BackCallsPanel";
 import ProfilePage from "../pages/basic/ProfilePage/ProfilePage";
 import ProfileDataPage from "../pages/basic/ProfilePage/children/ProfileDataPage/ProfileDataPage";
+import ProfileBookings from "../pages/basic/ProfilePage/children/ProfileBookings/ProfileBookings";
+import ProfileFavorite from "../pages/basic/ProfilePage/children/ProfileFavorite/ProfileFavorite";
+import UsersPanel from "../pages/adminPanel/UsersPanel/UsersPanel";
 
 export const router = createBrowserRouter([
     {
@@ -50,7 +53,15 @@ export const router = createBrowserRouter([
                     {
                         path: 'data',
                         element: <ProfileDataPage/>
-                    }
+                    },
+                    {
+                        path: 'bookings',
+                        element: <ProfileBookings/>
+                    },
+                    {
+                        path: 'favorite',
+                        element: <ProfileFavorite/>
+                    },
                 ]
             }
         ]
@@ -68,6 +79,10 @@ export const router = createBrowserRouter([
                 path: 'backCalls',
                 element: <BackCallsPanel/>
             },
+            {
+                path: 'users',
+                element: <UsersPanel/>
+            }
         ]
     },
     {

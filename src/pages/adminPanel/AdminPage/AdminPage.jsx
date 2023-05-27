@@ -11,8 +11,8 @@ import backCall from "../../../store/backCall";
 export const loader = async () => {
     await fetchData();
     await backCall.fetchBackCalls();
+    await user.fetchUserList();
     return null
-
 }
 
 const AdminPage = () => {
@@ -37,6 +37,9 @@ const AdminPage = () => {
                     </Button>
                     <Button component={Link} to={'backCalls'}>
                         Заявки
+                    </Button>
+                    <Button component={Link} to={'users'}>
+                        Клиенты
                     </Button>
                 </Box>
 
