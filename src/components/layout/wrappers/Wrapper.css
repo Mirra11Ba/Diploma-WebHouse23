@@ -173,17 +173,6 @@
         /* identical to box height, or 129% */
         letter-spacing: 0.015625em;
     }
-
-    .mon-footer-12-reg {
-        /* Montserrat/Footer 12 reg */
-        font-family: Montserrat, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-        /* identical to box height, or 125% */
-        letter-spacing: -0.015em;
-    }
 }
 
 /*Netbook*/
@@ -345,17 +334,6 @@
         line-height: 18px;
         /* identical to box height, or 129% */
         letter-spacing: 0.015625em;
-    }
-
-    .mon-footer-12-reg {
-        /* Montserrat/Footer 12 reg */
-        font-family: Montserrat, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-        /* identical to box height, or 125% */
-        letter-spacing: -0.015em;
     }
 }
 
@@ -519,17 +497,6 @@
         /* identical to box height, or 129% */
         letter-spacing: 0.015625em;
     }
-
-    .mon-footer-12-reg {
-        /* Montserrat/Footer 12 reg */
-        font-family: Montserrat, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-        /* identical to box height, or 125% */
-        letter-spacing: -0.015em;
-    }
 }
 
 /*Mobile*/
@@ -566,7 +533,7 @@
         text-align: center;
     }
 
-    h4 {
+    h4, h5 {
         /*Override*/
         /* Oswald/H5 24 reg */
         font-family: Oswald, sans-serif;
@@ -693,16 +660,5 @@
         line-height: 18px;
         /* identical to box height, or 129% */
         letter-spacing: 0.015625em;
-    }
-
-    .mon-footer-12-reg {
-        /* Montserrat/Footer 12 reg */
-        font-family: Montserrat, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
-        /* identical to box height, or 125% */
-        letter-spacing: -0.015em;
     }
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import AdvantageItem from "./AdvantageItem";
-import IcoCottage from "../../media/svg/cottage.svg";
-import IcoWallet from "../../media/svg/account_balance_wallet.svg";
-import IcoHomePin from "../../media/svg/home_pin.svg";
-import IcoClientNotes from "../../media/svg/clinical_notes.svg";
-import IcoCheckMark from "../../media/svg/approval_delegation.svg";
+import IcoCottage from "../../media/svg/advantage/cottage.svg";
+import IcoWallet from "../../media/svg/advantage/account_balance_wallet.svg";
+import IcoHomePin from "../../media/svg/advantage/home_pin.svg";
+import IcoClientNotes from "../../media/svg/advantage/clinical_notes.svg";
+import IcoCheckMark from "../../media/svg/advantage/approval_delegation.svg";
 import classes from "./Advantage.module.css";
 
 
