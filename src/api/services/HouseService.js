@@ -87,6 +87,6 @@ export default class HouseService {
     }
 
     static async deleteHouse(id) {
-        return $api.delete(`/house/${id}`)
+        return $api.delete(`/houses/${id}`)
     }
 }

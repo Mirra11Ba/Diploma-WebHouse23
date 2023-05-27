@@ -36,7 +36,7 @@ const EditToolBar = (props) => {
     return (
         <GridToolbarContainer>
             <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-                Add record
+                Добавить запись
             </Button>
         </GridToolbarContainer>
     );

@@ -5,11 +5,16 @@ import AuthService from "../api/services/AuthSevice";
 
 class User {
 
-    user = {isAuth: false}
+    currentUser = {};
+    isAuth = false;
     users = []
 
     constructor() {
         makeAutoObservable(this)
+    }
+
+    async fetchUser() {
+        this.currentUser = await UserService.getUser();
     }
 
     async login(login, password) {
@@ -17,7 +22,8 @@ class User {
             const response = await AuthService.auth(login, password)
             console.log(response);
             localStorage.setItem('token', response.data.token)
-            this.user.isAuth = true;
+            this.isAuth = true;
+            await this.fetchUser()
             return true;
         } catch (e) {
             return false;
@@ -30,24 +36,27 @@ class User {
             const response = await AuthService.reg(name, lastName, patronymic, login, password, phone)
             console.log(response);
             localStorage.setItem('token', response.data.token)
-            this.user.isAuth = true;
+            this.isAuth = true;
+            await this.fetchUser()
             return true;
         } catch (e) {
 
         }
     }
 
-    checkAuth() {
+    async checkAuth() {
 
-        if (localStorage.getItem('token')) {
-            this.user.isAuth = true;
+        if (localStorage.getItem('token') && localStorage.getItem('token') != 'undefined' ) {
+            this.isAuth = true;
+            await this.fetchUser()
         }
 
     }
 
     logout() {
         localStorage.clear()
-        this.user.isAuth = false;
+        this.isAuth = false;
+        this.currentUser = {};
     }
 
     async loginWithService(url) {

@@ -48,15 +48,15 @@ const Header = observer(() => {
     console.log(location)
 
     const settings = [
-        {title: 'Профиль', url: '/'},
+        {title: 'Профиль', url: '/profile'},
         {title: 'Избранное', url: '/'},
         {title: 'Брони', url: '/'},
-        {title: user.user.isAuth ? 'Выйти' : 'Войти', url: 'auth'},
+        {title: user.isAuth ? 'Выйти' : 'Войти', url: 'auth'},
         {title: 'Администрирование', url: '/admin'},
     ];
 
     const handleAuth = () => {
-        if (user.user.isAuth) {
+        if (user.isAuth) {
             user.logout()
         } else {
             setIsAuthOpen(true);
@@ -154,12 +154,14 @@ const Header = observer(() => {
 
 
                                 return setting.url === 'auth'
-                                        ?  <div><MenuItem
-                                            key={setting}
-                                            onClick={handleAuth}>
-                                            <Typography textAlign="center" sx={{width: '100%'}}>{setting.title}</Typography>
-                                        </MenuItem>
-                                        <Divider sx={{width: '100%'}}/></div>
+                                    ?  <div>
+                                    <MenuItem
+                                        key={setting}
+                                        onClick={handleAuth}>
+                                        <Typography textAlign="center" sx={{width: '100%'}}>{setting.title}</Typography>
+                                    </MenuItem>
+                                    <Divider sx={{width: '100%'}}/>
+                                </div>
                                 :
                                      <div><MenuItem
                                         key={setting}

@@ -12,6 +12,10 @@ import TextField from "@mui/material/TextField";
 import {styled} from "@mui/material";
 import {RegularButton} from "../../styled/buttons/RegularButton";
 import user from "../../../store/user";
+import IconButton from "@mui/material/IconButton";
+import vkLogo from '../../../media/svg/socials/vk.svg';
+import Divider from "@mui/material/Divider";
+import {VK_AUTH_URL} from "../../../api/http/urls";
 
 const AuthDialog = ({open, setOpen}) => {
 
@@ -119,6 +123,23 @@ const AuthDialog = ({open, setOpen}) => {
             >
                 Зарегистрироваться
             </RegularButton>
+
+
+            <Divider sx={{width: '100%', m: 0}} variant={'middle'}>ИЛИ</Divider>
+            <p style={{textAlign: 'center'}}>
+                Авторизуйтесь через
+            </p>
+            <Box>
+                <IconButton
+                    sx={{
+                        width: 'fit-content'
+                    }}
+                    onClick={() => user.loginWithService(VK_AUTH_URL)}
+                >
+                    <img src={vkLogo} alt=""/>
+                </IconButton>
+            </Box>
+
         </Box>
     </DialogContent>
 
