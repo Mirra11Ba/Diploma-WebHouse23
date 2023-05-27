@@ -36,7 +36,6 @@ const HousePanel = () => {
     const [rows, setRows] = React.useState(initialRows);
     const [rowModesModel, setRowModesModel] = React.useState({});
 
-
     const columns = useMemo(() => [
         {field: 'id', headerName: "ID"},
         {field: 'name', headerName: "Наименование", editable: true},
@@ -127,8 +126,6 @@ const HousePanel = () => {
     ], [rowModesModel])
 
 
-
-
     const handleRowModesModelChange = (newRowModesModel) => {
         setRowModesModel(newRowModesModel);
     };
@@ -137,34 +134,9 @@ const HousePanel = () => {
         const updatedRow = { ...newRow, isNew: false };
         console.log(newRow)
         if (newRow.isNew) {
-            console.log(await HouseService.addHouse(
-                newRow.name,
-                newRow.description,
-                newRow.image,
-                newRow.price,
-                newRow.area,
-                newRow.numberOfRooms,
-                newRow.numberOfFloors,
-                newRow.landPlotSize,
-                newRow.materialId,
-                newRow.developerId,
-                newRow.districtId,
-            ))
+            console.log(await HouseService.addHouse(newRow))
         } else {
-            console.log(await HouseService.updateHouse(
-                newRow.id,
-                newRow.name,
-                newRow.description,
-                newRow.image,
-                newRow.price,
-                newRow.area,
-                newRow.numberOfRooms,
-                newRow.numberOfFloors,
-                newRow.landPlotSize,
-                newRow.materialId,
-                newRow.developerId,
-                newRow.districtId,
-            ))
+            console.log(await HouseService.updateHouse(newRow))
         }
 
         setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
@@ -227,9 +199,7 @@ const HousePanel = () => {
                     slotProps={{
                         toolbar: { setRows, setRowModesModel },
                     }}
-                >
-
-                </DataGrid>
+                />
             </Box>
         </div>
     );

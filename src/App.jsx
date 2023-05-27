@@ -9,10 +9,12 @@ import Footer from "./components/layout/footer/Footer";
 import WrapperFullWidth from "./components/layout/wrappers/Wrapper-full-width";
 import {Outlet} from 'react-router-dom'
 import fetchData from "./hooks/fetchData";
+import user from "./store/user";
 
 export const loader = async () => {
     console.log('app loaded')
     await fetchData();
+    await user.checkAuth()
     return null
 }
 
