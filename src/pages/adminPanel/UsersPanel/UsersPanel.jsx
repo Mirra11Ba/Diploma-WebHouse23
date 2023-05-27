@@ -15,9 +15,11 @@ import HouseService from "../../../api/services/HouseService";
 
 const UsersPanel = () => {
 
+    console.log(user.users
+        .filter(item => item.roles.find(role => role.id === 1) === null && item.roles.length > 0))
 
     const initialRows = useMemo(() => user.users
-        .filter(item => item.roles.filter(role => role.id === 2).length !== 0)
+        .filter(item => !item.roles.find(role => role.id === 1) && item.roles.length > 0)
         .map((item) => {
         return {
             id: item.id,

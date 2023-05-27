@@ -13,7 +13,7 @@ import BackCallsPanel from "../pages/adminPanel/BackCallsPanel/BackCallsPanel";
 import ProfilePage from "../pages/basic/ProfilePage/ProfilePage";
 import ProfileDataPage from "../pages/basic/ProfilePage/children/ProfileDataPage/ProfileDataPage";
 import ProfileBookings from "../pages/basic/ProfilePage/children/ProfileBookings/ProfileBookings";
-import ProfileFavorite from "../pages/basic/ProfilePage/children/ProfileFavorite/ProfileFavorite";
+import ProfileFavorite, {loader as favouriteLoader} from "../pages/basic/ProfilePage/children/ProfileFavorite/ProfileFavorite";
 import UsersPanel from "../pages/adminPanel/UsersPanel/UsersPanel";
 
 export const router = createBrowserRouter([
@@ -60,7 +60,8 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: 'favorite',
-                        element: <ProfileFavorite/>
+                        element: <ProfileFavorite/>,
+                        loader: favouriteLoader
                     },
                 ]
             }

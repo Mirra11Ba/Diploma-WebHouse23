@@ -1,6 +1,7 @@
 import {makeAutoObservable} from "mobx";
 import UserService from "../api/services/UserService";
 import AuthService from "../api/services/AuthSevice";
+import favourites from "./favourites";
 
 
 class User {
@@ -53,8 +54,8 @@ class User {
         if (localStorage.getItem('token') && localStorage.getItem('token') != 'undefined' ) {
             this.isAuth = true;
             await this.fetchUser()
+            await favourites.fetchFavourites();
         }
-
     }
 
     logout() {

@@ -24,15 +24,18 @@ const ProfilePage = () => {
         return (<Navigate to={'/'}/>);
     }
 
+
+
     return (
-        <Grid container spacing={2} sx={{
+        <Grid container spacing={1} sx={{
             maxWidth: '1200px',
             display: 'flex',
             margin: 'auto'
         }}>
 
-            <Grid item xs={4}>
-
+            <Grid item xs={2} sx={{
+                display: {xs: 'none', md: 'flex'}
+            }}>
 
                 <List>
                     <ListItemButton component={Link} to={'data'}>
@@ -42,13 +45,15 @@ const ProfilePage = () => {
                         Мои брони
                     </ListItemButton>
                     <ListItemButton  component={Link} to={'favorite'}>
-                        Мой данные
+                        Избранное
                     </ListItemButton>
                 </List>
 
             </Grid>
 
-            <Grid item xs={8}>
+            <Grid item xs={12} md={10} sx={{
+
+            }}>
 
                 <Outlet/>
 

@@ -8,5 +8,4 @@ export const CardButtonOutlined = styled(Button)(({theme}) => ({
     color: theme.palette.primary.main,
     fontSize: "14px",
     height: "36px",
-    width: "141px",
 }))
