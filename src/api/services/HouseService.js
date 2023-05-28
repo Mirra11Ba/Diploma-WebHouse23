@@ -8,19 +8,23 @@ export default class HouseService {
         return response.data;
     }
 
-    static async addHouse(
-        name,
-        description,
-        image,
-        price,
-        area,
-        numberOfRooms,
-        numberOfFloors,
-        landPlotSize,
-        materialId,
-        developerId,
-        districtId
-    ) {
+    static async addHouse(house) {
+
+        const {
+
+                name,
+            description,
+            image,
+            price,
+            area,
+            numberOfRooms,
+            numberOfFloors,
+            landPlotSize,
+            materialId,
+            developerId,
+            districtId
+
+    } = house;
 
         console.log(name,
             description,
@@ -50,20 +54,21 @@ export default class HouseService {
 
     }
 
-    static async updateHouse(
-        id,
-        name,
-        description,
-        image,
-        price,
-        area,
-        numberOfRooms,
-        numberOfFloors,
-        landPlotSize,
-        materialId,
-        developerId,
-        districtId
-    ) {
+    static async updateHouse(house) {
+
+        const {id,
+            name,
+            description,
+            image,
+            price,
+            area,
+            numberOfRooms,
+            numberOfFloors,
+            landPlotSize,
+            materialId,
+            developerId,
+            districtId} = house;
+
         console.log(description)
         return $api.put(`/houses/${id}`, {
             name,
@@ -82,6 +87,6 @@ export default class HouseService {
     }
 
     static async deleteHouse(id) {
-        return $api.delete(`/house/${id}`)
+        return $api.delete(`/houses/${id}`)
     }
 }

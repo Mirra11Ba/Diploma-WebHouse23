@@ -20,6 +20,9 @@ import {AccountCircleOutlined} from "@mui/icons-material";
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import {Link, useLocation} from "react-router-dom";
 import Divider from "@mui/material/Divider";
+import user from "../../../store/user";
+import AuthDialog from "../../UserDialogs/AuthDialog/AuthDialog";
+import {observer} from "mobx-react-lite";
 
 
 const pages = [
@@ -35,27 +38,35 @@ const newPages = [
     {title: 'Products', value: 'products'}
 ]
 
-const settings = [
-    {title: 'Профиль', url: '/'},
-    {title: 'Избранное', url: '/'},
-    {title: 'Брони', url: '/'},
-    {title: 'Выйти', url: '/'},
-    {title: 'Администрирование', url: '/admin'},
-];
 
-function Header() {
+
+const Header = observer(() => {
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const [isOpen, setIsOpen] = React.useState(false);
-
+    const [isAuthOpen, setIsAuthOpen] = React.useState(false);
     const location = useLocation();
     console.log(location)
 
+    const settings = [
+        {title: 'Профиль', url: '/profile'},
+        {title: 'Избранное', url: '/'},
+        {title: 'Брони', url: '/'},
+        {title: user.isAuth ? 'Выйти' : 'Войти', url: 'auth'},
+        {title: 'Администрирование', url: '/admin'},
+    ];
+
+    const handleAuth = () => {
+        if (user.isAuth) {
+            user.logout()
+        } else {
+            setIsAuthOpen(true);
+        }
+        handleCloseUserMenu()
+    }
 
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
-
-
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
@@ -142,20 +153,31 @@ function Header() {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <div>
+                            {settings.map((setting) => {
+
+
+                                return setting.url === 'auth'
+                                    ?  <div>
                                     <MenuItem
+                                        key={setting}
+                                        onClick={handleAuth}>
+                                        <Typography textAlign="center" sx={{width: '100%'}}>{setting.title}</Typography>
+                                    </MenuItem>
+                                    <Divider sx={{width: '100%'}}/>
+                                </div>
+                                :
+                                     <div><MenuItem
                                         key={setting}
                                         component={Link}
                                         to={setting.url}
                                         onClick={handleCloseUserMenu}>
-                                        <Typography textAlign="center" sx={{width:'100%'}}>{setting.title}</Typography>
+                                        <Typography textAlign="center" sx={{width: '100%'}}>{setting.title}</Typography>
                                     </MenuItem>
-                                    <Divider sx={{width: '100%'}}/>
-                                </div>
+                                        <Divider sx={{width: '100%'}}/></div>
 
-                            ))}
+                            })}
                         </Menu>
+                        <AuthDialog open={isAuthOpen} setOpen={setIsAuthOpen}/>
                     </Box>
                     {/*блок с бургером и контекстным меню*/}
                     <Box sx={{flexGrow: 0, display: {xs: "flex", md: "none"}}}>
@@ -187,6 +209,6 @@ function Header() {
             </Container>
         </AppBar>
     );
-}
+})
 
 export default Header;
