@@ -1,0 +1,21 @@
+.numberedList {
+    list-style: none;
+    padding: 0;
+}
+
+.numberedList li {
+    margin-bottom: 10px;
+}
+
+.circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--neptune-blue);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+}
+
