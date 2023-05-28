@@ -19,15 +19,18 @@ const AbotUs = () => {
                     width: "100%",
                     height: "inherit",
                     objectFit: "cover",
+                    filter: "brightness(75%)",
                 }}/>
                 <WrapperMainContent>
                     <Box sx={{
-                        position: "flex",
+                        position: "absolute;",
                         alignContent: "center",
                         marginBottom: "20%",
+                        color: "white",
+                        marginTop: "-350px",
                     }}>
-                        <h2>Мы агентство недвижимости в Краснодаре «Дом 23»</h2>
-                        <p className={""}>
+                        <h2 style={{paddingBottom: "30px"}}>Мы агентство недвижимости в Краснодаре «Дом 23»</h2>
+                        <p className={"mon-filters-24-med"}>
                             Помогаем найти и купить землю, частный дом или квартиру в новостройке от застройщика.
                         </p>
                     </Box>
