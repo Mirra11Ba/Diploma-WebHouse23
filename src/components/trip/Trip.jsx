@@ -6,6 +6,7 @@ import ImgRieltor from "../../media/images/rieltor-larisa-bagrova.webp";
 import Box from "@mui/material/Box";
 import {styled, TextField} from "@mui/material";
 import {CardButton} from "../styled/buttons/CardButton";
+
 import backCall from "../../store/backCall";
 import BackCallsService from "../../api/services/BackCallsService";
 import user from "../../store/user";
@@ -96,12 +97,9 @@ export default function Trip() {
                     </CardButton>
                     <p className={`${classes.text} mon-body-14-reg`} style={{width: '80%'}}>Отправляя свои данные вы соглашаетесь с политикой конфиденциальности</p>
                    {/* <Box sx={{alignContent: "center", paddingLeft: "104px", paddingRight: "104px", paddingBottom: "93px"}}>
-
                     </Box>*/}
                 </Box>
             </Grid2>
-
-
         </Grid2>
     );
 };

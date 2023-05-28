@@ -546,23 +546,23 @@
     }
 
     .mon-filters-24-med {
-        /* Montserrat/Filters 24 med */
+        /*Override*/
         font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 24px;
-        line-height: 29px;
-        /* identical to box height, or 121% */
-        letter-spacing: -0.015em;
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height, or 120% */
     }
 
     .mon-list-24-reg {
+        /*Override*/
         /* Montserrat/List 24 reg */
         font-family: Montserrat, sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 20px;
+        line-height: 25px;
         /* identical to box height, or 121% */
         letter-spacing: -0.015em;
     }
