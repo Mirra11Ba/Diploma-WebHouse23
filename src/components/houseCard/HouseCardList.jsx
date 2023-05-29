@@ -10,13 +10,19 @@ const HouseCardList = observer(({houses}) => {
 
 
 
-    const list = houses.map(house =>
-        <Grid item lg={4} md={6} xs={12} sx={{
-            display: 'flex',
-            justifyContent: 'center'
-        }}>
-            <HouseCardItem house={house}/>
-        </Grid>
+    const list = houses.map((house, index) => {
+
+        if (index > 2) {
+            return;
+        }
+        return (<Grid item lg={4} md={6} xs={12} sx={{
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
+                <HouseCardItem house={house}/>
+        </Grid>)
+    }
+
     )
     return (
         <Grid container spacing={2} sx={{
