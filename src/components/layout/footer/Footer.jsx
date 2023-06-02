@@ -1,6 +1,6 @@
 import React from "react";
 import Grid2 from "@mui/material/Unstable_Grid2";
-import ImgWhiteLogo from "../../../media/images/house-23-logo-white.png";
+import ImgWhiteLogo from "../../../media/images/logo/house-23-logo-white.png";
 import {Link} from "react-router-dom";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";

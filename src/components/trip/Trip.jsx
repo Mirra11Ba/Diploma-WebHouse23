@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import classes from "./Trip.module.css";
 import {SmallButton} from "../styled/buttons/SmallButton";
-import ImgRieltor from "../../media/images/rieltor-larisa-bagrova.webp";
+import ImgRieltor from "../../media/images/trip/rieltor-larisa-bagrova.webp";
 import Box from "@mui/material/Box";
 import {styled, TextField} from "@mui/material";
 import {CardButton} from "../styled/buttons/CardButton";
