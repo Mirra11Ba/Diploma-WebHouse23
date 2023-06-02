@@ -13,40 +13,6 @@ export default function Faq() {
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
-
-
-    // const FaqAccordion = styled((props) => (
-    //     <Accordion disableGutters elevation={0} square {...props} />
-    // ))(({ theme }) => ({
-    //     border: `1px solid var(--dark-space-50)`,
-    //     // '&:not(:last-child)': {
-    //     //     borderBottom: 0,
-    //     // },
-    //     // '&:before': {
-    //     //     display: 'none',
-    //     // },
-    // }));
-    // const FaqAccordionSummary = styled((props) => (
-    //     <AccordionSummary
-    //
-    //         {...props}
-    //     />
-    // ))(({ theme }) => ({
-    //     backgroundColor:
-    //         theme.palette.mode === 'dark'
-    //             ? 'rgba(255, 255, 255, .05)'
-    //             : 'rgba(0, 0, 0, .03)',
-    //     flexDirection: 'row-reverse',
-    //     '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-    //         transform: 'rotate(90deg)',
-    //     },
-    //     '& .MuiAccordionSummary-content': {
-    //         marginLeft: theme.spacing(1),
-    //     },
-    // }));
-
-
-
     return (
         <Box>
             {/*1*/}
@@ -59,14 +25,9 @@ export default function Faq() {
                     <h4 sx={{width: '33%', flexShrink: 0}}>
                         Как купить дом дистанционно в Краснодаре?
                     </h4>
-                    {/*<Typography sx={{color: 'text.secondary'}}>I am an accordion</Typography>*/}
                 </AccordionSummary>
                 <AccordionDetails>
                     <Box className={"mon-body-20-reg"}>
-                        {/*<List>*/}
-                        {/*    <ListItem>1. Мы предлагаем возможность дистанционных сделок</ListItem>*/}
-                        {/*    <ListItem>1. Мы предлагаем возможность дистанционных сделок</ListItem>*/}
-                        {/*</List>*/}
                         <ul>
                             <li>Мы предлагаем возможность дистанционных сделок.</li>
                             <li>Вы можете просмотреть фотографии, видеообзоры, планы домов и получить детальную информацию о каждом объекте недвижимости на нашем сайте.</li>

@@ -50,7 +50,7 @@ export default function Trip() {
         }}>
             <Grid2 item xs={12} md={6}>
                 <Box>
-                    <img style={{width: '100%',aspectRatio: '1 / 1', borderRadius: '4px', objectFit: 'cover'}} src={ImgRieltor}/>
+                    <img style={{width: '100%', aspectRatio: '1 / 1', borderRadius: '4px', objectFit: 'cover'}} src={ImgRieltor}/>
                 </Box>
             </Grid2>
             <Grid2 item xs={12} md={6}>
@@ -96,8 +96,6 @@ export default function Trip() {
                         Жду звонка!
                     </CardButton>
                     <p className={`${classes.text} mon-body-14-reg`} style={{width: '80%'}}>Отправляя свои данные вы соглашаетесь с политикой конфиденциальности</p>
-                   {/* <Box sx={{alignContent: "center", paddingLeft: "104px", paddingRight: "104px", paddingBottom: "93px"}}>
-                    </Box>*/}
                 </Box>
             </Grid2>
         </Grid2>

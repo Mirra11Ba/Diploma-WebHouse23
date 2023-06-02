@@ -147,12 +147,3 @@ const HouseCardItem = observer((props) =>  {
 });
 
 export default HouseCardItem;
-
-// HouseCardItem.propTypes = {
-//     img: PropTypes.object,
-//     titleName: PropTypes.string,
-//     price: PropTypes.string,
-//     numberFloors: PropTypes.string,
-//     area: PropTypes.string,
-//     landPlotSize: PropTypes.string,
-// }
