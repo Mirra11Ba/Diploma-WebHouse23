@@ -136,7 +136,7 @@ const AuthDialog = ({open, setOpen}) => {
                     }}
                     onClick={() => user.loginWithService(VK_AUTH_URL)}
                 >
-                    <img src={vkLogo} alt=""/>
+                    <img src={vkLogo} alt="Войти через VK"/>
                 </IconButton>
             </Box>
 

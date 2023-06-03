@@ -10,10 +10,6 @@ export const MenuButton = styled(Button)(({theme}) =>
         "&:hover": {
             backgroundColor: "rgba(24, 160, 251, 0.25)"
         },
-        // "&:acitve": {
-        //     backgroundColor: "rgba(24, 160, 251, 0.25)"
-        // },
-
 
         //mon-menu-16-med {
         fontFamily: "Montserrat",

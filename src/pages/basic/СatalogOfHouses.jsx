@@ -23,7 +23,7 @@ const СatalogOfHouses = observer(() => {
         <WrapperMainContent>
             <FilterForm callback={setHouses}/>
 
-            <h4>Наши дома</h4>
+            <h4 style={{paddingBottom: "30px"}}>Наши дома</h4>
 
             <Grid container spacing={2}>
                 {houses.map(item => (

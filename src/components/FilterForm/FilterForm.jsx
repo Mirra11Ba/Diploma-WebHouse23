@@ -34,14 +34,9 @@ const FilterForm = ({callback}) => {
 
     const levels = [
         {id: 0, title: 'Любое', value: 0},
-        {id: 1, title: '1 этаж', value: 1},
+        {id: 1, title: '2 этаж', value: 1},
         {id: 2, title: '2 этажа', value: 2},
         {id: 3, title: '1 этаж', value: 3},
-        {id: 4, title: '1 этаж', value: 4},
-        {id: 5, title: '1 этаж', value: 5},
-        {id: 6, title: '1 этаж', value: 6},
-        {id: 7, title: '1 этаж', value: 7},
-        {id: 8, title: '10 этаж', value: 10},
     ];
     const [selectedLevels, setSelectedLevels] = useState(levels[0]);
 
@@ -101,7 +96,7 @@ const FilterForm = ({callback}) => {
 
 
     return (
-        <div className={styles.main} >
+        <div className={styles.main} style={{marginTop: "30px", marginBottom: "80px"}}>
             <h4>Фильтры</h4>
 
             <Grid
@@ -114,6 +109,7 @@ const FilterForm = ({callback}) => {
                     p: 2,
                     border: '1px solid black',
                     borderRadius: 1,
+                    marginTop: "30px",
                 }}>
                 <Grid item md={8}>
                     <p>Стоимость ₽</p>

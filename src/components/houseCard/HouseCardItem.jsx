@@ -16,6 +16,9 @@ import {observer} from "mobx-react-lite";
 
 
 const HouseCardItem = observer((props) =>  {
+    // const handlerSMS = () => {setShowModal}
+
+
     const {house} = props;
 
     const checkFavorite = () => {
@@ -126,6 +129,9 @@ const HouseCardItem = observer((props) =>  {
                 <Grid2 item xs={6.5}>
                     <CardButton
                         variant="contained"
+                        // onPress={(console.log("Заявка отправлена"))}
+
+                        
                     >
                         Бронь на показ
                     </CardButton>

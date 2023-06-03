@@ -93,8 +93,7 @@ const Header = observer(() => {
             <Container maxWidth="xl">
 
                 <Toolbar disableGutters>
-
-
+                    
                     {/*блок с логотипом*/}
                     <Box sx={{display: {xs: 'flex', md: 'flex'}, mr: 2, flexGrow: {xs: 1, md: 1.7}, justifyContent: {xs: 'start', md: 'end'}}}>
                         <img src={ImgLogo}/>

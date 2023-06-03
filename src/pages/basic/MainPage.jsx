@@ -8,23 +8,14 @@ import Trip from "../../components/trip/Trip";
 import HouseCardList from "../../components/houseCard/HouseCardList";
 import {observer} from "mobx-react-lite";
 import house from "../../store/house";
+import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
+import {PhoneFab} from "../../components/styled/buttons/PhoneFab";
 
 
 const MainPage = observer(() => {
     return(
         <>
-            {/*<img style={{width: "100%", height: "auto"}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
-
-            {/*<div style={{height: "600px;", width: "100%"}}>*/}
-            {/*    <img style={{width: "100%", height: "100%", objectFit: "cover", objectPosition: 'center'}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
-            {/*</div>*/}
-
-            {/*<div style={{height: "600px;", width: "100%"}}>*/}
-            {/*    <img style={{width: "100%", height: "80hv", objectFit: "cover", objectPosition: 'center'}} src={ImgLuchshieDomaUNas} alt={"киберпанк"}/>*/}
-            {/*</div>*/}
-
             <Slider/>
-
 
             <WrapperMainContent>
                 {/*Блок преимущества*/}
@@ -47,6 +38,25 @@ const MainPage = observer(() => {
                 {/*Блок запись на экскурсию*/}
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Записаться на экскурсию бесплатно</h3>
                 <Trip />
+
+
+
+
+                <PhoneFab
+                    aria-label="Обратный звонок"
+                    sx={{
+                    // position: 'fixed',
+                    // left: '50%',
+                    }}
+                >
+                    <PhoneInTalkIcon
+                        sx={{
+                            fontSize: '40px',
+                            color: 'white',
+                        }}
+                    >
+                    </PhoneInTalkIcon>
+                </PhoneFab>
             </WrapperMainContent>
         </>
     );
