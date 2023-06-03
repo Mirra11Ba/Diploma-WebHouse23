@@ -9,8 +9,6 @@ export const PhoneFab = styled(Button)(({theme}) => ({
     backgroundColor: theme.palette.primary.main,
     "&:hover": {
         backgroundColor: theme.palette.primary.dark,
+        // boxShadow: ,
     },
-    // "&:active": {
-    //     backgroundColor: theme.palette.primary.light,
-    // },
 }))
