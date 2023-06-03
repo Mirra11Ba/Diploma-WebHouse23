@@ -59,6 +59,7 @@ const AbotUs = () => {
 
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Преимущества</h3>
                 <Trip/>
+
             </WrapperMainContent>
         </>
     );

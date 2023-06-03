@@ -32,6 +32,7 @@ const СatalogOfHouses = observer(() => {
                     </Grid>
                 ))}
             </Grid>
+
         </WrapperMainContent>
     );
 });

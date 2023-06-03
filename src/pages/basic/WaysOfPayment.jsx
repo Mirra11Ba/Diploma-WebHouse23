@@ -14,6 +14,7 @@ export default function WaysOfPayment() {
             {/*Блок способы оплаты*/}
             <h3 style={{marginBottom: "30px", marginTop: "30px"}}>Способы оплаты</h3>
             <PaymentMethodList/>
+
         </WrapperMainContent>
     </>
     );
