@@ -3,21 +3,19 @@ import {Button, TextField} from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import Box from "@mui/material/Box";
 import {PhoneFab} from "../../styled/buttons/PhoneFab";
-import {RegularButton} from "../../styled/buttons/RegularButton";
 import {SmallButton} from "../../styled/buttons/SmallButton";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
+import MaskedInput from 'react-text-mask';
+// import MaskedInput from 'react-input-mask';
 
 const CallBackFormDialog = () => {
     const [openForm, setOpenForm] = useState(false);
-
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
+    const [errors, setErrors] = useState({});
 
     const openFormDialog = () => {
         setOpenForm(true);
@@ -28,7 +26,21 @@ const CallBackFormDialog = () => {
     };
 
     const handlePhoneNumberChange = (event) => {
-        setPhone(event.target.value);
+        let value = event.target.value;
+
+        // Удаление всех нецифровых символов из введенного значения
+        value = value.replace(/\D/g, '');
+
+        // Ограничение на количество цифр
+        value = value.slice(0, 11);
+
+        // Добавление префикса "+7"
+        if (value.length >= 1 && value[0] !== '7') {
+            value = '7' + value;
+        }
+
+        setPhone(value);
+        // setPhone(event.target.value);
     };
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -37,10 +49,48 @@ const CallBackFormDialog = () => {
         setName(event.target.value);
     };
 
+    const validateForm = () => {
+        const errors = {};
+
+        if (!/^\+7\d{10}$/.test(phone.replace(/\D/g, ''))) {
+            errors.phoneNumber = 'Введите корректный российский номер телефона';
+        }
+
+        // if (!/^\+7\d{10}$/.test(phone)) {
+        //     errors.phoneNumber = 'Введите корректный российский номер телефона';
+        // }
+
+        if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+            errors.email = 'Введите корректный адрес электронной почты';
+        }
+
+        return errors;
+    };
+    const phoneMask = [
+        '+',
+        '7',
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+        /\d/,
+    ];
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Отправлено');
+        const validationErrors = validateForm();
+
+        if (Object.keys(validationErrors).length === 0) {
+            // Данные формы прошли валидацию
+            console.log('Данные формы отправлены');
+            closeFormDialog();
+        } else {
+            setErrors(validationErrors);
+        }
     };
 
     return (
@@ -60,7 +110,7 @@ const CallBackFormDialog = () => {
                         lg: "85%",
                     },
                 }}>
-            >
+                >
                 <PhoneInTalkIcon
                     sx={{
                         position: 'absolute',
@@ -75,30 +125,44 @@ const CallBackFormDialog = () => {
                 <DialogTitle>
                     <h4>Заявка на обратный звонок</h4>
                 </DialogTitle>
-                <DialogContent >
+                <DialogContent>
                     <Box sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: 2
-                        }}
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 2
+                    }}
                     >
-                        <TextField
-                            sx={{
-                                width: '100%',
-                                marginTop: '5px',
-                            }}
-                            placeholder={'+79185557788'}
-                            label="Телефон*"
+                        <MaskedInput
+                            mask={phoneMask}
+                            guide={false}
                             value={phone}
                             onChange={handlePhoneNumberChange}
+                            render={(ref, props) => (
+                                <TextField
+                                    {...props}
+                                    inputRef={ref}
+                                    sx={{
+                                        width: '100%',
+                                        marginTop: '5px',
+                                    }}
+                                    placeholder={'+79185557788'}
+                                    label="Телефон*"
+                                    value={phone}
+                                    onChange={handlePhoneNumberChange}
+                                    error={!!errors.phone}
+                                    helperText={errors.phone}
+                                />
+                            )}
                         />
+
                         <TextField
                             sx={{width: '100%'}}
                             placeholder={'you@ya.ru'}
                             label="Почта*"
                             value={email}
                             onChange={handleEmailChange}
-                            // fullWidth
+                            error={!!errors.email}
+                            helperText={errors.email}
                         />
                         <TextField
                             placeholder={'Алекс'}
