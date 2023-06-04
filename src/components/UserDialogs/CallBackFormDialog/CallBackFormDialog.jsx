@@ -7,8 +7,6 @@ import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import Box from "@mui/material/Box";
 import {PhoneFab} from "../../styled/buttons/PhoneFab";
 import {SmallButton} from "../../styled/buttons/SmallButton";
-import MaskedInput from 'react-text-mask';
-// import MaskedInput from 'react-input-mask';
 
 const CallBackFormDialog = () => {
     const [openForm, setOpenForm] = useState(false);
@@ -25,23 +23,25 @@ const CallBackFormDialog = () => {
         setOpenForm(false);
     };
 
-    const handlePhoneNumberChange = (event) => {
-        let value = event.target.value;
-
-        // Удаление всех нецифровых символов из введенного значения
-        value = value.replace(/\D/g, '');
-
-        // Ограничение на количество цифр
-        value = value.slice(0, 11);
-
-        // Добавление префикса "+7"
-        if (value.length >= 1 && value[0] !== '7') {
-            value = '7' + value;
-        }
-
-        setPhone(value);
-        // setPhone(event.target.value);
+    const handlePhoneChange = (event) => {
+        const formattedPhone = formatPhone(event.target.value);
+        setPhone(formattedPhone);
     };
+    const formatPhone = (value) => {
+        const phone = value.replace(/[^\d]/g, ''); // Оставляем только цифры
+        const phoneLength = phone.length;
+
+        if (phoneLength <= 3) {
+            return phone;
+        } else if (phoneLength <= 6) {
+            return `+7 (${phone.slice(1, 4)}) ${phone.slice(4)}`;
+        } else if (phoneLength <= 8) {
+            return `+7 (${phone.slice(1, 4)}) ${phone.slice(4, 7)}-${phone.slice(7)}`;
+        } else {
+            return `+7 (${phone.slice(1, 4)}) ${phone.slice(4, 7)}-${phone.slice(7, 9)}-${phone.slice(9, 11)}`;
+        }
+    };
+
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
     };
@@ -52,13 +52,9 @@ const CallBackFormDialog = () => {
     const validateForm = () => {
         const errors = {};
 
-        if (!/^\+7\d{10}$/.test(phone.replace(/\D/g, ''))) {
-            errors.phoneNumber = 'Введите корректный российский номер телефона';
+        if (!/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phone)) {
+            errors.phoneNumber = 'Введите корректный номер телефона в формате +7 (999) 999-99-99';
         }
-
-        // if (!/^\+7\d{10}$/.test(phone)) {
-        //     errors.phoneNumber = 'Введите корректный российский номер телефона';
-        // }
 
         if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             errors.email = 'Введите корректный адрес электронной почты';
@@ -66,19 +62,6 @@ const CallBackFormDialog = () => {
 
         return errors;
     };
-    const phoneMask = [
-        '+',
-        '7',
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-        /\d/,
-    ];
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -92,6 +75,7 @@ const CallBackFormDialog = () => {
             setErrors(validationErrors);
         }
     };
+
 
     return (
         <Box>
@@ -132,29 +116,18 @@ const CallBackFormDialog = () => {
                         gap: 2
                     }}
                     >
-                        <MaskedInput
-                            mask={phoneMask}
-                            guide={false}
+                        <TextField
+                            sx={{
+                                width: '100%',
+                                marginTop: '5px',
+                            }}
+                            placeholder={'+79185557788'}
+                            label="Телефон*"
                             value={phone}
-                            onChange={handlePhoneNumberChange}
-                            render={(ref, props) => (
-                                <TextField
-                                    {...props}
-                                    inputRef={ref}
-                                    sx={{
-                                        width: '100%',
-                                        marginTop: '5px',
-                                    }}
-                                    placeholder={'+79185557788'}
-                                    label="Телефон*"
-                                    value={phone}
-                                    onChange={handlePhoneNumberChange}
-                                    error={!!errors.phone}
-                                    helperText={errors.phone}
-                                />
-                            )}
+                            onChange={handlePhoneChange}
+                            error={!!errors.phone}
+                            helperText={errors.phone}
                         />
-
                         <TextField
                             sx={{width: '100%'}}
                             placeholder={'you@ya.ru'}
