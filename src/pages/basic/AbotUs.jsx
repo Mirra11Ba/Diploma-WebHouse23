@@ -6,7 +6,6 @@ import Faq from "../../components/Faq/Faq";
 import classes from "../../components/Faq/Faq.module.css";
 import ImgSkyScraper from "../../media/images/about/vysotnye-domaa.webp";
 import Box from "@mui/material/Box";
-import WrapperCss from "../../components/layout/wrappers/Wrapper.css";
 
 const AbotUs = () => {
     return (

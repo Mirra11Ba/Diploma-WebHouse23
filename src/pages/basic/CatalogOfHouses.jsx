@@ -7,7 +7,7 @@ import HouseCardItem from "../../components/houseCard/HouseCardItem";
 import WrapperMainContent from "../../components/layout/wrappers/Wrapper-main-content";
 
 
-const СatalogOfHouses = observer(() => {
+const CatalogOfHouses = observer(() => {
 
     const [houses, setHouses] = useState([])
 
@@ -37,4 +37,4 @@ const СatalogOfHouses = observer(() => {
     );
 });
 
-export default СatalogOfHouses;
+export default CatalogOfHouses;

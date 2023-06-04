@@ -2,7 +2,7 @@ import {createBrowserRouter} from "react-router-dom";
 import MainPage from "../pages/basic/MainPage";
 import React from "react";
 import App, {loader as appLoader} from "../App";
-import CatalogOfHouses from '../pages/basic/СatalogOfHouses'
+import CatalogOfHouses from '../pages/basic/CatalogOfHouses'
 import WaysOfPayment from "../pages/basic/WaysOfPayment";
 import Services from "../pages/basic/Services";
 import AbotUs from "../pages/basic/AbotUs";

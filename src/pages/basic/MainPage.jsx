@@ -8,13 +8,7 @@ import Trip from "../../components/trip/Trip";
 import HouseCardList from "../../components/houseCard/HouseCardList";
 import {observer} from "mobx-react-lite";
 import house from "../../store/house";
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
-import {PhoneFab} from "../../components/styled/buttons/PhoneFab";
-import Box from "@mui/material/Box";
-import {Fab} from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import PhoneBackFab from "../../components/PhoneFabFormDialog/PhoneFabFormDialog";
-import PhoneFabForm from "../../components/PhoneFabFormDialog/PhoneFabFormDialog";
+import CallBackFormDialog from "../../components/UserDialogs/CallBackFormDialog/CallBackFormDialog";
 
 
 const MainPage = observer(() => {
@@ -43,7 +37,7 @@ const MainPage = observer(() => {
                 {/*Блок запись на экскурсию*/}
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Записаться на экскурсию бесплатно</h3>
                 <Trip />
-                <PhoneFabForm/>
+                <CallBackFormDialog/>
             </WrapperMainContent>
         </>
     );
