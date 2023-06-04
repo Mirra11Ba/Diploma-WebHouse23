@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, TextField} from "@mui/material";
+import {Button, Snackbar, TextField} from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
@@ -7,6 +7,8 @@ import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import Box from "@mui/material/Box";
 import {PhoneFab} from "../../styled/buttons/PhoneFab";
 import {SmallButton} from "../../styled/buttons/SmallButton";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 const CallBackFormDialog = () => {
     const [openForm, setOpenForm] = useState(false);
@@ -53,7 +55,7 @@ const CallBackFormDialog = () => {
         const errors = {};
 
         if (!/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/.test(phone)) {
-            errors.phoneNumber = 'Введите корректный номер телефона в формате +7 (999) 999-99-99';
+            errors.phoneNumber = 'Введите корректный номер в формате +79997778811, отображаться будет +7 (999) 999-99-99';
         }
 
         if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
@@ -63,6 +65,30 @@ const CallBackFormDialog = () => {
         return errors;
     };
 
+    // Snackbar
+    const [openSnackbar, setOpenSnackbar] = React.useState(false);
+    const handleClickSnack = () => {
+        setOpenSnackbar(true);
+    };
+    const handleCloseSnackbar = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnackbar(false);
+    };
+    const action = (
+        <React.Fragment>
+            <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleCloseSnackbar}
+            >
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </React.Fragment>
+    );
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const validationErrors = validateForm();
@@ -70,6 +96,7 @@ const CallBackFormDialog = () => {
         if (Object.keys(validationErrors).length === 0) {
             // Данные формы прошли валидацию
             console.log('Данные формы отправлены');
+            handleClickSnack();
             closeFormDialog();
         } else {
             setErrors(validationErrors);
@@ -121,7 +148,7 @@ const CallBackFormDialog = () => {
                                 width: '100%',
                                 marginTop: '5px',
                             }}
-                            placeholder={'+79185557788'}
+                            placeholder={'79185557788'}
                             label="Телефон*"
                             value={phone}
                             onChange={handlePhoneChange}
@@ -158,6 +185,14 @@ const CallBackFormDialog = () => {
                     </Box>
                 </DialogContent>
             </Dialog>
+
+            <Snackbar
+                open={openSnackbar}
+                autoHideDuration={4000}
+                onClose={handleCloseSnackbar}
+                message="Форма для записи на обратный звонок успешно отправлена"
+                action={action}
+            />
         </Box>
     );
 };

@@ -143,7 +143,13 @@ const HouseCardItem = observer((props) =>  {
                     display: 'flex',
                     justifyContent: 'end'
                 }}>
-                    <CardButtonOutlined variant="outlined">Подробнее</CardButtonOutlined>
+                    <CardButtonOutlined
+                        variant="outlined"
+                        
+
+                    >
+                        Подробнее
+                    </CardButtonOutlined>
 
                 </Grid2>
             </Grid2>
