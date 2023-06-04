@@ -190,7 +190,7 @@ const CallBackFormDialog = () => {
                 open={openSnackbar}
                 autoHideDuration={4000}
                 onClose={handleCloseSnackbar}
-                message="Форма для записи на обратный звонок успешно отправлена"
+                message="Форма успешна отправлена"
                 action={action}
             />
         </Box>

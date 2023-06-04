@@ -41,6 +41,9 @@ const AdminPage = () => {
                     <Button component={Link} to={'users'}>
                         Клиенты
                     </Button>
+                    <Button component={Link} to={'booking'}>
+                        Бронь на показ
+                    </Button>
                 </Box>
 
                 <Button component={Link} to={'/'}>

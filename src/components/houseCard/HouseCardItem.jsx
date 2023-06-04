@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import classes from "./HouseCard.module.css";
 import {SmallButton} from "../styled/buttons/SmallButton";
-import {Button} from "@mui/material";
+import {Button, Snackbar} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -13,11 +13,35 @@ import {CardButtonOutlined} from "../styled/buttons/CardButtonOutlined";
 import FavouritesService from "../../api/services/FavouritesService";
 import favourites from "../../store/favourites";
 import {observer} from "mobx-react-lite";
+import CloseIcon from "@mui/icons-material/Close";
 
 
 const HouseCardItem = observer((props) =>  {
     // const handlerSMS = () => {setShowModal}
 
+    // Snackbar
+    const [openSnackbar, setOpenSnackbar] = React.useState(false);
+    const handleClickSnack = () => {
+        setOpenSnackbar(true);
+    };
+    const handleCloseSnackbar = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnackbar(false);
+    };
+    const action = (
+        <React.Fragment>
+            <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleCloseSnackbar}
+            >
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </React.Fragment>
+    );
 
     const {house} = props;
 
@@ -145,15 +169,20 @@ const HouseCardItem = observer((props) =>  {
                 }}>
                     <CardButtonOutlined
                         variant="outlined"
-                        
-
+                        onClick={handleClickSnack}
                     >
                         Подробнее
                     </CardButtonOutlined>
 
                 </Grid2>
             </Grid2>
-
+            <Snackbar
+                open={openSnackbar}
+                autoHideDuration={4000}
+                onClose={handleCloseSnackbar}
+                message="Эта функция будет доступна в следующей версии"
+                action={action}
+            />
         </Grid2>
     );
 });

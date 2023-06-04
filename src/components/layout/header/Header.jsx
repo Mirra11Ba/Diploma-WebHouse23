@@ -21,6 +21,7 @@ import AuthDialog from "../../UserDialogs/AuthDialog/AuthDialog";
 import {observer} from "mobx-react-lite";
 import {Snackbar} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
+import {useState} from "react";
 
 
 const pages = [
@@ -48,33 +49,18 @@ const Header = observer(() => {
     ];
 
     // Snackbar
-    const [openSnackbar, setOpenSnackbar] = React.useState(false);
-    const handleClickSnack = () => {
-        setOpenSnackbar(true);
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+    const showSnackbar = (message) => {
+        setSnackbarMessage(message);
+        setSnackbarOpen(true);
     };
-    const handleCloseSnackbar = (event, reason) => {
-        if (reason === 'clickaway') {
-            return;
-        }
-        setOpenSnackbar(false);
-    };
-    const action = (
-        <React.Fragment>
-            <IconButton
-                size="small"
-                aria-label="close"
-                color="inherit"
-                onClick={handleCloseSnackbar}
-            >
-                <CloseIcon fontSize="small" />
-            </IconButton>
-        </React.Fragment>
-    );
+
 
     const handleAuth = () => {
         if (user.isAuth) {
             user.logout();
-            handleClickSnack();
+            showSnackbar('Вы вышли из учетной записи');
         }
         else {
             setIsAuthOpen(true);
@@ -240,11 +226,10 @@ const Header = observer(() => {
             </Container>
 
             <Snackbar
-                open={openSnackbar}
-                autoHideDuration={4000}
-                onClose={handleCloseSnackbar}
-                message="Вы вышли из учетной записи"
-                action={action}
+                open={snackbarOpen}
+                autoHideDuration={3000}
+                onClose={() => setSnackbarOpen(false)}
+                message={snackbarMessage}
             />
         </AppBar>
     );

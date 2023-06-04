@@ -19,7 +19,6 @@ import {VK_AUTH_URL} from "../../../api/http/urls";
 
 const AuthDialog = ({open, setOpen}) => {
 
-
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [lastName, setLastName] = useState('');
@@ -83,6 +82,7 @@ const AuthDialog = ({open, setOpen}) => {
         const isReg = await user.reg(firstName, lastName, patronymic, email, newPassword, phone)
         if (isReg) {
             setOpen(false);
+
         } else {
 
         }
@@ -218,7 +218,7 @@ const AuthDialog = ({open, setOpen}) => {
             }}
         >
             <DialogTitle>
-                <h4>Авторизация</h4>
+                <h4>Регистрация</h4>
             </DialogTitle>
             {isReg
                 ? regContent

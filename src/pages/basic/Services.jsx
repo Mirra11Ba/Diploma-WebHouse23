@@ -10,6 +10,7 @@ import ImgPodborIpoteki from "../../media/images/services/podbor-ipoteki.webp";
 import ImgRemont from "../../media/images/services/remont-pod-klyuch.webp";
 import classes from "../../components/Faq/Faq.module.css";
 import ImgLogo from "../../media/images/logo/house-23-logo.png";
+import CallBackFormDialog from "../../components/UserDialogs/CallBackFormDialog/CallBackFormDialog";
 
 
 const Services = () => {
@@ -241,7 +242,7 @@ const Services = () => {
                     достопримечательности города и края, инфраструктуру районов, университеты и школы, парки и ТЦ.</p>
             </Box>
             <Trip/>
-
+            <CallBackFormDialog/>
         </WrapperMainContent>
     );
 };

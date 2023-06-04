@@ -15,6 +15,8 @@ import ProfileDataPage from "../pages/basic/ProfilePage/children/ProfileDataPage
 import ProfileBookings from "../pages/basic/ProfilePage/children/ProfileBookings/ProfileBookings";
 import ProfileFavorite, {loader as favouriteLoader} from "../pages/basic/ProfilePage/children/ProfileFavorite/ProfileFavorite";
 import UsersPanel from "../pages/adminPanel/UsersPanel/UsersPanel";
+import Contacts from "../pages/basic/Contacts";
+import BookingPanel from "../pages/adminPanel/BookingPanel/BookingPanel";
 
 export const router = createBrowserRouter([
     {
@@ -44,7 +46,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'contacts',
-                element: <CatalogOfHouses/>
+                element: <Contacts/>
             },
             {
                 path: 'profile',
@@ -83,7 +85,11 @@ export const router = createBrowserRouter([
             {
                 path: 'users',
                 element: <UsersPanel/>
-            }
+            },
+            {
+                path: 'booking',
+                element: <BookingPanel/>
+            },
         ]
     },
     {
