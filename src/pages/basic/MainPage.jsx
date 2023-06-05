@@ -9,6 +9,7 @@ import HouseCardList from "../../components/houseCard/HouseCardList";
 import {observer} from "mobx-react-lite";
 import house from "../../store/house";
 import CallBackFormDialog from "../../components/UserDialogs/CallBackFormDialog/CallBackFormDialog";
+import BookingFormDialog from "../../components/UserDialogs/BookingFormDialog/BookingFormDialog";
 
 
 const MainPage = observer(() => {
@@ -38,6 +39,7 @@ const MainPage = observer(() => {
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Записаться на экскурсию бесплатно</h3>
                 <Trip />
                 <CallBackFormDialog/>
+                <BookingFormDialog/>
             </WrapperMainContent>
         </>
     );
