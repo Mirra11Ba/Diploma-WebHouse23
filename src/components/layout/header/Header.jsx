@@ -61,8 +61,7 @@ const Header = observer(() => {
         if (user.isAuth) {
             user.logout();
             showSnackbar('Вы вышли из учетной записи');
-        }
-        else {
+        } else {
             setIsAuthOpen(true);
         }
         handleCloseUserMenu();
@@ -171,6 +170,9 @@ const Header = observer(() => {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => {
+                                if (setting.title === 'Администрирование' && !localStorage.getItem('token')) {
+                                    return <></>
+                                }
                                 return setting.url === 'auth'
                                     ?
                                     <div>

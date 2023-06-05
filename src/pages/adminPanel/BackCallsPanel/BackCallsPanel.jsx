@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import {DataGrid, GridActionsCellItem, GridRowModes} from "@mui/x-data-grid";
 import EditToolBar from "../components/EditToolBar";
 import Box from "@mui/material/Box";
@@ -14,8 +14,24 @@ import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import status from "../../../store/status";
 import HouseService from "../../../api/services/HouseService";
 import BackCallsService from "../../../api/services/BackCallsService";
+import BackCall from "../../../store/backCall";
 
 const BackCallsPanel = () => {
+
+    useEffect(() => {
+        // Загрузка данных при монтировании компонента
+        BackCall.fetchBackCalls();
+    }, []);
+
+    // const initialRows = useMemo(() => BackCall.backCalls.map((item) => ({
+    //         id: item.id,
+    //         name: item.name,
+    //         phone: item.phone,
+    //         email: item.email,
+    //         statusId: item.status.id
+    //     })),
+    //     [BackCall.backCalls]
+    // );
 
     const initialRows = useMemo(() => backCall.backCalls.map((item) => {
         return {
@@ -92,6 +108,7 @@ const BackCallsPanel = () => {
         const updatedRow = { ...newRow, isNew: false };
 
         console.log(newRow)
+        await BackCallsService.changeStatus(newRow.id, newRow.statusId)
         //console.log(await BackCallsService.changeStatus(newRow.id, newRow.statusId))
         /*        if (newRow.isNew) {
             console.log(await BackCallsService.addBackCall(newRow))

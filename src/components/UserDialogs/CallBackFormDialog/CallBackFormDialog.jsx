@@ -9,8 +9,9 @@ import {PhoneFab} from "../../styled/buttons/PhoneFab";
 import {SmallButton} from "../../styled/buttons/SmallButton";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import {API_URL} from "../../../api/http";
 
-const CallBackFormDialog = () => {
+const CallBackFormDialog = ({onSubmit}) => {
     const [openForm, setOpenForm] = useState(false);
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
@@ -20,11 +21,9 @@ const CallBackFormDialog = () => {
     const openFormDialog = () => {
         setOpenForm(true);
     };
-
     const closeFormDialog = () => {
         setOpenForm(false);
     };
-
     const handlePhoneChange = (event) => {
         const formattedPhone = formatPhone(event.target.value);
         setPhone(formattedPhone);
@@ -76,18 +75,16 @@ const CallBackFormDialog = () => {
         }
         setOpenSnackbar(false);
     };
-    const action = (
-        <React.Fragment>
-            <IconButton
-                size="small"
-                aria-label="close"
-                color="inherit"
-                onClick={handleCloseSnackbar}
-            >
-                <CloseIcon fontSize="small" />
-            </IconButton>
-        </React.Fragment>
-    );
+    const action = (<React.Fragment>
+        <IconButton
+            size="small"
+            aria-label="close"
+            color="inherit"
+            onClick={handleCloseSnackbar}
+        >
+            <CloseIcon fontSize="small"/>
+        </IconButton>
+    </React.Fragment>);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -95,6 +92,24 @@ const CallBackFormDialog = () => {
 
         if (Object.keys(validationErrors).length === 0) {
             // Данные формы прошли валидацию
+            // const newBackCall = {
+            //     id: rows.length + 1, // Генерируйте уникальный ID для новой записи
+            //     name,
+            //     phone,
+            //     email,
+            // };
+            // setRows((prevRows) => [...prevRows, newBackCall]);
+            fetch(`${API_URL}/back_calls`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({phone, email, name})
+            }).then(response => {
+                console.log(response)
+            })
+            // onSubmit(phone, email, name);
             console.log('Данные формы отправлены');
             handleClickSnack();
             closeFormDialog();
@@ -104,97 +119,85 @@ const CallBackFormDialog = () => {
     };
 
 
-    return (
-        <Box>
-            <PhoneFab
-                onClick={openFormDialog}
-                aria-label="Обратный звонок"
+    return (<Box>
+        <PhoneFab
+            onClick={openFormDialog}
+            aria-label="Обратный звонок"
+            sx={{
+                position: 'fixed', zIndex: '1000', left: {
+                    xs: "none", lg: "93%",
+                }, top: {
+                    xs: "none", lg: "85%",
+                },
+            }}>
+            >
+            <PhoneInTalkIcon
                 sx={{
-                    position: 'fixed',
-                    zIndex: '1000',
-                    left: {
-                        xs: "none",
-                        lg: "93%",
-                    },
-                    top: {
-                        xs: "none",
-                        lg: "85%",
-                    },
+                    position: 'absolute', fontSize: '40px', color: 'white',
+                }}
+            >
+            </PhoneInTalkIcon>
+        </PhoneFab>
+
+        <Dialog open={openForm} onClose={closeFormDialog}>
+            <DialogTitle>
+                <h4>Заявка на обратный звонок</h4>
+            </DialogTitle>
+            <DialogContent>
+                <Box sx={{
+                    display: 'flex', flexDirection: 'column', gap: 2
+                }}
+                >
+                    <TextField
+                        sx={{
+                            width: '100%', marginTop: '5px',
+                        }}
+                        placeholder={'79185557788'}
+                        label="Телефон*"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        error={!!errors.phone}
+                        helperText={errors.phone}
+                    />
+                    <TextField
+                        sx={{width: '100%'}}
+                        placeholder={'you@ya.ru'}
+                        label="Почта*"
+                        value={email}
+                        onChange={handleEmailChange}
+                        error={!!errors.email}
+                        helperText={errors.email}
+                    />
+                    <TextField
+                        placeholder={'Алекс'}
+                        label="Имя"
+                        value={name}
+                        onChange={handleNameChange}
+                        fullWidth
+                    />
+                </Box>
+
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap: 2,
+                    paddingTop: '30px',
+                    justifyContent: 'space-between',
                 }}>
-                >
-                <PhoneInTalkIcon
-                    sx={{
-                        position: 'absolute',
-                        fontSize: '40px',
-                        color: 'white',
-                    }}
-                >
-                </PhoneInTalkIcon>
-            </PhoneFab>
+                    <Button onClick={closeFormDialog} sx={{textTransform: 'none'}}>Закрыть</Button>
+                    <SmallButton type="submit" onClick={handleSubmit} variant="contained">Жду звонка</SmallButton>
+                </Box>
+            </DialogContent>
+        </Dialog>
 
-            <Dialog open={openForm} onClose={closeFormDialog}>
-                <DialogTitle>
-                    <h4>Заявка на обратный звонок</h4>
-                </DialogTitle>
-                <DialogContent>
-                    <Box sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: 2
-                    }}
-                    >
-                        <TextField
-                            sx={{
-                                width: '100%',
-                                marginTop: '5px',
-                            }}
-                            placeholder={'79185557788'}
-                            label="Телефон*"
-                            value={phone}
-                            onChange={handlePhoneChange}
-                            error={!!errors.phone}
-                            helperText={errors.phone}
-                        />
-                        <TextField
-                            sx={{width: '100%'}}
-                            placeholder={'you@ya.ru'}
-                            label="Почта*"
-                            value={email}
-                            onChange={handleEmailChange}
-                            error={!!errors.email}
-                            helperText={errors.email}
-                        />
-                        <TextField
-                            placeholder={'Алекс'}
-                            label="Имя"
-                            value={name}
-                            onChange={handleNameChange}
-                            fullWidth
-                        />
-                    </Box>
-
-                    <Box sx={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        gap: 2,
-                        paddingTop: '30px',
-                        justifyContent: 'space-between',
-                    }}>
-                        <Button onClick={closeFormDialog} sx={{textTransform: 'none'}}>Закрыть</Button>
-                        <SmallButton type="submit" onClick={handleSubmit} variant="contained">Жду звонка</SmallButton>
-                    </Box>
-                </DialogContent>
-            </Dialog>
-
-            <Snackbar
-                open={openSnackbar}
-                autoHideDuration={4000}
-                onClose={handleCloseSnackbar}
-                message="Форма успешна отправлена"
-                action={action}
-            />
-        </Box>
-    );
+        <Snackbar
+            open={openSnackbar}
+            autoHideDuration={4000}
+            onClose={handleCloseSnackbar}
+            message="Форма успешна отправлена"
+            action={action}
+        />
+    </Box>);
 };
 
 export default CallBackFormDialog;
