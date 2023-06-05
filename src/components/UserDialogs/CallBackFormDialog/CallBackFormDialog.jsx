@@ -92,13 +92,6 @@ const CallBackFormDialog = ({onSubmit}) => {
 
         if (Object.keys(validationErrors).length === 0) {
             // Данные формы прошли валидацию
-            // const newBackCall = {
-            //     id: rows.length + 1, // Генерируйте уникальный ID для новой записи
-            //     name,
-            //     phone,
-            //     email,
-            // };
-            // setRows((prevRows) => [...prevRows, newBackCall]);
             fetch(`${API_URL}/back_calls`, {
                 headers: {
                     'Accept': 'application/json',
@@ -109,7 +102,6 @@ const CallBackFormDialog = ({onSubmit}) => {
             }).then(response => {
                 console.log(response)
             })
-            // onSubmit(phone, email, name);
             console.log('Данные формы отправлены');
             handleClickSnack();
             closeFormDialog();

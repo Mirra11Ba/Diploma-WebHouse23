@@ -153,9 +153,7 @@ const HouseCardItem = observer((props) =>  {
                 <Grid2 item xs={6.5}>
                     <CardButton
                         variant="contained"
-                        // onPress={(console.log("Заявка отправлена"))}
-
-                        
+                        onClick={handleClickSnack}
                     >
                         Бронь на показ
                     </CardButton>
