@@ -6,7 +6,7 @@ import Faq from "../../components/Faq/Faq";
 import classes from "../../components/Faq/Faq.module.css";
 import ImgSkyScraper from "../../media/images/about/vysotnye-domaa.webp";
 import Box from "@mui/material/Box";
-import WrapperCss from "../../components/layout/wrappers/Wrapper.css";
+import CallBackFormDialog from "../../components/UserDialogs/CallBackFormDialog/CallBackFormDialog";
 
 const AbotUs = () => {
     return (
@@ -59,6 +59,7 @@ const AbotUs = () => {
 
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Преимущества</h3>
                 <Trip/>
+                <CallBackFormDialog/>
             </WrapperMainContent>
         </>
     );

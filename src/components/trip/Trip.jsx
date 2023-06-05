@@ -88,13 +88,15 @@ export default function Trip() {
                         value={name}
                         onChange={handleName}
                     />
-                    <CardButton
+                    <SmallButton
                         variant={'contained'}
                         sx={{alignItems: "center"}}
-                        onClick={handleCreateBackCall}
-                    >
+                        onClick={handleCreateBackCall}>
                         Жду звонка!
-                    </CardButton>
+                    </SmallButton>
+                    {/*<CardButton*/}
+                    {/*    */}
+                    {/*</CardButton>*/}
                     <p className={`${classes.text} mon-body-14-reg`} style={{width: '80%'}}>Отправляя свои данные вы соглашаетесь с политикой конфиденциальности</p>
                 </Box>
             </Grid2>

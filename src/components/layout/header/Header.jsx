@@ -12,17 +12,16 @@ import MenuItem from '@mui/material/MenuItem';
 import ImgLogo from "../../../media/images/logo/house-23-logo.png";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import {MenuButton} from "../../styled/buttons/MenuButton";
-import {AccountCircleOutlined} from "@mui/icons-material";
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import {Link, useLocation} from "react-router-dom";
 import Divider from "@mui/material/Divider";
 import user from "../../../store/user";
 import AuthDialog from "../../UserDialogs/AuthDialog/AuthDialog";
 import {observer} from "mobx-react-lite";
+import {Snackbar} from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import {useState} from "react";
 
 
 const pages = [
@@ -34,12 +33,6 @@ const pages = [
     {title: "Контакты", url: '/contacts'},
 ];
 
-const newPages = [
-    {title: 'Products', value: 'products'}
-]
-
-
-
 const Header = observer(() => {
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const [isOpen, setIsOpen] = React.useState(false);
@@ -48,20 +41,31 @@ const Header = observer(() => {
     console.log(location)
 
     const settings = [
-        {title: 'Профиль', url: '/profile'},
+        {title: 'Мой профиль', url: '/profile'},
+        {title: 'Мои брони', url: '/'},
         {title: 'Избранное', url: '/'},
-        {title: 'Брони', url: '/'},
         {title: user.isAuth ? 'Выйти' : 'Войти', url: 'auth'},
         {title: 'Администрирование', url: '/admin'},
     ];
 
+    // Snackbar
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+    const showSnackbar = (message) => {
+        setSnackbarMessage(message);
+        setSnackbarOpen(true);
+    };
+
+
     const handleAuth = () => {
         if (user.isAuth) {
-            user.logout()
-        } else {
+            user.logout();
+            showSnackbar('Вы вышли из учетной записи');
+        }
+        else {
             setIsAuthOpen(true);
         }
-        handleCloseUserMenu()
+        handleCloseUserMenu();
     }
 
     const handleOpenUserMenu = (event) => {
@@ -81,7 +85,12 @@ const Header = observer(() => {
             key={page.url}
             component={Link}
             to={page.url}
-            sx={{my: 2, display: 'block', borderBottom: location.pathname === page.url ? '1px solid blue' : '0px', borderRadius: 0, }}
+            sx={{
+                my: 2,
+                display: 'block',
+                borderBottom: location.pathname === page.url ? '3px solid var(--neptune-blue)' : '0px',
+                borderRadius: 0,
+            }}
         >
             {page.title}
         </MenuButton>
@@ -93,20 +102,30 @@ const Header = observer(() => {
             <Container maxWidth="xl">
 
                 <Toolbar disableGutters>
-                    
+
                     {/*блок с логотипом*/}
-                    <Box sx={{display: {xs: 'flex', md: 'flex'}, mr: 2, flexGrow: {xs: 1, md: 1.7}, justifyContent: {xs: 'start', md: 'end'}}}>
+                    <Box sx={{
+                        display: {xs: 'flex', md: 'flex'},
+                        mr: 2,
+                        flexGrow: {xs: 1, md: 1.7},
+                        justifyContent: {xs: 'start', md: 'end'}
+                    }}>
                         <img src={ImgLogo}/>
                     </Box>
 
-                    {/*блок с пунктами меню*/}
+                    {/*блок с пунктами главного меню*/}
                     <Box sx={{flexGrow: 4, display: {xs: 'none', md: 'flex'}, justifyContent: 'center'}}>
                         {pages.map((page) => (
                             <MenuButton
                                 key={page.url}
                                 component={Link}
                                 to={page.url}
-                                sx={{my: 2, display: 'block', borderBottom: location.pathname === page.url ? '3px solid var(--neptune-blue)' : '0px', borderRadius: 0, }}
+                                sx={{
+                                    my: 2,
+                                    display: 'block',
+                                    borderBottom: location.pathname === page.url ? '3px solid var(--neptune-blue)' : '0px',
+                                    borderRadius: 0,
+                                }}
                             >
                                 {page.title}
                             </MenuButton>
@@ -121,7 +140,7 @@ const Header = observer(() => {
                         </p>
                     </Box>
 
-                    {/*блок с икнокой пользователя*/}
+                    {/*блок с иконкой пользователя*/}
                     <Box sx={{flexGrow: {xs: 0, md: 1.7}}}>
                         <Tooltip title="Открыть профиль">
                             <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}
@@ -132,10 +151,9 @@ const Header = observer(() => {
                                         color="inherit"
                             >
                                 <PersonOutlinedIcon/>
-                                {/*<AccountCircleOutlined/>*/}
-                                {/*<Avatar alt="User" src="/static/images/avatar/2.jpg" />*/}
                             </IconButton>
                         </Tooltip>
+                        {/*sub menu*/}
                         <Menu
                             sx={{mt: '45px', '& ul': {padding: 0}, '& hr': {margin: 0}}}
                             id="menu-appbar"
@@ -153,31 +171,34 @@ const Header = observer(() => {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => {
-
-
                                 return setting.url === 'auth'
-                                    ?  <div>
-                                    <MenuItem
-                                        key={setting}
-                                        onClick={handleAuth}>
-                                        <Typography textAlign="center" sx={{width: '100%'}}>{setting.title}</Typography>
-                                    </MenuItem>
-                                    <Divider sx={{width: '100%'}}/>
-                                </div>
-                                :
-                                     <div><MenuItem
-                                        key={setting}
-                                        component={Link}
-                                        to={setting.url}
-                                        onClick={handleCloseUserMenu}>
-                                        <Typography textAlign="center" sx={{width: '100%'}}>{setting.title}</Typography>
-                                    </MenuItem>
-                                        <Divider sx={{width: '100%'}}/></div>
-
+                                    ?
+                                    <div>
+                                        <MenuItem
+                                            key={setting}
+                                            onClick={handleAuth}>
+                                            <Typography textAlign="left"
+                                                        sx={{width: '100%'}}>{setting.title}</Typography>
+                                        </MenuItem>
+                                        <Divider sx={{width: '100%'}}/>
+                                    </div>
+                                    :
+                                    <div>
+                                        <MenuItem
+                                            key={setting}
+                                            component={Link}
+                                            to={setting.url}
+                                            onClick={handleCloseUserMenu}>
+                                            <Typography textAlign="left"
+                                                        sx={{width: '100%'}}>{setting.title}</Typography>
+                                        </MenuItem>
+                                        <Divider sx={{width: '100%'}}/>
+                                    </div>
                             })}
                         </Menu>
                         <AuthDialog open={isAuthOpen} setOpen={setIsAuthOpen}/>
                     </Box>
+
                     {/*блок с бургером и контекстным меню*/}
                     <Box sx={{flexGrow: 0, display: {xs: "flex", md: "none"}}}>
                         <IconButton
@@ -196,16 +217,20 @@ const Header = observer(() => {
                             onClose={handleOpenDrawer}
                         >
                             {<List sx={{p: 2}} onClick={handleOpenDrawer}>
-
                                 {menuButton}
-
                             </List>}
                         </Drawer>
-
                     </Box>
 
                 </Toolbar>
             </Container>
+
+            <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={3000}
+                onClose={() => setSnackbarOpen(false)}
+                message={snackbarMessage}
+            />
         </AppBar>
     );
 })

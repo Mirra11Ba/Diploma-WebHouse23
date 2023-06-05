@@ -5,9 +5,10 @@ import {observer} from "mobx-react-lite";
 import Grid from "@mui/material/Grid";
 import HouseCardItem from "../../components/houseCard/HouseCardItem";
 import WrapperMainContent from "../../components/layout/wrappers/Wrapper-main-content";
+import CallBackFormDialog from "../../components/UserDialogs/CallBackFormDialog/CallBackFormDialog";
 
 
-const СatalogOfHouses = observer(() => {
+const CatalogOfHouses = observer(() => {
 
     const [houses, setHouses] = useState([])
 
@@ -32,8 +33,9 @@ const СatalogOfHouses = observer(() => {
                     </Grid>
                 ))}
             </Grid>
+            <CallBackFormDialog/>
         </WrapperMainContent>
     );
 });
 
-export default СatalogOfHouses;
+export default CatalogOfHouses;

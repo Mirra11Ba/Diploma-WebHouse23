@@ -8,8 +8,8 @@ import Trip from "../../components/trip/Trip";
 import HouseCardList from "../../components/houseCard/HouseCardList";
 import {observer} from "mobx-react-lite";
 import house from "../../store/house";
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
-import {PhoneFab} from "../../components/styled/buttons/PhoneFab";
+import CallBackFormDialog from "../../components/UserDialogs/CallBackFormDialog/CallBackFormDialog";
+import BookingFormDialog from "../../components/UserDialogs/BookingFormDialog/BookingFormDialog";
 
 
 const MainPage = observer(() => {
@@ -38,25 +38,8 @@ const MainPage = observer(() => {
                 {/*Блок запись на экскурсию*/}
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Записаться на экскурсию бесплатно</h3>
                 <Trip />
-
-
-
-
-                <PhoneFab
-                    aria-label="Обратный звонок"
-                    sx={{
-                    // position: 'fixed',
-                    // left: '50%',
-                    }}
-                >
-                    <PhoneInTalkIcon
-                        sx={{
-                            fontSize: '40px',
-                            color: 'white',
-                        }}
-                    >
-                    </PhoneInTalkIcon>
-                </PhoneFab>
+                <CallBackFormDialog/>
+                <BookingFormDialog/>
             </WrapperMainContent>
         </>
     );
