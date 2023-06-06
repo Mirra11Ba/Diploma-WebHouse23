@@ -14,18 +14,20 @@ import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import status from "../../../store/status";
 import HouseService from "../../../api/services/HouseService";
 import BackCallsService from "../../../api/services/BackCallsService";
+import booking from "../../../store/booking";
 
 const BookingPanel = () => {
 
-    const initialRows = useMemo(() => backCall.backCalls.map((item) => {
+    const initialRows = useMemo(() => booking.bookings.map((item) => {
         return {
             id: item.id,
-            name: item.name,
-            phone: item.phone,
-            email: item.email,
+            date: new Date(Date.parse(item.time)).toLocaleString(),
+            phone: item.user.phone,
+            name: item.user.name,
+            houseId: item.house.id,
             statusId: item.status.id
         }
-    }), [JSON.stringify(backCall.backCalls)]);
+    }), [JSON.stringify(booking.bookings)]);
 
     const [rows, setRows] = React.useState(initialRows);
     const [rowModesModel, setRowModesModel] = React.useState({});
@@ -33,10 +35,9 @@ const BookingPanel = () => {
     // код скопирован из backcall, только header name new
     const columns = useMemo(() => [
         {field: 'id', headerName: "ID"},
-        {field: 'date', headerName: "Дата", editable: false},
-        {field: 'time', headerName: "Время", editable: false},
-        {field: 'phone', headerName: "Телефон клиента", editable: false},
-        {field: 'name', headerName: "Имя клиента", editable: false},
+        {field: 'date', headerName: "Дата", editable: false, flex: 1},
+        {field: 'phone', headerName: "Телефон клиента", editable: false, flex: 2},
+        {field: 'name', headerName: "Имя клиента", editable: false, flex: 2},
         {field: 'houseId', headerName: "Код дома", editable: false},
         {
             field: 'statusId',

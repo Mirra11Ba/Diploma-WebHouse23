@@ -48,9 +48,9 @@ const BackCallsPanel = () => {
 
     const columns = useMemo(() => [
         {field: 'id', headerName: "ID"},
-        {field: 'name', headerName: "Наименование", editable: false},
-        {field: 'phone', headerName: "Номер телефона", editable: false},
-        {field: 'email', headerName: "Email", editable: false},
+        {field: 'name', headerName: "Наименование", editable: false, flex: 1},
+        {field: 'phone', headerName: "Номер телефона", editable: false, flex: 1},
+        {field: 'email', headerName: "Email", editable: false, flex: 1},
         {
             field: 'statusId',
             headerName: "Статус",

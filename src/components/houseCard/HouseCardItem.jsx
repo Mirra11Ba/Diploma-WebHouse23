@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import classes from "./HouseCard.module.css";
@@ -14,15 +14,23 @@ import FavouritesService from "../../api/services/FavouritesService";
 import favourites from "../../store/favourites";
 import {observer} from "mobx-react-lite";
 import CloseIcon from "@mui/icons-material/Close";
+import BookingFormDialog from "../UserDialogs/BookingFormDialog/BookingFormDialog";
+import {BookingModalContext, HouseContext} from "../../context";
 
 
 const HouseCardItem = observer((props) =>  {
     // const handlerSMS = () => {setShowModal}
 
+    const {bookingOpen, setBookingOpen} = useContext(BookingModalContext);
+    const {selectedHouseId, setSelectedHouseId} = useContext(HouseContext);
+
     // Snackbar
     const [openSnackbar, setOpenSnackbar] = React.useState(false);
     const handleClickSnack = () => {
-        setOpenSnackbar(true);
+        //setOpenSnackbar(true);
+
+        setBookingOpen(true);
+        setSelectedHouseId(house.id)
     };
     const handleCloseSnackbar = (event, reason) => {
         if (reason === 'clickaway') {
@@ -174,13 +182,7 @@ const HouseCardItem = observer((props) =>  {
 
                 </Grid2>
             </Grid2>
-            <Snackbar
-                open={openSnackbar}
-                autoHideDuration={4000}
-                onClose={handleCloseSnackbar}
-                message="Эта функция будет доступна в следующей версии"
-                action={action}
-            />
+
         </Grid2>
     );
 });

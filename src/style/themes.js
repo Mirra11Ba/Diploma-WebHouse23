@@ -1,5 +1,5 @@
 import {createTheme} from "@mui/material";
-
+import {ruRU} from '@mui/x-date-pickers/locales'
 
 export const house23Theme = createTheme({
 
@@ -22,7 +22,7 @@ export const house23Theme = createTheme({
         tonalOffset: 0.09,
         // contrastThreshold: 1,
     },
-
+    ruRU,
     // typography: {
     //     fontFamily: [
     //         "Montserrat",

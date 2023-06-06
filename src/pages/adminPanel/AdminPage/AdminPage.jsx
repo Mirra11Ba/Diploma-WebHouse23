@@ -7,11 +7,13 @@ import Box from "@mui/material/Box";
 import fetchData from "../../../hooks/fetchData";
 import BackCallsService from "../../../api/services/BackCallsService";
 import backCall from "../../../store/backCall";
+import booking from "../../../store/booking";
 
 export const loader = async () => {
     await fetchData();
     await backCall.fetchBackCalls();
     await user.fetchUserList();
+    await booking.fetchBookings()
     return null
 }
 

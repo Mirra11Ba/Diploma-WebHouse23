@@ -21,7 +21,7 @@ import AuthDialog from "../../UserDialogs/AuthDialog/AuthDialog";
 import {observer} from "mobx-react-lite";
 import {Snackbar} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 const pages = [
@@ -45,8 +45,22 @@ const Header = observer(() => {
         {title: 'Мои брони', url: '/'},
         {title: 'Избранное', url: '/'},
         {title: user.isAuth ? 'Выйти' : 'Войти', url: 'auth'},
-        {title: 'Администрирование', url: '/admin'},
     ];
+
+    if (user.currentUser.roles?.find((item) => item.id === 1)) {
+        settings.push(         {title: 'Администрирование', url: '/admin'},
+        )
+    }
+
+/*    useEffect(() => {
+        console.log()
+
+        if (user.currentUser.roles?.find((item) => item.id === 1)) {
+            settings.push(
+            )
+        }
+
+    }, [])*/
 
     // Snackbar
     const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -169,18 +183,18 @@ const Header = observer(() => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => {
-                                if (setting.title === 'Администрирование' && !localStorage.getItem('token')) {
+                            {settings?.map((setting) => {
+                                if (setting?.title === 'Администрирование' && !localStorage.getItem('token')) {
                                     return <></>
                                 }
-                                return setting.url === 'auth'
+                                return setting?.url === 'auth'
                                     ?
                                     <div>
                                         <MenuItem
                                             key={setting}
                                             onClick={handleAuth}>
                                             <Typography textAlign="left"
-                                                        sx={{width: '100%'}}>{setting.title}</Typography>
+                                                        sx={{width: '100%'}}>{setting?.title}</Typography>
                                         </MenuItem>
                                         <Divider sx={{width: '100%'}}/>
                                     </div>
@@ -189,10 +203,10 @@ const Header = observer(() => {
                                         <MenuItem
                                             key={setting}
                                             component={Link}
-                                            to={setting.url}
+                                            to={setting?.url}
                                             onClick={handleCloseUserMenu}>
                                             <Typography textAlign="left"
-                                                        sx={{width: '100%'}}>{setting.title}</Typography>
+                                                        sx={{width: '100%'}}>{setting?.title}</Typography>
                                         </MenuItem>
                                         <Divider sx={{width: '100%'}}/>
                                     </div>

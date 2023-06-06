@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import WrapperMainContent from "../../components/layout/wrappers/Wrapper-main-content";
 import AdvantageList from "../../components/advantage/AdvantageList";
 import PaymentMethodList from "../../components/paymentMethod/PaymentMethodList";
@@ -10,9 +10,14 @@ import {observer} from "mobx-react-lite";
 import house from "../../store/house";
 import CallBackFormDialog from "../../components/UserDialogs/CallBackFormDialog/CallBackFormDialog";
 import BookingFormDialog from "../../components/UserDialogs/BookingFormDialog/BookingFormDialog";
+import {BookingModalContext, HouseContext} from "../../context";
 
 
 const MainPage = observer(() => {
+
+    const {bookingOpen, setBookingOpen} = useContext(BookingModalContext);
+    const {selectedHouseId, setSelectedHouseId} = useContext(HouseContext);
+
     return(
         <>
             <Slider/>
@@ -39,7 +44,7 @@ const MainPage = observer(() => {
                 <h3 style={{marginBottom: "30px", marginTop: "80px"}}>Записаться на экскурсию бесплатно</h3>
                 <Trip />
                 <CallBackFormDialog/>
-                <BookingFormDialog/>
+
             </WrapperMainContent>
         </>
     );
