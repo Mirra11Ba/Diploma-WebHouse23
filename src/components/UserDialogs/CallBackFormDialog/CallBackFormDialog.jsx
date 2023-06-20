@@ -116,16 +116,28 @@ const CallBackFormDialog = ({onSubmit}) => {
             onClick={openFormDialog}
             aria-label="Обратный звонок"
             sx={{
-                position: 'fixed', zIndex: '1000', left: {
-                    xs: "none", lg: "93%",
-                }, top: {
-                    xs: "none", lg: "85%",
+                position: 'fixed', zIndex: '1000',
+                left: {
+                    xs: "79%", md: "93%", lg: "93%",
                 },
+                top: {
+                    xs: "85%", md: "85%", lg: "85%",
+                },
+                width: {
+                    xs: "60px", md: "70px",
+                },
+                height: {
+                    xs: "60px", md: "70px",
+                }
             }}>
             >
             <PhoneInTalkIcon
                 sx={{
-                    position: 'absolute', fontSize: '40px', color: 'white',
+                    position: 'absolute', color: 'white',
+                    fontSize: {
+                       xs: "30px", md: "40px",
+                    },
+
                 }}
             >
             </PhoneInTalkIcon>

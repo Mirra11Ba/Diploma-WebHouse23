@@ -61,9 +61,6 @@ const BookingFormDialog = ({open, setOpen, houseId}) => {
 
     return (
         <div>
-            <Button variant="contained" color="primary" onClick={handleOpen}>
-                Бронь
-            </Button>
             <Modal
                 open={open}
                 onClose={handleClose}

@@ -21,8 +21,6 @@ export const loader = async () => {
     await user.checkAuth()
     return null
 }
-
-
 function App() {
 
     const [bookingOpen, setBookingOpen] = useState(false);
@@ -51,5 +49,4 @@ function App() {
         </div>
     );
 }
-
 export default App;
